@@ -53,8 +53,9 @@ const projects = [
     sector: "Communications",
     url: "https://njiwa.co.tz",
     logo: "/images/clients/njiwa.png",
-    description: "Njiwa is Britech Solutions’ bulk SMS platform for reaching customers, members and communities by text message.",
-    highlights: ["Bulk SMS messaging"],
+    description:
+      "Njiwa is Britech Solutions’ bulk SMS platform for reaching customers, members and communities by text message, with registered sender IDs, scheduling, delivery reports and an API for developers.",
+    highlights: ["Registered sender IDs", "Bulk & personalised campaigns", "Scheduled messages", "Contact groups & list upload", "Real-time delivery reports", "Developer API & webhooks", "OTP & transactional alerts", "All major Tanzanian networks"],
     isProduct: true,
   },
   {
@@ -67,7 +68,7 @@ const projects = [
     logo: "/images/clients/rasiflow.png",
     description:
       "RASIFlow digitizes HR, leave, finance, imprest, fleet and payroll management into one transparent, role-based administrative platform for NGOs and organizations in Tanzania.",
-    highlights: ["HR & leave management", "Finance & imprest", "Fleet management", "Payroll", "Role-based controls and workflows"],
+    highlights: ["HR & leave management", "Accounting, Finance & Imprest", "Fleet management", "Payroll", "Timesheet", "Procurement & Inventory", "Role-based controls and workflows"],
     isProduct: true,
   },
   {
@@ -80,7 +81,7 @@ const projects = [
     logo: "/images/clients/resulynx.png",
     description:
       "Resulynx connects Theory of Change, logframes, indicators, field data, evidence, dashboards, learning and adaptive management in one results-management platform.",
-    highlights: ["Theory of Change & logframes", "Indicators & field data", "Evidence & dashboards", "Learning & adaptive management"],
+    highlights: ["Theory of Change & logframes", "Indicators & targets", "Mobile field data collection", "Evidence & document library", "Results dashboards", "Donor & progress reporting", "Learning & adaptive management", "Role-based project access"],
     isProduct: true,
   },
   {
@@ -91,8 +92,9 @@ const projects = [
     sector: "Logistics",
     url: "https://trans-it.co.tz",
     logo: "/images/clients/transit.png",
-    description: "Trans-iT is a fleet and logistics management platform built by Britech Solutions.",
-    highlights: ["Fleet management", "Logistics operations"],
+    description:
+      "Trans-iT is Britech Solutions’ fleet and logistics management platform for managing vehicles, drivers, trips, fuel and maintenance in one place.",
+    highlights: ["Vehicle & driver management", "Trip & route planning", "Fuel tracking", "Maintenance scheduling", "Cargo & delivery tracking", "Trip expenses & costing", "Licence & insurance expiry alerts", "Fleet dashboards & reports"],
     isProduct: true,
   },
 ];
