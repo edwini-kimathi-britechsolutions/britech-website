@@ -34,7 +34,7 @@ export default async function IndustryPage({ params }: Props) {
             <ArrowLeft className="h-4 w-4" /> All industries
           </Link>
           <div className="mt-6 flex animate-fade-up flex-col gap-6 lg:flex-row lg:items-center">
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-mint-400 shadow-xl">
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-xl">
               <Icon name={ind.icon} className="h-8 w-8" />
             </span>
             <div>
@@ -63,7 +63,7 @@ export default async function IndustryPage({ params }: Props) {
             <ul className="mt-6 space-y-4">
               {ind.help.map((h) => (
                 <li key={h} className="flex gap-3 text-navy-100">
-                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-mint-400" /> {h}
+                  <CheckCircle2 className="mt-0.5 h-5 w-5 shrink-0 text-white" /> {h}
                 </li>
               ))}
             </ul>
@@ -81,7 +81,7 @@ export default async function IndustryPage({ params }: Props) {
                 href={`/solutions/${s.slug}`}
                 className="group rounded-2xl border border-navy-100 p-6 transition hover:border-mint-300 hover:shadow-lg"
               >
-                <Icon name={s.icon} className="h-6 w-6 text-mint-700" />
+                <Icon name={s.icon} className="h-6 w-6 text-navy-900" />
                 <h3 className="mt-4 font-semibold text-navy-900">{s.title}</h3>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
                   Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />

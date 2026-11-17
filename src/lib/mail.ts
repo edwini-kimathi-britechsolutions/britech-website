@@ -66,8 +66,8 @@ export async function sendInquiryNotification(inq: Inquiry, adminUrl: string) {
   const rows: [string, string][] = [
     ["Name", name],
     ["Email", inq.email],
-    ["Phone", inq.phone ?? "—"],
-    ["Organization", inq.company ?? "—"],
+    ["Phone", inq.phone ?? "Not provided"],
+    ["Organization", inq.company ?? "Not provided"],
     ["Interested in", inq.service],
   ];
 
@@ -75,7 +75,7 @@ export async function sendInquiryNotification(inq: Inquiry, adminUrl: string) {
     from,
     to: notifyTo,
     replyTo: { name, address: inq.email },
-    subject: oneLine(`New website inquiry: ${inq.service} — ${inq.company || name}`).slice(0, 200),
+    subject: oneLine(`New website inquiry: ${inq.service} (${inq.company || name})`).slice(0, 200),
     text: `${rows.map(([k, v]) => `${k}: ${v}`).join("\n")}\n\n${inq.message}\n\nView in admin: ${adminUrl}`,
     html: `<div style="font-family:Arial,sans-serif;color:#1a1c45;max-width:600px">
       <h2 style="margin:0 0 16px">New inquiry from the website</h2>
@@ -94,7 +94,7 @@ export async function sendTestEmail(to: string) {
   await tx.sendMail({
     from,
     to,
-    subject: "Britech website — test email",
+    subject: "Britech website: test email",
     text: "Your SMTP settings work. Contact-form notifications will be delivered to this mailbox.",
   });
 }

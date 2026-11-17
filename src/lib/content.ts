@@ -51,7 +51,7 @@ const DEFAULTS: SiteSettings = {
   // WhatsApp button stays hidden until a number is set in the admin.
   whatsapp: "",
   // Empty text hides the announcement bar.
-  announcement_text: "Meet Njiwa — Britech’s bulk SMS platform.",
+  announcement_text: "Meet Njiwa, Britech’s bulk SMS platform.",
   announcement_link: "/products#njiwa",
 };
 

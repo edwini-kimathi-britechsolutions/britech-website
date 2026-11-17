@@ -28,7 +28,7 @@ export default function IndustriesPage() {
                 href={`/industries/${ind.slug}`}
                 className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5"
               >
-                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-mint-50 text-mint-700">
+                <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-navy-900">
                   <Icon name={ind.icon} className="h-6 w-6" />
                 </span>
                 <h2 className="mt-5 text-lg font-semibold text-navy-900">{ind.title}</h2>

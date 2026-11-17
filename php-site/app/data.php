@@ -81,7 +81,7 @@ return array (
       'intro' => 
       array (
         0 => 'At Britech Solutions, we empower organizations to transform their operations, unlock new revenue streams, and deliver exceptional customer experiences through cutting-edge digital solutions. Our end-to-end services span strategic consulting, platform development, industry-specific applications, infrastructure management, and value chain transformation.',
-        1 => 'Our agentic AI capabilities go beyond innovation hype — integrating AI directly into enterprise operations to optimize processes, enhance decision-making, and accelerate growth. With Britech Solutions, you gain a trusted partner dedicated to helping you harness generative AI securely, responsibly, and strategically.',
+        1 => 'Our agentic AI capabilities go beyond innovation hype, integrating AI directly into enterprise operations to optimize processes, enhance decision-making, and accelerate growth. With Britech Solutions, you gain a trusted partner dedicated to helping you harness generative AI securely, responsibly, and strategically.',
       ),
       'features' => 
       array (
@@ -123,11 +123,11 @@ return array (
       'icon' => 'GraduationCap',
       'title' => 'Training, Support & Capacity Building',
       'short' => 'We equip your teams with the skills, tools, and ongoing support needed to fully adopt and sustain digital systems.',
-      'headline' => 'Technology alone is not enough — people need the skills and confidence to use it.',
+      'headline' => 'Technology alone is not enough. People need the skills and confidence to use it.',
       'intro' => 
       array (
         0 => 'At Britech Solutions, we provide comprehensive training, technical support, and capacity-building services to ensure that our digital solutions are fully adopted, sustainable, and impactful.',
-        1 => 'We work closely with clients to build internal capacity, reduce dependency on external support, and empower users at all levels to manage and maintain the systems we deliver — with bilingual delivery in English and Kiswahili where needed.',
+        1 => 'We work closely with clients to build internal capacity, reduce dependency on external support, and empower users at all levels to manage and maintain the systems we deliver, with bilingual delivery in English and Kiswahili where needed.',
       ),
       'features' => 
       array (
@@ -173,7 +173,7 @@ return array (
       'intro' => 
       array (
         0 => 'We specialize in building robust, scalable enterprise software tailored to complex operational needs. From custom business applications to full-scale ERP systems, our solutions streamline workflows, enhance decision-making, and improve organizational efficiency.',
-        1 => 'We design ERP systems that integrate finance, inventory, procurement, HR, project management, and CRM into a single unified platform — centralizing operations, providing real-time data visibility, and supporting scalable growth.',
+        1 => 'We design ERP systems that integrate finance, inventory, procurement, HR, project management, and CRM into a single unified platform, centralizing operations, providing real-time data visibility, and supporting scalable growth.',
       ),
       'features' => 
       array (
@@ -264,7 +264,7 @@ return array (
       'headline' => 'Safeguarding Digital Ecosystems. Building Trust. Ensuring Resilience.',
       'intro' => 
       array (
-        0 => 'In today’s hyper-connected digital landscape, cybersecurity is no longer a peripheral IT concern — it is a critical business priority that demands strategic attention, technical expertise, and proactive action.',
+        0 => 'In today’s hyper-connected digital landscape, cybersecurity is no longer a peripheral IT concern. It is a critical business priority that demands strategic attention, technical expertise, and proactive action.',
         1 => 'We serve enterprises, government agencies, NGOs, and development partners across finance, health, agriculture, education, conservation, and governance. Our services meet local and international compliance standards, ensuring your systems are protected, audit-ready, and future-proof.',
       ),
       'features' => 
@@ -311,7 +311,7 @@ return array (
       'intro' => 
       array (
         0 => 'We help organizations harness the power of technology to drive innovation, improve efficiency, and achieve strategic goals.',
-        1 => 'Our Digital Strategy & IT Consulting services guide companies, institutions, and development partners through their digital transformation journeys — whether starting from scratch or scaling existing systems.',
+        1 => 'Our Digital Strategy & IT Consulting services guide companies, institutions, and development partners through their digital transformation journeys, whether starting from scratch or scaling existing systems.',
       ),
       'features' => 
       array (
@@ -394,7 +394,7 @@ return array (
     3 => 
     array (
       'title' => 'Professional Expertise',
-      'text' => 'Leadership certified in PMP, CISA, ITIL, and CISSP — global best practice in delivery, security and governance.',
+      'text' => 'Leadership certified in PMP, CISA, ITIL, and CISSP, bringing global best practice in delivery, security and governance.',
       'icon' => 'BadgeCheck',
     ),
     4 => 
@@ -430,7 +430,7 @@ return array (
     3 => 
     array (
       'title' => 'Customers',
-      'text' => 'Our clients are at the heart of our business — we build lasting relationships through responsive, personalized service.',
+      'text' => 'Our clients are at the heart of our business. We build lasting relationships through responsive, personalized service.',
     ),
     4 => 
     array (
@@ -627,7 +627,7 @@ return array (
       'icon' => 'Landmark',
       'title' => 'Government & Public Sector',
       'short' => 'Digital governance, service delivery, and institutional systems.',
-      'intro' => 'We work with public institutions to modernize service delivery, strengthen institutional capacity, and improve transparency — in full compliance with Tanzanian laws and ICT regulations.',
+      'intro' => 'We work with public institutions to modernize service delivery, strengthen institutional capacity, and improve transparency, in full compliance with Tanzanian laws and ICT regulations.',
       'challenges' => 
       array (
         0 => 'Legacy systems and fragmented data',

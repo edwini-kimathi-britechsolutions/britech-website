@@ -108,11 +108,11 @@ export default async function InquiryPage({ params }: { params: Promise<{ id: st
       <p className="mt-4 flex items-center gap-2 text-sm text-navy-500">
         {inq.emailedAt ? (
           <>
-            <CheckCircle2 className="h-4 w-4 text-mint-700" /> Notification emailed {dateTime(inq.emailedAt)}
+            <CheckCircle2 className="h-4 w-4 text-navy-900" /> Notification emailed {dateTime(inq.emailedAt)}
           </>
         ) : inq.emailError ? (
           <>
-            <AlertTriangle className="h-4 w-4 text-amber-600" /> Notification email failed: {inq.emailError}
+            <AlertTriangle className="h-4 w-4 text-navy-900" /> Notification email failed: {inq.emailError}
           </>
         ) : (
           "No notification email was sent."

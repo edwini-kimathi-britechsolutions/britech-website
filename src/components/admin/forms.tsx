@@ -119,7 +119,7 @@ export function ProjectForm({ project }: { project?: Project | null }) {
         <Field label="Project name">
           <input name="name" required defaultValue={project?.name} className={inputCls} />
         </Field>
-        <Field label="Client" hint="Optional — leave empty for Britech’s own platforms.">
+        <Field label="Client" hint="Optional. Leave empty for Britech’s own platforms.">
           <input name="client" defaultValue={project?.client ?? ""} className={inputCls} />
         </Field>
       </div>
@@ -277,9 +277,9 @@ export function CreateUserForm() {
         </Field>
         <Field label="Role">
           <select name="role" defaultValue="AUTHOR" className={inputCls}>
-            <option value="AUTHOR">Author — writes own posts</option>
-            <option value="EDITOR">Editor — publishes & manages content</option>
-            <option value="ADMIN">Admin — full access</option>
+            <option value="AUTHOR">Author: writes own posts</option>
+            <option value="EDITOR">Editor: publishes & manages content</option>
+            <option value="ADMIN">Admin: full access</option>
           </select>
         </Field>
       </div>

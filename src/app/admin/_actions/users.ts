@@ -24,7 +24,7 @@ export async function createUser(_: FormState, fd: FormData): Promise<FormState>
   const password = tempPassword();
   await db.user.create({ data: { ...parsed.data, passwordHash: await hashPassword(password) } });
   revalidatePath("/admin/users");
-  return { ok: `Account created for ${parsed.data.email}. Share this temporary password securely — it won’t be shown again:`, secret: password };
+  return { ok: `Account created for ${parsed.data.email}. Share this temporary password securely. It won’t be shown again:`, secret: password };
 }
 
 const UpdateUser = z.object({

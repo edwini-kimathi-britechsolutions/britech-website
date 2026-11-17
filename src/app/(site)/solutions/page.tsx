@@ -27,7 +27,7 @@ export default function SolutionsPage() {
               href={`/solutions/${s.slug}`}
               className="group flex gap-6 rounded-2xl border border-navy-100 bg-white p-7 transition hover:-translate-y-1 hover:border-mint-300 hover:shadow-xl hover:shadow-navy-900/5"
             >
-              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-mint-400 transition group-hover:bg-mint-500 group-hover:text-navy-950">
+              <span className="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white transition group-hover:bg-navy-700">
                 <Icon name={s.icon} className="h-7 w-7" />
               </span>
               <div>

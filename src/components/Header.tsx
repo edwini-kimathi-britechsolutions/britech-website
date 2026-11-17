@@ -41,7 +41,7 @@ export default function Header({ phone, announcement }: { phone: string; announc
         <div className="bg-navy-950 text-white">
           <div className="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
             <p className="flex min-w-0 items-center gap-2 text-sm text-navy-200">
-              <Sparkles className="h-4 w-4 shrink-0 text-mint-400" />
+              <Sparkles className="h-4 w-4 shrink-0 text-white" />
               <span className="truncate">{announcement.text}</span>
             </p>
             {announcement.link && (
@@ -87,7 +87,7 @@ export default function Header({ phone, announcement }: { phone: string; announc
                           href={`/solutions/${s.slug}`}
                           className="flex gap-3 rounded-xl p-3 transition hover:bg-navy-50"
                         >
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mint-50 text-mint-700">
+                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900">
                             <Icon name={s.icon} className="h-5 w-5" />
                           </span>
                           <span>

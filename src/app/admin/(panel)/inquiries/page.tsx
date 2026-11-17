@@ -53,12 +53,12 @@ export default async function InquiriesPage({
       {sp.deleted && <Notice>Inquiry deleted.</Notice>}
       {!smtp.host && (
         <Notice tone="warn">
-          Email notifications are off. {user.role === "ADMIN" ? (
+          Email notifications are off. Inquiries are still saved here.{" "}
+          {user.role === "ADMIN" ? (
             <Link href="/admin/settings" className="font-semibold underline">Set up SMTP in Site settings</Link>
           ) : (
             "Ask an admin to set up SMTP in Site settings."
-          )}{" "}
-          — inquiries are still saved here.
+          )}
         </Notice>
       )}
 
@@ -93,7 +93,7 @@ export default async function InquiriesPage({
                   {r.company && <span className="text-sm text-navy-500">· {r.company}</span>}
                 </div>
                 <p className="mt-0.5 truncate text-sm text-navy-500">
-                  <span className="font-medium text-navy-700">{r.service}</span> — {r.message}
+                  <span className="font-medium text-navy-700">{r.service}</span>: {r.message}
                 </p>
               </div>
               <div className="flex shrink-0 flex-col items-end gap-1">

@@ -19,7 +19,7 @@ $tags = array_values(array_filter(array_map('trim', explode(',', $post['tags']))
       <h1 class="mt-3 text-3xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl"><?= e($post['title']) ?></h1>
       <p class="mt-5 text-lg leading-relaxed text-navy-500"><?= e($post['excerpt']) ?></p>
       <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-navy-500">
-        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-mint-400"><?= e(mb_substr($post['authorName'], 0, 1)) ?></span>
+        <span class="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white"><?= e(mb_substr($post['authorName'], 0, 1)) ?></span>
         <span class="font-medium text-navy-800"><?= e($post['authorName']) ?></span>
         <span>·</span>
         <?php if ($post['publishedAt']): ?><time datetime="<?= e(iso_date($post['publishedAt'])) ?>"><?= e(format_date($post['publishedAt'])) ?></time><?php endif; ?>

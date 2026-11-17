@@ -9,7 +9,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
   <div class="<?= CONTAINER ?> relative py-16 sm:py-20">
     <a href="/solutions" class="inline-flex items-center gap-1 text-sm font-medium text-navy-500 hover:text-navy-900"><?= icon('ArrowLeft', 'h-4 w-4') ?> All solutions</a>
     <div class="mt-6 flex animate-fade-up flex-col gap-6 lg:flex-row lg:items-center">
-      <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-mint-400 shadow-xl"><?= icon($service['icon'], 'h-8 w-8') ?></span>
+      <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-xl"><?= icon($service['icon'], 'h-8 w-8') ?></span>
       <div>
         <?= eyebrow('Solution') ?>
         <h1 class="mt-3 text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl"><?= e($service['title']) ?></h1>
@@ -38,7 +38,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
     <div class="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
       <?php foreach ($service['features'] as $f): ?>
       <div class="rounded-2xl border border-navy-100 bg-white p-6">
-        <?= icon('CheckCircle2', 'h-6 w-6 text-mint-500') ?>
+        <?= icon('CheckCircle2', 'h-6 w-6 text-navy-900') ?>
         <h3 class="mt-4 font-semibold text-navy-900"><?= e($f['title']) ?></h3>
         <p class="mt-2 text-navy-500"><?= e($f['text']) ?></p>
       </div>
@@ -55,7 +55,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
       <ol class="mt-8 space-y-4">
         <?php foreach ($delivery['approach'] as $i => $step): ?>
         <li class="flex items-center gap-4 rounded-2xl border border-navy-100 p-5">
-          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-mint-400"><?= $i + 1 ?></span>
+          <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white"><?= $i + 1 ?></span>
           <span class="font-medium text-navy-800"><?= e($step) ?></span>
         </li>
         <?php endforeach; ?>
@@ -65,7 +65,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
       <h2 class="text-3xl font-bold tracking-tight text-navy-900">What you receive</h2>
       <ul class="mt-8 space-y-3 rounded-2xl bg-navy-50/70 p-6">
         <?php foreach ($delivery['deliverables'] as $d): ?>
-        <li class="flex items-center gap-3 text-navy-700"><?= icon('FileCheck2', 'h-5 w-5 shrink-0 text-mint-700') ?> <?= e($d) ?></li>
+        <li class="flex items-center gap-3 text-navy-700"><?= icon('FileCheck2', 'h-5 w-5 shrink-0 text-navy-900') ?> <?= e($d) ?></li>
         <?php endforeach; ?>
       </ul>
     </div>
@@ -79,7 +79,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
     <div class="mt-8 grid gap-5 md:grid-cols-3">
       <?php foreach ($others as $s): ?>
       <a href="/solutions/<?= e($s['slug']) ?>" class="group rounded-2xl border border-navy-100 p-6 transition hover:border-mint-300 hover:shadow-lg">
-        <?= icon($s['icon'], 'h-6 w-6 text-mint-700') ?>
+        <?= icon($s['icon'], 'h-6 w-6 text-navy-900') ?>
         <h3 class="mt-4 font-semibold text-navy-900"><?= e($s['title']) ?></h3>
         <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>
       </a>

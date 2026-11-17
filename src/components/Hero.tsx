@@ -26,7 +26,7 @@ const onCircle = (i: number, n: number) => {
 
 const inner = [Cloud, Database, Cpu];
 
-/** Britech mark at the centre with every service in orbit — "one partner, every capability". */
+/** Britech mark at the centre with every service in orbit: "one partner, every capability". */
 function ServiceOrbit() {
   return (
     <div className="relative mx-auto aspect-square w-full max-w-[520px]">
@@ -40,7 +40,7 @@ function ServiceOrbit() {
             <div className="animate-orbit-reverse">
               <div className="flex flex-col items-center gap-1.5">
                 <span className="flex h-11 w-11 items-center justify-center rounded-2xl border border-navy-100 bg-white text-navy-800 shadow-lg shadow-navy-900/10 sm:h-14 sm:w-14">
-                  <Icon name={s.icon} className="h-5 w-5 text-mint-700 sm:h-6 sm:w-6" />
+                  <Icon name={s.icon} className="h-5 w-5 text-navy-900 sm:h-6 sm:w-6" />
                 </span>
                 <span className="rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-navy-700 shadow-sm sm:text-xs">
                   {short[s.slug]}
@@ -56,7 +56,7 @@ function ServiceOrbit() {
         {inner.map((I, i) => (
           <div key={i} className="absolute -translate-x-1/2 -translate-y-1/2" style={onCircle(i, inner.length)}>
             <div className="animate-orbit-slow">
-              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-mint-400 shadow-md sm:h-9 sm:w-9">
+              <span className="flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-white shadow-md sm:h-9 sm:w-9">
                 <I className="h-4 w-4" />
               </span>
             </div>
@@ -75,7 +75,7 @@ function ServiceOrbit() {
       {/* Status cards */}
       <div className="absolute -left-[4%] top-0 hidden animate-pop-in sm:block [animation-delay:900ms]">
         <div className="flex animate-float items-center gap-3 rounded-xl border-l-4 border-mint-500 bg-white px-4 py-3 shadow-xl shadow-navy-900/10">
-          <ShieldCheck className="h-5 w-5 text-mint-700" />
+          <ShieldCheck className="h-5 w-5 text-navy-900" />
           <div>
             <p className="text-sm font-semibold text-navy-900">Systems secured</p>
             <p className="text-xs text-navy-400">ISO 27001 · NIST aligned</p>
@@ -119,7 +119,7 @@ export default function Hero({ logos }: { logos: Pick<Partner, "id" | "name" | "
           </h1>
 
           <p className="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-navy-500 [animation-delay:200ms]">
-            Britech Solutions designs, builds and secures the digital systems that businesses, governments and NGOs run on — from
+            Britech Solutions designs, builds and secures the digital systems that businesses, governments and NGOs run on, from
             mobile apps and ERP to cybersecurity and data intelligence.
           </p>
 

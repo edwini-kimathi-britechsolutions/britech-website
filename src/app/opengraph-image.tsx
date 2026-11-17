@@ -3,7 +3,7 @@ import path from "node:path";
 import { ImageResponse } from "next/og";
 
 // Link preview image used by WhatsApp, LinkedIn, Facebook, X, etc.
-export const alt = "Britech Solutions — Driven by Innovation. Powered by Technology.";
+export const alt = "Britech Solutions | Driven by Innovation. Powered by Technology.";
 export const size = { width: 1200, height: 630 };
 export const contentType = "image/png";
 
@@ -31,7 +31,7 @@ export default async function OpengraphImage() {
           <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1 }}>Smart, secure & scalable</div>
           <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1, color: "#4fdcba" }}>digital systems.</div>
           <div style={{ marginTop: 28, fontSize: 28, color: "#c7cae6" }}>
-            Software · Cybersecurity · Data & BI · ERP · AI — Arusha, Tanzania
+            Software · Cybersecurity · Data & BI · ERP · AI · Arusha, Tanzania
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#9a9fcf" }}>britechsolutions.co.tz</div>

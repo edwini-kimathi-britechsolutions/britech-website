@@ -21,7 +21,7 @@ export default async function CTA() {
                 Get in Touch
               </ButtonLink>
               <a href={telHref(phone1)} className="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">
-                <Phone className="h-4 w-4 text-mint-400" /> {phone1}
+                <Phone className="h-4 w-4 text-white" /> {phone1}
               </a>
             </div>
           </div>

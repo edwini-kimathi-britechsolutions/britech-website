@@ -62,7 +62,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
       <div className="mt-8 grid gap-4 sm:grid-cols-3 xl:grid-cols-6">
         {cards.map(({ label, value, href, Icon }) => (
           <Link key={label} href={href} className="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-mint-300">
-            <Icon className="h-5 w-5 text-mint-700" />
+            <Icon className="h-5 w-5 text-navy-900" />
             <p className="mt-3 text-3xl font-bold text-navy-900">{value}</p>
             <p className="text-sm text-navy-500">{label}</p>
           </Link>

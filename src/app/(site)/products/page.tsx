@@ -9,7 +9,7 @@ import { contactForProduct } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Products",
-  description: "Platforms built and run by Britech Solutions — RASIFlow, Resulynx, Trans-iT, Njiwa and more.",
+  description: "Platforms built and run by Britech Solutions, including RASIFlow, Resulynx, Trans-iT and Njiwa.",
 };
 
 export default async function ProductsPage({ searchParams }: { searchParams: Promise<{ page?: string }> }) {

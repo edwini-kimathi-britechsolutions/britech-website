@@ -5,7 +5,7 @@
     <?php foreach (data('industries') as $i => $ind): ?>
     <div data-reveal style="transition-delay:<?= ($i % 3) * 80 ?>ms">
       <a href="/industries/<?= e($ind['slug']) ?>" class="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">
-        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-mint-50 text-mint-700"><?= icon($ind['icon'], 'h-6 w-6') ?></span>
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-50 text-navy-900"><?= icon($ind['icon'], 'h-6 w-6') ?></span>
         <h2 class="mt-5 text-lg font-semibold text-navy-900"><?= e($ind['title']) ?></h2>
         <p class="mt-2 flex-1 leading-relaxed text-navy-500"><?= e($ind['short']) ?></p>
         <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>

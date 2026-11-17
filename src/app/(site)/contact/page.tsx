@@ -26,14 +26,14 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
       <PageHero
         eyebrow="Contact"
         title="Let’s build something brilliant"
-        text="Tell us about your goals and our team will help you find the right solution — from a quick consultation to full-scale delivery."
+        text="Tell us about your goals and our team will help you find the right solution, from a quick consultation to full-scale delivery."
       />
       <section className="py-20 sm:py-24">
         <Container className="grid gap-10 lg:grid-cols-5">
           <div className="space-y-4 lg:col-span-2">
             {cards.map(({ Icon, title, lines }) => (
               <div key={title} className="flex gap-4 rounded-2xl border border-navy-100 p-5">
-                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mint-50 text-mint-700">
+                <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-50 text-navy-900">
                   <Icon className="h-5 w-5" />
                 </span>
                 <div className="min-w-0">

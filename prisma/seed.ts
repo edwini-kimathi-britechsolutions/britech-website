@@ -41,7 +41,7 @@ const projects = [
     url: "https://silvertrack.co.tz",
     logo: "/images/clients/silvertrack.png",
     description:
-      "SilverTrack is the Tanzania DVS Poultry Health System — a poultry health monitoring platform built for Silverlands Tanzania. Silverlands commenced day-old-chick and poultry feed production in 2014 to supply commercial and small-scale chicken farmers across Tanzania.",
+      "SilverTrack is the Tanzania DVS Poultry Health System, a poultry health monitoring platform built for Silverlands Tanzania. Silverlands commenced day-old-chick and poultry feed production in 2014 to supply commercial and small-scale chicken farmers across Tanzania.",
     highlights: ["Poultry health monitoring", "Built for Silverlands Tanzania", "Supports commercial and small-scale chicken farmers"],
     isProduct: false, // client project
   },

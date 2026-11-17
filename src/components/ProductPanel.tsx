@@ -29,7 +29,7 @@ export default function ProductPanel({ product }: { product: ProductData }) {
         <ul className="relative mt-5 grid gap-3 sm:grid-cols-2">
           {highlights.slice(0, 8).map((h) => (
             <li key={h} className="flex items-center gap-3 rounded-xl bg-white/[0.06] px-4 py-3 text-sm font-medium text-white ring-1 ring-white/10">
-              <CheckCircle2 className="h-4 w-4 shrink-0 text-mint-400" /> {h}
+              <CheckCircle2 className="h-4 w-4 shrink-0 text-white" /> {h}
             </li>
           ))}
         </ul>

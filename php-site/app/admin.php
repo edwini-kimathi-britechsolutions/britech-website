@@ -206,9 +206,9 @@ function admin_inquiries(array $user): void
         $h .= notice('Inquiry deleted.');
     }
     if ($smtp['host'] === '') {
-        $h .= notice('Email notifications are off. ' . ($user['role'] === 'ADMIN'
+        $h .= notice('Email notifications are off. Inquiries are still saved here. ' . ($user['role'] === 'ADMIN'
             ? '<a href="/admin/settings" class="font-semibold underline">Set up SMTP in Site settings</a>'
-            : 'Ask an admin to set up SMTP in Site settings.') . ' — inquiries are still saved here.', 'warn');
+            : 'Ask an admin to set up SMTP in Site settings.'), 'warn');
     }
     $h .= '<div class="mb-4 flex flex-col gap-3 sm:flex-row sm:items-center sm:justify-between">'
         . filter_chips('/admin/inquiries', 'status', $status, [
@@ -229,7 +229,7 @@ function admin_inquiries(array $user): void
                 . '<span class="mt-2 h-2 w-2 shrink-0 rounded-full ' . ($new ? 'bg-mint-500' : 'bg-transparent') . '"></span>'
                 . '<div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline gap-x-2"><span class="text-navy-900 ' . ($new ? 'font-semibold' : 'font-medium') . '">' . e($r['firstName'] . ' ' . $r['lastName']) . '</span>'
                 . ($r['company'] ? '<span class="text-sm text-navy-500">· ' . e($r['company']) . '</span>' : '') . '</div>'
-                . '<p class="mt-0.5 truncate text-sm text-navy-500"><span class="font-medium text-navy-700">' . e($r['service']) . '</span> — ' . e($r['message']) . '</p></div>'
+                . '<p class="mt-0.5 truncate text-sm text-navy-500"><span class="font-medium text-navy-700">' . e($r['service']) . '</span>: ' . e($r['message']) . '</p></div>'
                 . '<div class="flex shrink-0 flex-col items-end gap-1"><span class="text-xs text-navy-400">' . e(format_date($r['createdAt'])) . '</span>'
                 . ($r['emailError'] ? '<span title="' . e($r['emailError']) . '" class="inline-flex items-center gap-1 text-xs text-amber-700">' . icon('AlertTriangle', 'h-3 w-3') . ' not emailed</span>' : '')
                 . '</div></a>';
@@ -362,7 +362,7 @@ function admin_post_edit(array $user, string $id): void
 
     $locked = $post && !$editor && $post['status'] === 'PUBLISHED';
     $canDelete = $post && ($editor || ($post['authorId'] === $user['id'] && $post['status'] !== 'PUBLISHED'));
-    $saved = ['published' => 'Published — the post is live on the website.', 'review' => 'Submitted for review. An editor will publish it.', 'draft' => 'Draft saved.'];
+    $saved = ['published' => 'Published. The post is live on the website.', 'review' => 'Submitted for review. An editor will publish it.', 'draft' => 'Draft saved.'];
 
     $actions = '';
     if ($post) {
@@ -520,7 +520,7 @@ function admin_projects(array $user): void
             $h .= '<tr class="hover:bg-navy-50/60"><td class="px-5 py-3"><a href="/admin/projects/' . e($p['id']) . '" class="flex items-center gap-3">'
                 . '<span class="flex h-10 w-16 shrink-0 items-center justify-center">' . ($p['logo'] ? '<img src="' . e($p['logo']) . '" alt="" class="max-h-10 max-w-16 object-contain">' : '') . '</span>'
                 . '<span><span class="block font-medium text-navy-900">' . e($p['name']) . '</span><span class="block text-xs text-navy-400">' . e($p['tagline']) . '</span></span></a></td>'
-                . '<td class="px-5 py-3 text-navy-600">' . e($p['client'] ?? '—') . '</td>'
+                . '<td class="px-5 py-3 text-navy-600">' . e($p['client'] ?? 'Not set') . '</td>'
                 . '<td class="px-5 py-3"><span class="rounded-full px-2.5 py-0.5 text-xs font-semibold ' . ($prod ? 'bg-mint-50 text-mint-700' : 'bg-navy-50 text-navy-600') . '">' . ($prod ? 'Product' : 'Client work') . '</span></td>'
                 . '<td class="px-5 py-3 text-navy-600">' . ((int) $p['published'] ? 'Visible' : 'Hidden') . '</td>'
                 . '<td class="px-5 py-3 text-navy-600">' . (int) $p['sortOrder'] . '</td></tr>';
@@ -616,7 +616,7 @@ function admin_project_edit(array $user, string $id): void
     $form = '<form method="post" data-pending-form class="max-w-3xl space-y-5 rounded-xl border border-navy-100 bg-white p-6">' . csrf_field() . form_message($error)
         . '<div class="grid gap-5 sm:grid-cols-2">'
         . field('Project name', text_input('name', old($old, $p, 'name'), ['required' => true, 'maxlength' => '120']))
-        . field('Client', text_input('client', old($old, $p, 'client')), 'Optional — leave empty for Britech’s own platforms.')
+        . field('Client', text_input('client', old($old, $p, 'client')), 'Optional. Leave empty for Britech’s own platforms.')
         . '</div>'
         . field('Tagline', text_input('tagline', old($old, $p, 'tagline'), ['required' => true, 'maxlength' => '200', 'placeholder' => 'e.g. Poultry health monitoring system']))
         . field('Description', textarea('description', old($old, $p, 'description'), 5, ['required' => true]))
@@ -904,7 +904,7 @@ function admin_users(array $me): void
         . '<div class="grid gap-4 sm:grid-cols-3">'
         . field('Name', text_input('name', $createOld['name'] ?? '', ['required' => true]))
         . field('Email', text_input('email', $createOld['email'] ?? '', ['type' => 'email', 'required' => true]))
-        . field('Role', select('role', ['AUTHOR' => 'Author — writes own posts', 'EDITOR' => 'Editor — publishes & manages content', 'ADMIN' => 'Admin — full access'], $createOld['role'] ?? 'AUTHOR'))
+        . field('Role', select('role', ['AUTHOR' => 'Author: writes own posts', 'EDITOR' => 'Editor: publishes & manages content', 'ADMIN' => 'Admin: full access'], $createOld['role'] ?? 'AUTHOR'))
         . '</div>' . submit_button('Create account') . '</form>';
     $h .= '<div class="flex justify-end">' . search_form('/admin/users', $q, [], 'Search name or email') . '</div>';
 
@@ -957,7 +957,7 @@ function create_user(): array
     }
     $password = temp_password();
     db_insert('User', ['id' => new_id(), 'name' => $name, 'email' => $email, 'role' => $role, 'passwordHash' => hash_password($password), 'active' => true, 'createdAt' => now_utc(), 'updatedAt' => now_utc()]);
-    return [null, "Account created for {$email}. Share this temporary password securely — it won’t be shown again:", $password];
+    return [null, "Account created for {$email}. Share this temporary password securely. It won’t be shown again:", $password];
 }
 
 function update_user(array $me, string $id): array

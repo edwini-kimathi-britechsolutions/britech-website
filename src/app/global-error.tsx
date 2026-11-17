@@ -7,7 +7,7 @@ export default function GlobalError({ reset }: { error: Error & { digest?: strin
       <body style={{ fontFamily: "system-ui, sans-serif", display: "grid", placeItems: "center", minHeight: "100vh", margin: 0, color: "#1a1c45" }}>
         <div style={{ textAlign: "center", padding: 24 }}>
           <h1 style={{ fontSize: 28 }}>Britech Solutions</h1>
-          <p>Sorry — something went wrong loading the site.</p>
+          <p>Sorry, something went wrong loading the site.</p>
           <button onClick={reset} style={{ marginTop: 12, padding: "10px 18px", borderRadius: 8, border: 0, background: "#1a1c45", color: "#fff", cursor: "pointer" }}>
             Try again
           </button>

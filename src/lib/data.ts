@@ -54,7 +54,7 @@ export const services: Service[] = [
     headline: "Revolutionizing Operations. Creating New Value. Enhancing Experiences.",
     intro: [
       "At Britech Solutions, we empower organizations to transform their operations, unlock new revenue streams, and deliver exceptional customer experiences through cutting-edge digital solutions. Our end-to-end services span strategic consulting, platform development, industry-specific applications, infrastructure management, and value chain transformation.",
-      "Our agentic AI capabilities go beyond innovation hype — integrating AI directly into enterprise operations to optimize processes, enhance decision-making, and accelerate growth. With Britech Solutions, you gain a trusted partner dedicated to helping you harness generative AI securely, responsibly, and strategically.",
+      "Our agentic AI capabilities go beyond innovation hype, integrating AI directly into enterprise operations to optimize processes, enhance decision-making, and accelerate growth. With Britech Solutions, you gain a trusted partner dedicated to helping you harness generative AI securely, responsibly, and strategically.",
     ],
     features: [
       { title: "AI Strategy & Consulting", text: "Identify where generative AI and emerging technologies deliver the greatest value." },
@@ -71,10 +71,10 @@ export const services: Service[] = [
     title: "Training, Support & Capacity Building",
     short:
       "We equip your teams with the skills, tools, and ongoing support needed to fully adopt and sustain digital systems.",
-    headline: "Technology alone is not enough — people need the skills and confidence to use it.",
+    headline: "Technology alone is not enough. People need the skills and confidence to use it.",
     intro: [
       "At Britech Solutions, we provide comprehensive training, technical support, and capacity-building services to ensure that our digital solutions are fully adopted, sustainable, and impactful.",
-      "We work closely with clients to build internal capacity, reduce dependency on external support, and empower users at all levels to manage and maintain the systems we deliver — with bilingual delivery in English and Kiswahili where needed.",
+      "We work closely with clients to build internal capacity, reduce dependency on external support, and empower users at all levels to manage and maintain the systems we deliver, with bilingual delivery in English and Kiswahili where needed.",
     ],
     features: [
       { title: "User Training & Onboarding", text: "Tailored on-site or virtual sessions, from basic usage to advanced features." },
@@ -94,7 +94,7 @@ export const services: Service[] = [
     headline: "ERP solutions that are intuitive, fully integrated, highly secure, and scalable.",
     intro: [
       "We specialize in building robust, scalable enterprise software tailored to complex operational needs. From custom business applications to full-scale ERP systems, our solutions streamline workflows, enhance decision-making, and improve organizational efficiency.",
-      "We design ERP systems that integrate finance, inventory, procurement, HR, project management, and CRM into a single unified platform — centralizing operations, providing real-time data visibility, and supporting scalable growth.",
+      "We design ERP systems that integrate finance, inventory, procurement, HR, project management, and CRM into a single unified platform, centralizing operations, providing real-time data visibility, and supporting scalable growth.",
     ],
     features: [
       { title: "Unified ERP Platforms", text: "Finance, inventory, procurement, HR, projects and CRM in one system." },
@@ -133,7 +133,7 @@ export const services: Service[] = [
       "End-to-end cybersecurity and IT audit services to stay secure, compliant, and resilient against evolving threats.",
     headline: "Safeguarding Digital Ecosystems. Building Trust. Ensuring Resilience.",
     intro: [
-      "In today’s hyper-connected digital landscape, cybersecurity is no longer a peripheral IT concern — it is a critical business priority that demands strategic attention, technical expertise, and proactive action.",
+      "In today’s hyper-connected digital landscape, cybersecurity is no longer a peripheral IT concern. It is a critical business priority that demands strategic attention, technical expertise, and proactive action.",
       "We serve enterprises, government agencies, NGOs, and development partners across finance, health, agriculture, education, conservation, and governance. Our services meet local and international compliance standards, ensuring your systems are protected, audit-ready, and future-proof.",
     ],
     features: [
@@ -154,7 +154,7 @@ export const services: Service[] = [
     headline: "Align IT investments with business objectives for maximum return.",
     intro: [
       "We help organizations harness the power of technology to drive innovation, improve efficiency, and achieve strategic goals.",
-      "Our Digital Strategy & IT Consulting services guide companies, institutions, and development partners through their digital transformation journeys — whether starting from scratch or scaling existing systems.",
+      "Our Digital Strategy & IT Consulting services guide companies, institutions, and development partners through their digital transformation journeys, whether starting from scratch or scaling existing systems.",
     ],
     features: [
       { title: "Transformation Roadmaps", text: "Assess digital maturity and build actionable plans to modernize." },
@@ -178,7 +178,7 @@ export const highlights = [
   { title: "Compliance & Integrity", text: "We operate in full compliance with Tanzanian laws and ICT regulations, upholding integrity, transparency, and accountability.", icon: "Scale" },
   { title: "Domain Registrar & Hosting", text: "Accredited .tz domain registrar with nearly 200 domains and hosted accounts on secure, high-performance infrastructure.", icon: "Globe" },
   { title: "Custom Mobile Applications", text: "10+ custom iOS and Android apps built with Flutter and React Native for agriculture, health, and finance.", icon: "Smartphone" },
-  { title: "Professional Expertise", text: "Leadership certified in PMP, CISA, ITIL, and CISSP — global best practice in delivery, security and governance.", icon: "BadgeCheck" },
+  { title: "Professional Expertise", text: "Leadership certified in PMP, CISA, ITIL, and CISSP, bringing global best practice in delivery, security and governance.", icon: "BadgeCheck" },
   { title: "Client Base", text: "Over 300 clients across agriculture, health, education, and finance with long-term partnerships.", icon: "Users" },
   { title: "Bilingual Training & Support", text: "Human-centered training and helpdesk support delivered in English and Kiswahili, matched to each user’s role.", icon: "GraduationCap" },
 ];
@@ -187,7 +187,7 @@ export const values = [
   { title: "Quality", text: "We combine creativity and innovation to deliver solutions that provide real, lasting value: simple yet impactful." },
   { title: "People", text: "We attract top talent, invest in their growth, and recognize their contributions. Our team is our greatest asset." },
   { title: "Teamwork", text: "We believe in the power of collaboration. By leveraging our collective strengths, we achieve excellence together." },
-  { title: "Customers", text: "Our clients are at the heart of our business — we build lasting relationships through responsive, personalized service." },
+  { title: "Customers", text: "Our clients are at the heart of our business. We build lasting relationships through responsive, personalized service." },
   { title: "Integrity", text: "We act with honesty, transparency, and accountability. Doing the right thing is non-negotiable." },
 ];
 
@@ -312,7 +312,7 @@ export const industries: Industry[] = [
     title: "Government & Public Sector",
     short: "Digital governance, service delivery, and institutional systems.",
     intro:
-      "We work with public institutions to modernize service delivery, strengthen institutional capacity, and improve transparency — in full compliance with Tanzanian laws and ICT regulations.",
+      "We work with public institutions to modernize service delivery, strengthen institutional capacity, and improve transparency, in full compliance with Tanzanian laws and ICT regulations.",
     challenges: [
       "Legacy systems and fragmented data",
       "Limited technical capacity and budget constraints",

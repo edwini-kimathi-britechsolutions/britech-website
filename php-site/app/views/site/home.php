@@ -42,7 +42,7 @@ $heroLogos = array_slice($partners, 0, 5);
         for Africa &amp; beyond.
       </h1>
 
-      <p class="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-navy-500 [animation-delay:200ms]">Britech Solutions designs, builds and secures the digital systems that businesses, governments and NGOs run on — from mobile apps and ERP to cybersecurity and data intelligence.</p>
+      <p class="mt-6 max-w-xl animate-fade-up text-lg leading-relaxed text-navy-500 [animation-delay:200ms]">Britech Solutions designs, builds and secures the digital systems that businesses, governments and NGOs run on, from mobile apps and ERP to cybersecurity and data intelligence.</p>
 
       <div class="mt-9 flex animate-fade-up flex-wrap gap-3 [animation-delay:300ms]">
         <?= button_link('/contact', 'Start a Project') ?>
@@ -64,7 +64,7 @@ $heroLogos = array_slice($partners, 0, 5);
     </div>
 
     <div class="animate-fade-up [animation-delay:250ms]">
-      <!-- Britech mark at the centre with every service in orbit — "one partner, every capability". -->
+      <!-- Britech mark at the centre with every service in orbit: "one partner, every capability". -->
       <div class="relative mx-auto aspect-square w-full max-w-[520px]">
         <div class="absolute inset-[18%] rounded-full bg-mint-300/30 blur-3xl"></div>
 
@@ -73,7 +73,7 @@ $heroLogos = array_slice($partners, 0, 5);
           <div class="absolute -translate-x-1/2 -translate-y-1/2" style="<?= $onCircle($i, count($services)) ?>">
             <div class="animate-orbit-reverse">
               <div class="flex flex-col items-center gap-1.5">
-                <span class="flex h-11 w-11 items-center justify-center rounded-2xl border border-navy-100 bg-white text-navy-800 shadow-lg shadow-navy-900/10 sm:h-14 sm:w-14"><?= icon($sv['icon'], 'h-5 w-5 text-mint-700 sm:h-6 sm:w-6') ?></span>
+                <span class="flex h-11 w-11 items-center justify-center rounded-2xl border border-navy-100 bg-white text-navy-800 shadow-lg shadow-navy-900/10 sm:h-14 sm:w-14"><?= icon($sv['icon'], 'h-5 w-5 text-navy-900 sm:h-6 sm:w-6') ?></span>
                 <span class="rounded-full bg-white/90 px-2 py-0.5 text-[10px] font-semibold text-navy-700 shadow-sm sm:text-xs"><?= e($shortName[$sv['slug']] ?? $sv['title']) ?></span>
               </div>
             </div>
@@ -84,7 +84,7 @@ $heroLogos = array_slice($partners, 0, 5);
         <div class="absolute inset-[29%] animate-orbit-reverse-slow rounded-full border border-navy-100 bg-white/40 backdrop-blur-[2px]">
           <?php foreach (['Cloud', 'Database', 'Cpu'] as $i => $ic): ?>
           <div class="absolute -translate-x-1/2 -translate-y-1/2" style="<?= $onCircle($i, 3) ?>">
-            <div class="animate-orbit-slow"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-mint-400 shadow-md sm:h-9 sm:w-9"><?= icon($ic, 'h-4 w-4') ?></span></div>
+            <div class="animate-orbit-slow"><span class="flex h-8 w-8 items-center justify-center rounded-full bg-navy-900 text-white shadow-md sm:h-9 sm:w-9"><?= icon($ic, 'h-4 w-4') ?></span></div>
           </div>
           <?php endforeach; ?>
         </div>
@@ -98,7 +98,7 @@ $heroLogos = array_slice($partners, 0, 5);
 
         <div class="absolute -left-[4%] top-0 hidden animate-pop-in sm:block [animation-delay:900ms]">
           <div class="flex animate-float items-center gap-3 rounded-xl border-l-4 border-mint-500 bg-white px-4 py-3 shadow-xl shadow-navy-900/10">
-            <?= icon('ShieldCheck', 'h-5 w-5 text-mint-700') ?>
+            <?= icon('ShieldCheck', 'h-5 w-5 text-navy-900') ?>
             <div><p class="text-sm font-semibold text-navy-900">Systems secured</p><p class="text-xs text-navy-400">ISO 27001 · NIST aligned</p></div>
           </div>
         </div>
@@ -153,7 +153,7 @@ $heroLogos = array_slice($partners, 0, 5);
       <?php foreach ($services as $i => $sv): ?>
       <div data-reveal style="transition-delay:<?= ($i % 4) * 80 ?>ms" class="w-[82%] shrink-0 snap-start sm:w-auto">
         <a href="/solutions/<?= e($sv['slug']) ?>" class="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">
-          <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-mint-400 transition group-hover:bg-mint-500 group-hover:text-navy-950"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
+          <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white transition group-hover:bg-navy-700"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
           <h3 class="mt-5 font-semibold text-navy-900"><?= e($sv['title']) ?></h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-navy-500"><?= e($sv['short']) ?></p>
           <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>
@@ -176,7 +176,7 @@ $heroLogos = array_slice($partners, 0, 5);
 <!-- PRODUCTS -->
 <section class="py-20 sm:py-28">
   <div class="<?= CONTAINER ?>">
-    <?= section_heading('Built by Britech', 'Our flagship products &amp; systems', 'Platforms we’ve designed, built and support — for operations, results management, logistics and messaging.') ?>
+    <?= section_heading('Built by Britech', 'Our flagship products &amp; systems', 'Platforms we’ve designed, built and support for operations, results management, logistics and messaging.') ?>
     <div class="mt-12" data-tabs>
       <div class="mx-auto flex w-fit max-w-full flex-wrap justify-center gap-1 rounded-2xl border border-navy-100 bg-navy-50/60 p-1 sm:rounded-full" role="tablist">
         <?php foreach ($products as $i => $p): ?>
@@ -226,10 +226,10 @@ $heroLogos = array_slice($partners, 0, 5);
       <?php foreach (data('industries') as $i => $ind): ?>
       <div data-reveal style="transition-delay:<?= ($i % 4) * 80 ?>ms">
         <a href="/industries/<?= e($ind['slug']) ?>" class="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">
-          <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-50 text-mint-700"><?= icon($ind['icon'], 'h-5 w-5') ?></span>
+          <span class="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-50 text-navy-900"><?= icon($ind['icon'], 'h-5 w-5') ?></span>
           <h3 class="mt-5 font-semibold text-navy-900"><?= e($ind['title']) ?></h3>
           <p class="mt-2 flex-1 text-sm leading-relaxed text-navy-500"><?= e($ind['short']) ?></p>
-          <?= icon('ArrowRight', 'mt-4 h-4 w-4 text-mint-700 transition group-hover:translate-x-1') ?>
+          <?= icon('ArrowRight', 'mt-4 h-4 w-4 text-navy-900 transition group-hover:translate-x-1') ?>
         </a>
       </div>
       <?php endforeach; ?>
@@ -249,13 +249,13 @@ $heroLogos = array_slice($partners, 0, 5);
   <div class="<?= CONTAINER ?>">
     <div class="grid items-end gap-6 lg:grid-cols-2">
       <?= section_heading('How we work', 'From discovery to handover', '', false) ?>
-      <p class="text-lg text-navy-500 lg:pb-2">A clear, accountable process — so you always know what happens next, and your team can run the system after we hand it over.</p>
+      <p class="text-lg text-navy-500 lg:pb-2">A clear, accountable process, so you always know what happens next and your team can run the system after we hand it over.</p>
     </div>
     <ol class="relative mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
       <span aria-hidden="true" class="absolute left-5 right-5 top-5 hidden h-px bg-gradient-to-r from-mint-400 via-navy-200 to-navy-100 lg:block"></span>
       <?php foreach (data('engagementProcess') as $i => $step): ?>
       <li class="relative">
-        <span class="relative flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-mint-400 ring-4 ring-white"><?= $i + 1 ?></span>
+        <span class="relative flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-white ring-4 ring-white"><?= $i + 1 ?></span>
         <h3 class="mt-5 font-semibold text-navy-900"><?= e($step['title']) ?></h3>
         <p class="mt-2 text-sm leading-relaxed text-navy-500"><?= e($step['text']) ?></p>
       </li>
@@ -274,7 +274,7 @@ $heroLogos = array_slice($partners, 0, 5);
     <div class="mt-12 grid gap-5 <?= $tc === 1 ? 'max-w-3xl' : ($tc === 2 ? 'md:grid-cols-2' : 'md:grid-cols-2 lg:grid-cols-3') ?>">
       <?php foreach ($testimonials as $t): ?>
       <figure class="flex h-full flex-col rounded-2xl bg-white/[0.05] p-7 ring-1 ring-white/10">
-        <?= icon('Quote', 'h-6 w-6 text-mint-400') ?>
+        <?= icon('Quote', 'h-6 w-6 text-white') ?>
         <blockquote class="mt-4 flex-1 text-lg leading-relaxed text-navy-100">“<?= e($t['quote']) ?>”</blockquote>
         <figcaption class="mt-6 flex items-center gap-3">
           <?php if ($t['photo']): ?>
@@ -331,25 +331,25 @@ $heroLogos = array_slice($partners, 0, 5);
 
       <div data-reveal style="transition-delay:120ms" class="lg:col-span-2">
         <div class="h-full rounded-3xl border border-navy-100 bg-white p-8">
-          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><?= icon('Award', 'h-4 w-4 text-mint-700') ?> Credentials</span>
+          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><?= icon('Award', 'h-4 w-4 text-navy-900') ?> Credentials</span>
           <div class="mt-5 flex flex-wrap gap-2">
             <?php foreach (['PMP', 'CISA', 'ITIL', 'CISSP'] as $c): ?>
             <span class="rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-bold text-mint-300"><?= $c ?></span>
             <?php endforeach; ?>
           </div>
-          <p class="mt-5 flex items-start gap-2 text-navy-600"><?= icon('Globe', 'mt-0.5 h-4 w-4 shrink-0 text-mint-700') ?> Accredited .tz domain registrar, hosting nearly 200 domains.</p>
+          <p class="mt-5 flex items-start gap-2 text-navy-600"><?= icon('Globe', 'mt-0.5 h-4 w-4 shrink-0 text-navy-900') ?> Accredited .tz domain registrar, hosting nearly 200 domains.</p>
         </div>
       </div>
 
       <div data-reveal style="transition-delay:160ms" class="lg:col-span-2">
         <div class="h-full rounded-3xl border border-navy-100 bg-white p-8">
-          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><?= icon('Heart', 'h-4 w-4 text-mint-700') ?> What we stand for</span>
+          <span class="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><?= icon('Heart', 'h-4 w-4 text-navy-900') ?> What we stand for</span>
           <div class="mt-5 flex flex-wrap gap-2">
             <?php foreach (data('values') as $v): ?>
             <span class="rounded-full border border-navy-200 px-4 py-1.5 text-sm font-medium text-navy-700"><?= e($v['title']) ?></span>
             <?php endforeach; ?>
           </div>
-          <p class="mt-5 text-navy-500">“Run it like you own it” — the mindset every Britech team member brings to client work.</p>
+          <p class="mt-5 text-navy-500">“Run it like you own it” is the mindset every Britech team member brings to client work.</p>
         </div>
       </div>
     </div>

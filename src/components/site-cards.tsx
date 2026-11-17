@@ -90,7 +90,7 @@ export function ProjectCard({ project, compact = false }: { project: Project; co
         <ul className="mt-5 space-y-2">
           {highlights.map((h) => (
             <li key={h} className="flex items-start gap-2 text-sm text-navy-700">
-              <Check className="mt-0.5 h-4 w-4 shrink-0 text-mint-700" /> {h}
+              <Check className="mt-0.5 h-4 w-4 shrink-0 text-navy-900" /> {h}
             </li>
           ))}
         </ul>
@@ -152,7 +152,7 @@ export function PostCard({ post }: { post: PublicPost }) {
         <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-navy-500">{post.excerpt}</p>
         <div className="mt-5 flex items-center justify-between">
           <PostMeta post={post} />
-          <ArrowRight className="h-4 w-4 text-mint-700 transition group-hover:translate-x-1" />
+          <ArrowRight className="h-4 w-4 text-navy-900 transition group-hover:translate-x-1" />
         </div>
       </div>
     </Link>

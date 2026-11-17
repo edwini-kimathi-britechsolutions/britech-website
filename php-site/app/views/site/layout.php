@@ -10,7 +10,7 @@ $company = data('company');
 $siteName = 'Britech Solutions';
 $fullTitle = isset($meta['title']) && $meta['title'] !== ''
     ? $meta['title'] . ' | ' . $siteName
-    : 'Britech Solutions — Driven by Innovation. Powered by Technology';
+    : 'Britech Solutions | Driven by Innovation. Powered by Technology';
 $description = $meta['description'] ?? 'Britech Solutions builds smart, secure, and scalable digital systems for businesses, governments, and organizations in Tanzania, Africa and beyond.';
 $path = request_path();
 $canonical = site_url() . ($path === '/' ? '' : $path);
@@ -77,7 +77,7 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
 <?php if ($s['announcement_text'] !== ''): ?>
 <div class="bg-navy-950 text-white">
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
-    <p class="flex min-w-0 items-center gap-2 text-sm text-navy-200"><?= icon('Sparkles', 'h-4 w-4 shrink-0 text-mint-400') ?><span class="truncate"><?= e($s['announcement_text']) ?></span></p>
+    <p class="flex min-w-0 items-center gap-2 text-sm text-navy-200"><?= icon('Sparkles', 'h-4 w-4 shrink-0 text-white') ?><span class="truncate"><?= e($s['announcement_text']) ?></span></p>
     <?php if ($s['announcement_link'] !== ''): ?>
     <a href="<?= e($s['announcement_link']) ?>" class="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-mint-400 transition hover:text-mint-300">Learn more <?= icon('ArrowRight', 'h-3.5 w-3.5') ?></a>
     <?php endif; ?>
@@ -100,7 +100,7 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
             <div class="grid grid-cols-2 gap-1 rounded-2xl border border-navy-100 bg-white p-3 shadow-xl shadow-navy-900/10">
               <?php foreach (data('services') as $sv): ?>
               <a href="/solutions/<?= e($sv['slug']) ?>" class="flex gap-3 rounded-xl p-3 transition hover:bg-navy-50">
-                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-mint-50 text-mint-700"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
+                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
                 <span><span class="block text-sm font-semibold text-navy-900"><?= e($sv['title']) ?></span><span class="line-clamp-1 text-xs text-navy-400"><?= e($sv['short']) ?></span></span>
               </a>
               <?php endforeach; ?>
@@ -158,7 +158,7 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
         <?php if ($socials): ?>
         <div class="mt-6 flex gap-3">
           <?php foreach ($socials as [$key, $href, $label]): ?>
-          <a href="<?= e($href) ?>" target="_blank" rel="noreferrer" aria-label="<?= e($label) ?>" class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 transition hover:bg-mint-500 hover:text-navy-950"><?= social_svg($key) ?></a>
+          <a href="<?= e($href) ?>" target="_blank" rel="noreferrer" aria-label="<?= e($label) ?>" class="flex h-10 w-10 items-center justify-center rounded-lg bg-white/5 ring-1 ring-white/10 transition hover:bg-white hover:text-navy-950"><?= social_svg($key) ?></a>
           <?php endforeach; ?>
         </div>
         <?php endif; ?>
@@ -185,10 +185,10 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
       <div class="lg:col-span-3">
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
         <ul class="mt-5 space-y-4 text-sm">
-          <li class="flex gap-3"><?= icon('MapPin', 'mt-0.5 h-4 w-4 shrink-0 text-mint-400') ?><?= e($s['address']) ?></li>
-          <li class="flex gap-3"><?= icon('Mail', 'mt-0.5 h-4 w-4 shrink-0 text-mint-400') ?><a href="mailto:<?= e($s['email']) ?>" class="hover:text-mint-400"><?= e($s['email']) ?></a></li>
+          <li class="flex gap-3"><?= icon('MapPin', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><?= e($s['address']) ?></li>
+          <li class="flex gap-3"><?= icon('Mail', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="mailto:<?= e($s['email']) ?>" class="hover:text-mint-400"><?= e($s['email']) ?></a></li>
           <?php foreach ($phones as $p): ?>
-          <li class="flex gap-3"><?= icon('Phone', 'mt-0.5 h-4 w-4 shrink-0 text-mint-400') ?><a href="<?= e(tel_href($p)) ?>" class="hover:text-mint-400"><?= e($p) ?></a></li>
+          <li class="flex gap-3"><?= icon('Phone', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="<?= e(tel_href($p)) ?>" class="hover:text-mint-400"><?= e($p) ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>

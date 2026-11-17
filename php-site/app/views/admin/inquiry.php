@@ -57,9 +57,9 @@ $btn = 'inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm fon
 
   <p class="mt-4 flex items-center gap-2 text-sm text-navy-500">
     <?php if ($inq['emailedAt']): ?>
-      <?= icon('CheckCircle2', 'h-4 w-4 text-mint-700') ?> Notification emailed <?= e(format_datetime($inq['emailedAt'])) ?>
+      <?= icon('CheckCircle2', 'h-4 w-4 text-navy-900') ?> Notification emailed <?= e(format_datetime($inq['emailedAt'])) ?>
     <?php elseif ($inq['emailError']): ?>
-      <?= icon('AlertTriangle', 'h-4 w-4 text-amber-600') ?> Notification email failed: <?= e($inq['emailError']) ?>
+      <?= icon('AlertTriangle', 'h-4 w-4 text-navy-900') ?> Notification email failed: <?= e($inq['emailError']) ?>
     <?php else: ?>
       No notification email was sent.
     <?php endif; ?>

@@ -35,7 +35,7 @@ export default async function ServicePage({ params }: Props) {
             <ArrowLeft className="h-4 w-4" /> All solutions
           </Link>
           <div className="mt-6 flex animate-fade-up flex-col gap-6 lg:flex-row lg:items-center">
-            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-mint-400 shadow-xl">
+            <span className="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-xl">
               <Icon name={service.icon} className="h-8 w-8" />
             </span>
             <div>
@@ -73,7 +73,7 @@ export default async function ServicePage({ params }: Props) {
           <div className="mt-10 grid gap-5 sm:grid-cols-2 lg:grid-cols-3">
             {service.features.map((f) => (
               <div key={f.title} className="rounded-2xl border border-navy-100 bg-white p-6">
-                <CheckCircle2 className="h-6 w-6 text-mint-500" />
+                <CheckCircle2 className="h-6 w-6 text-navy-900" />
                 <h3 className="mt-4 font-semibold text-navy-900">{f.title}</h3>
                 <p className="mt-2 text-navy-500">{f.text}</p>
               </div>
@@ -90,7 +90,7 @@ export default async function ServicePage({ params }: Props) {
               <ol className="mt-8 space-y-4">
                 {delivery.approach.map((step, i) => (
                   <li key={step} className="flex items-center gap-4 rounded-2xl border border-navy-100 p-5">
-                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-mint-400">
+                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white">
                       {i + 1}
                     </span>
                     <span className="font-medium text-navy-800">{step}</span>
@@ -103,7 +103,7 @@ export default async function ServicePage({ params }: Props) {
               <ul className="mt-8 space-y-3 rounded-2xl bg-navy-50/70 p-6">
                 {delivery.deliverables.map((d) => (
                   <li key={d} className="flex items-center gap-3 text-navy-700">
-                    <FileCheck2 className="h-5 w-5 shrink-0 text-mint-700" /> {d}
+                    <FileCheck2 className="h-5 w-5 shrink-0 text-navy-900" /> {d}
                   </li>
                 ))}
               </ul>
@@ -122,7 +122,7 @@ export default async function ServicePage({ params }: Props) {
                 href={`/solutions/${s.slug}`}
                 className="group rounded-2xl border border-navy-100 p-6 transition hover:border-mint-300 hover:shadow-lg"
               >
-                <Icon name={s.icon} className="h-6 w-6 text-mint-700" />
+                <Icon name={s.icon} className="h-6 w-6 text-navy-900" />
                 <h3 className="mt-4 font-semibold text-navy-900">{s.title}</h3>
                 <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
                   Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />

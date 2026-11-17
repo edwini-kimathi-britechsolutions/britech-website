@@ -4,7 +4,7 @@
   <div class="<?= CONTAINER ?> grid gap-6 md:grid-cols-2">
     <?php foreach (data('services') as $s): ?>
     <a href="/solutions/<?= e($s['slug']) ?>" class="group flex gap-6 rounded-2xl border border-navy-100 bg-white p-7 transition hover:-translate-y-1 hover:border-mint-300 hover:shadow-xl hover:shadow-navy-900/5">
-      <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-mint-400 transition group-hover:bg-mint-500 group-hover:text-navy-950"><?= icon($s['icon'], 'h-7 w-7') ?></span>
+      <span class="flex h-14 w-14 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white transition group-hover:bg-navy-700"><?= icon($s['icon'], 'h-7 w-7') ?></span>
       <div>
         <h2 class="text-xl font-semibold text-navy-900"><?= e($s['title']) ?></h2>
         <p class="mt-2 leading-relaxed text-navy-500"><?= e($s['short']) ?></p>

@@ -69,7 +69,7 @@ function cta(): string
         . '<p class="mt-4 text-lg text-navy-200">Partner with us to design and deliver the digital solutions your organization needs to thrive in a fast-changing world.</p></div>'
         . '<div class="flex shrink-0 flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">'
         . button_link('/contact', 'Get in Touch', 'mint')
-        . '<a href="' . e(tel_href($phone)) . '" class="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">' . icon('Phone', 'h-4 w-4 text-mint-400') . ' ' . e($phone) . '</a>'
+        . '<a href="' . e(tel_href($phone)) . '" class="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">' . icon('Phone', 'h-4 w-4 text-white') . ' ' . e($phone) . '</a>'
         . '</div></div></div></div></section>';
 }
 
@@ -122,7 +122,7 @@ function project_card(array $p): string
     if ($highlights) {
         $h .= '<ul class="mt-5 space-y-2">';
         foreach ($highlights as $hl) {
-            $h .= '<li class="flex items-start gap-2 text-sm text-navy-700">' . icon('Check', 'mt-0.5 h-4 w-4 shrink-0 text-mint-700') . ' ' . e($hl) . '</li>';
+            $h .= '<li class="flex items-start gap-2 text-sm text-navy-700">' . icon('Check', 'mt-0.5 h-4 w-4 shrink-0 text-navy-900') . ' ' . e($hl) . '</li>';
         }
         $h .= '</ul>';
     }
@@ -147,7 +147,7 @@ function product_panel(array $p): string
     if ($highlights) {
         $h .= '<ul class="relative mt-5 grid gap-3 sm:grid-cols-2">';
         foreach ($highlights as $hl) {
-            $h .= '<li class="flex items-center gap-3 rounded-xl bg-white/[0.06] px-4 py-3 text-sm font-medium text-white ring-1 ring-white/10">' . icon('CheckCircle2', 'h-4 w-4 shrink-0 text-mint-400') . ' ' . e($hl) . '</li>';
+            $h .= '<li class="flex items-center gap-3 rounded-xl bg-white/[0.06] px-4 py-3 text-sm font-medium text-white ring-1 ring-white/10">' . icon('CheckCircle2', 'h-4 w-4 shrink-0 text-white') . ' ' . e($hl) . '</li>';
         }
         $h .= '</ul>';
     }
@@ -178,7 +178,7 @@ function post_card(array $post): string
         . '<span class="text-xs font-semibold uppercase tracking-[0.15em] text-mint-700">' . e($post['category']) . '</span>'
         . '<h3 class="mt-2 text-lg font-semibold leading-snug text-navy-900 group-hover:text-navy-700">' . e($post['title']) . '</h3>'
         . '<p class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-navy-500">' . e($post['excerpt']) . '</p>'
-        . '<div class="mt-5 flex items-center justify-between">' . post_meta($post) . icon('ArrowRight', 'h-4 w-4 text-mint-700 transition group-hover:translate-x-1') . '</div>'
+        . '<div class="mt-5 flex items-center justify-between">' . post_meta($post) . icon('ArrowRight', 'h-4 w-4 text-navy-900 transition group-hover:translate-x-1') . '</div>'
         . '</div></a>';
 }
 

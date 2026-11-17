@@ -131,11 +131,11 @@ function send_inquiry_notification(array $inq, string $adminUrl): void
     $rowsData = [
         ['Name', $name],
         ['Email', $inq['email']],
-        ['Phone', $inq['phone'] ?: '—'],
-        ['Organization', $inq['company'] ?: '—'],
+        ['Phone', $inq['phone'] ?: 'Not provided'],
+        ['Organization', $inq['company'] ?: 'Not provided'],
         ['Interested in', $inq['service']],
     ];
-    $m->Subject = mb_substr(one_line('New website inquiry: ' . $inq['service'] . ' — ' . ($inq['company'] ?: $name)), 0, 200);
+    $m->Subject = mb_substr(one_line('New website inquiry: ' . $inq['service'] . ' (' . ($inq['company'] ?: $name) . ')'), 0, 200);
 
     $tableRows = '';
     $text = '';
@@ -158,7 +158,7 @@ function send_test_email(string $to): void
 {
     $m = mailer();
     $m->addAddress($to);
-    $m->Subject = 'Britech website — test email';
+    $m->Subject = 'Britech website: test email';
     $m->Body = 'Your SMTP settings work. Contact-form notifications will be delivered to this mailbox.';
     $m->send();
 }

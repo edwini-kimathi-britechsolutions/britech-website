@@ -11,7 +11,7 @@ import { Notice, PageTitle } from "@/components/admin/StatusBadge";
 export const metadata = { title: "Edit post" };
 
 const SAVED: Record<string, string> = {
-  published: "Published — the post is live on the website.",
+  published: "Published. The post is live on the website.",
   review: "Submitted for review. An editor will publish it.",
   draft: "Draft saved.",
 };

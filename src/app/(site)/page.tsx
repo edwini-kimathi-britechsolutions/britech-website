@@ -76,7 +76,7 @@ export default async function Home() {
                   href={`/solutions/${s.slug}`}
                   className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-mint-400 transition group-hover:bg-mint-500 group-hover:text-navy-950">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white transition group-hover:bg-navy-700">
                     <Icon name={s.icon} className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-semibold text-navy-900">{s.title}</h3>
@@ -115,7 +115,7 @@ export default async function Home() {
             <SectionHeading
               eyebrow="Built by Britech"
               title="Our flagship products & systems"
-              text="Platforms we’ve designed, built and support — for operations, results management, logistics and messaging."
+              text="Platforms we’ve designed, built and support for operations, results management, logistics and messaging."
             />
             <div className="mt-12">
               <ProductTabs products={products} />
@@ -154,12 +154,12 @@ export default async function Home() {
                   href={`/industries/${ind.slug}`}
                   className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5"
                 >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-mint-50 text-mint-700">
+                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-50 text-navy-900">
                     <Icon name={ind.icon} className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-semibold text-navy-900">{ind.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-500">{ind.short}</p>
-                  <ArrowRight className="mt-4 h-4 w-4 text-mint-700 transition group-hover:translate-x-1" />
+                  <ArrowRight className="mt-4 h-4 w-4 text-navy-900 transition group-hover:translate-x-1" />
                 </Link>
               </Reveal>
             ))}
@@ -185,7 +185,7 @@ export default async function Home() {
           <div className="grid items-end gap-6 lg:grid-cols-2">
             <SectionHeading center={false} eyebrow="How we work" title="From discovery to handover" />
             <p className="text-lg text-navy-500 lg:pb-2">
-              A clear, accountable process — so you always know what happens next, and your team can run the system after we hand it over.
+              A clear, accountable process, so you always know what happens next and your team can run the system after we hand it over.
             </p>
           </div>
           <ol className="relative mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
@@ -193,7 +193,7 @@ export default async function Home() {
             <span aria-hidden className="absolute left-5 right-5 top-5 hidden h-px bg-gradient-to-r from-mint-400 via-navy-200 to-navy-100 lg:block" />
             {engagementProcess.map((step, i) => (
               <li key={step.title} className="relative">
-                <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-mint-400 ring-4 ring-white">
+                <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-white ring-4 ring-white">
                   {i + 1}
                 </span>
                 <h3 className="mt-5 font-semibold text-navy-900">{step.title}</h3>
@@ -215,7 +215,7 @@ export default async function Home() {
             <div className={`mt-12 grid gap-5 ${testimonials.length === 1 ? "max-w-3xl" : testimonials.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"}`}>
               {testimonials.map((t) => (
                 <figure key={t.id} className="flex h-full flex-col rounded-2xl bg-white/[0.05] p-7 ring-1 ring-white/10">
-                  <Quote className="h-6 w-6 text-mint-400" />
+                  <Quote className="h-6 w-6 text-white" />
                   <blockquote className="mt-4 flex-1 text-lg leading-relaxed text-navy-100">“{t.quote}”</blockquote>
                   <figcaption className="mt-6 flex items-center gap-3">
                     {t.photo ? (
@@ -291,7 +291,7 @@ export default async function Home() {
             <Reveal delay={120} className="lg:col-span-2">
               <div className="h-full rounded-3xl border border-navy-100 bg-white p-8">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500">
-                  <Award className="h-4 w-4 text-mint-700" /> Credentials
+                  <Award className="h-4 w-4 text-navy-900" /> Credentials
                 </span>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["PMP", "CISA", "ITIL", "CISSP"].map((c) => (
@@ -301,7 +301,7 @@ export default async function Home() {
                   ))}
                 </div>
                 <p className="mt-5 flex items-start gap-2 text-navy-600">
-                  <Globe className="mt-0.5 h-4 w-4 shrink-0 text-mint-700" /> Accredited .tz domain registrar, hosting nearly 200 domains.
+                  <Globe className="mt-0.5 h-4 w-4 shrink-0 text-navy-900" /> Accredited .tz domain registrar, hosting nearly 200 domains.
                 </p>
               </div>
             </Reveal>
@@ -309,7 +309,7 @@ export default async function Home() {
             <Reveal delay={160} className="lg:col-span-2">
               <div className="h-full rounded-3xl border border-navy-100 bg-white p-8">
                 <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500">
-                  <Heart className="h-4 w-4 text-mint-700" /> What we stand for
+                  <Heart className="h-4 w-4 text-navy-900" /> What we stand for
                 </span>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {values.map((v) => (
@@ -318,7 +318,7 @@ export default async function Home() {
                     </span>
                   ))}
                 </div>
-                <p className="mt-5 text-navy-500">“Run it like you own it” — the mindset every Britech team member brings to client work.</p>
+                <p className="mt-5 text-navy-500">“Run it like you own it” is the mindset every Britech team member brings to client work.</p>
               </div>
             </Reveal>
           </div>

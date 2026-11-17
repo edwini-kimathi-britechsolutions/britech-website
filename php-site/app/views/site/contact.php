@@ -11,13 +11,13 @@ $cards = [
 $input = 'w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15';
 $v = fn (string $k) => e($old[$k] ?? '');
 ?>
-<?= page_hero('Contact', 'Let’s build something brilliant', 'Tell us about your goals and our team will help you find the right solution — from a quick consultation to full-scale delivery.') ?>
+<?= page_hero('Contact', 'Let’s build something brilliant', 'Tell us about your goals and our team will help you find the right solution, from a quick consultation to full-scale delivery.') ?>
 <section class="py-20 sm:py-24">
   <div class="<?= CONTAINER ?> grid gap-10 lg:grid-cols-5">
     <div class="space-y-4 lg:col-span-2">
       <?php foreach ($cards as [$ic, $title, $lines]): ?>
       <div class="flex gap-4 rounded-2xl border border-navy-100 p-5">
-        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-mint-50 text-mint-700"><?= icon($ic, 'h-5 w-5') ?></span>
+        <span class="flex h-11 w-11 shrink-0 items-center justify-center rounded-xl bg-navy-50 text-navy-900"><?= icon($ic, 'h-5 w-5') ?></span>
         <div class="min-w-0">
           <h2 class="font-semibold text-navy-900"><?= e($title) ?></h2>
           <?php foreach ($lines as [$text, $href]): ?>
@@ -41,8 +41,8 @@ $v = fn (string $k) => e($old[$k] ?? '');
 
       <?php if ($sent): ?>
       <div role="status" class="rounded-2xl bg-mint-50 p-8 text-center">
-        <?= icon('CheckCircle2', 'mx-auto h-12 w-12 text-mint-700') ?>
-        <h3 class="mt-4 text-xl font-semibold text-navy-900">Thank you — we’ve received your message.</h3>
+        <?= icon('CheckCircle2', 'mx-auto h-12 w-12 text-navy-900') ?>
+        <h3 class="mt-4 text-xl font-semibold text-navy-900">Thank you. We’ve received your message.</h3>
         <p class="mt-2 text-navy-600">Our team will get back to you shortly.</p>
       </div>
       <?php else: ?>

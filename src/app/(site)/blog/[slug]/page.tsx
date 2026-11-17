@@ -59,7 +59,7 @@ export default async function PostPage({ params }: Props) {
             <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl">{post.title}</h1>
             <p className="mt-5 text-lg leading-relaxed text-navy-500">{post.excerpt}</p>
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-navy-500">
-              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-mint-400">
+              <span className="flex h-9 w-9 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white">
                 {post.author.name.charAt(0)}
               </span>
               <span className="font-medium text-navy-800">{post.author.name}</span>

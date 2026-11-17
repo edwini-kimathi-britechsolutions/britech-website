@@ -24,7 +24,7 @@ function route_site(string $path): bool
     }
 
     if ($path === '/about') {
-        site_page('about', [], ['title' => 'About Britech', 'description' => 'Seven years of growth, innovation, and impact — learn about Britech Solutions’ mission, vision, and values.']);
+        site_page('about', [], ['title' => 'About Britech', 'description' => 'Seven years of growth, innovation, and impact. Learn about Britech Solutions’ mission, vision, and values.']);
         return true;
     }
 
@@ -57,7 +57,7 @@ function route_site(string $path): bool
     if ($path === '/products') {
         $page = parse_page();
         $r = products($page);
-        site_page('products', $r + ['page' => $page], ['title' => 'Products', 'description' => 'Platforms built and run by Britech Solutions — RASIFlow, Resulynx, Trans-iT, Njiwa and more.']);
+        site_page('products', $r + ['page' => $page], ['title' => 'Products', 'description' => 'Platforms built and run by Britech Solutions, including RASIFlow, Resulynx, Trans-iT and Njiwa.']);
         return true;
     }
 
