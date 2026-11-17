@@ -82,7 +82,7 @@ function partners_page(?string $q, ?string $kind, int $page): array
 
 function projects_page(?string $q, ?string $sector, int $page): array
 {
-    $where = 'published = 1';
+    $where = 'published = 1 AND isProduct = 0';
     $params = [];
     if ($sector) {
         $where .= ' AND sector = :sector';
@@ -100,7 +100,7 @@ function projects_page(?string $q, ?string $sector, int $page): array
 
 function project_sectors(): array
 {
-    return rows('SELECT sector AS name, COUNT(*) AS count FROM `Project` WHERE published = 1 AND sector IS NOT NULL GROUP BY sector ORDER BY sector ASC');
+    return rows('SELECT sector AS name, COUNT(*) AS count FROM `Project` WHERE published = 1 AND isProduct = 0 AND sector IS NOT NULL GROUP BY sector ORDER BY sector ASC');
 }
 
 /** Britech-owned platforms (projects flagged “Show as a product”). */

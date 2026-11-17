@@ -68,7 +68,7 @@ function route_site(string $path): bool
         $sector = qs('sector', 80);
         $sector = in_array($sector, array_column($sectors, 'name'), true) ? $sector : null;
         $r = projects_page($q ?: null, $sector, $page);
-        site_page('our-work', $r + compact('q', 'page', 'sector', 'sectors'), ['title' => 'Our Work', 'description' => 'Platforms and projects delivered by Britech Solutions.']);
+        site_page('our-work', $r + compact('q', 'page', 'sector', 'sectors'), ['title' => 'Our Work', 'description' => 'Client projects designed and delivered by Britech Solutions.']);
         return true;
     }
 

@@ -154,7 +154,7 @@ export function ProjectForm({ project }: { project?: Project | null }) {
         <input type="checkbox" name="isProduct" defaultChecked={project?.isProduct ?? false} className="mt-0.5 h-4 w-4 accent-mint-600" />
         <span>
           <span className="font-medium text-navy-900">Show as a Britech product</span>
-          <span className="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs. Leave off for client work.</span>
+          <span className="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs instead of Our Work. Leave off for client work.</span>
         </span>
       </label>
       <SubmitButton pending={actionPending}>Save project</SubmitButton>

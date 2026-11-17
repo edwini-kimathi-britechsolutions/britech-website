@@ -104,6 +104,7 @@ export const PROJECT_PAGE_SIZE = 12;
 async function loadProjectsPage({ q, sector, page = 1 }: { q?: string; sector?: string; page?: number }) {
   const where = {
     published: true,
+    isProduct: false, // Britech products are listed on /products, not here
     ...(sector ? { sector } : {}),
     ...(q ? { OR: [{ name: { contains: q } }, { tagline: { contains: q } }, { client: { contains: q } }, { description: { contains: q } }] } : {}),
   };
@@ -116,7 +117,7 @@ async function loadProjectsPage({ q, sector, page = 1 }: { q?: string; sector?: 
 export const getProjectsPage = cached(loadProjectsPage, "projects-page");
 
 async function loadProjectSectors() {
-  const rows = await db.project.groupBy({ by: ["sector"], where: { published: true, sector: { not: null } }, _count: true });
+  const rows = await db.project.groupBy({ by: ["sector"], where: { published: true, isProduct: false, sector: { not: null } }, _count: true });
   return rows.map((r) => ({ name: r.sector as string, count: r._count })).sort((a, b) => a.name.localeCompare(b.name));
 }
 export const getProjectSectors = cached(loadProjectSectors, "project-sectors");

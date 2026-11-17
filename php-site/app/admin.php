@@ -498,7 +498,7 @@ function admin_projects(array $user): void
     $offset = ($page - 1) * $size;
     $list = rows("SELECT * FROM `Project` WHERE {$where} ORDER BY sortOrder ASC, name ASC LIMIT {$offset}, {$size}", $params);
 
-    $h = page_title('Projects & products', 'Projects appear on Our Work. Turn on “Show as a Britech product” to also list one on Products.', add_button('/admin/projects/new', 'Add project'));
+    $h = page_title('Projects & products', 'Client work appears on Our Work. Projects marked “Show as a Britech product” appear on Products instead.', add_button('/admin/projects/new', 'Add project'));
     if (isset($_GET['saved'])) {
         $h .= notice('Project saved.');
     }
@@ -625,14 +625,14 @@ function admin_project_edit(array $user, string $id): void
         . field('Website', text_input('url', old($old, $p, 'url'), ['placeholder' => 'https://']))
         . field('Sector', text_input('sector', old($old, $p, 'sector'), ['placeholder' => 'e.g. Agriculture']))
         . '</div>'
-        . field('Web address', text_input('slug', old($old, $p, 'slug')), 'Used for links like /our-work#address. Leave empty to create it from the name.')
+        . field('Web address', text_input('slug', old($old, $p, 'slug')), 'Used for links like /our-work#address (or /products#address for products). Leave empty to create it from the name.')
         . image_field('logo', 'Logo', old($old, $p, 'logo'), 'PNG with transparent background works best.')
         . '<div class="grid gap-5 sm:grid-cols-2">'
         . field('Display order', text_input('sortOrder', (string) old($old, $p, 'sortOrder', 0), ['type' => 'number', 'min' => '0', 'max' => '999']), 'Lower numbers show first.')
         . '<div class="self-end pb-3">' . checkbox('published', old_checked($old, $p, 'published', true), 'Show on website') . '</div>'
         . '</div>'
         . '<label class="flex items-start gap-2 rounded-lg bg-navy-50/70 p-3 text-sm text-navy-700"><input type="checkbox" name="isProduct"' . (old_checked($old, $p, 'isProduct', false) ? ' checked' : '') . ' class="mt-0.5 h-4 w-4 accent-mint-600">'
-        . '<span><span class="font-medium text-navy-900">Show as a Britech product</span><span class="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs. Leave off for client work.</span></span></label>'
+        . '<span><span class="font-medium text-navy-900">Show as a Britech product</span><span class="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs instead of Our Work. Leave off for client work.</span></span></label>'
         . submit_button('Save project') . '</form>';
 
     $del = $project ? '<form method="post">' . csrf_field() . '<input type="hidden" name="action" value="delete">' . confirm_submit('Delete ' . $project['name'] . '?', icon('Trash2', 'h-4 w-4') . ' Delete') . '</form>' : '';

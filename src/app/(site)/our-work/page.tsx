@@ -9,7 +9,7 @@ import { PROJECT_PAGE_SIZE, getProjectSectors, getProjectsPage } from "@/lib/con
 
 export const metadata: Metadata = {
   title: "Our Work",
-  description: "Platforms and projects delivered by Britech Solutions.",
+  description: "Client projects designed and delivered by Britech Solutions.",
 };
 
 type SP = { q?: string; sector?: string; page?: string };
@@ -21,18 +21,21 @@ export default async function OurWorkPage({ searchParams }: { searchParams: Prom
   const sectors = await getProjectSectors();
   const sector = sectors.some((s) => s.name === sp.sector) ? sp.sector : undefined;
   const { projects, total, pages } = await getProjectsPage({ q, sector, page });
+  // Search and filters only help once there are enough projects to browse.
+  const showTools = Boolean(q || sector) || total > PROJECT_PAGE_SIZE;
 
   return (
     <>
       <PageHero
         eyebrow="Our work"
-        title="Platforms we’ve built for our clients and ourselves"
-        text="From poultry health monitoring to results management, enterprise operations and messaging — systems Britech has designed and delivered."
+        title="Systems we’ve built for our clients"
+        text="Platforms Britech has designed and delivered for organizations across Tanzania."
       />
 
       <section className="py-16 sm:py-20">
         <Container>
-          <div className="flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
+          {showTools && (
+          <div className="mb-10 flex flex-col gap-4 lg:flex-row lg:items-center lg:justify-between">
             {sectors.length > 1 ? (
               <FilterChips
                 path="/our-work"
@@ -46,13 +49,16 @@ export default async function OurWorkPage({ searchParams }: { searchParams: Prom
             )}
             <SearchForm path="/our-work" q={q} keep={{ sector }} placeholder="Search projects" />
           </div>
+          )}
 
           {projects.length === 0 ? (
-            <div className="mt-10">
+            q || sector ? (
               <EmptyState title="No projects match your search" resetHref="/our-work" />
-            </div>
+            ) : (
+              <EmptyState title="Client projects coming soon" />
+            )
           ) : (
-            <div className="mt-10 grid gap-6 md:grid-cols-2 xl:grid-cols-3">
+            <div className="grid gap-6 md:grid-cols-2 xl:grid-cols-3">
               {projects.map((p) => (
                 <ProjectCard key={p.id} project={p} />
               ))}
@@ -60,13 +66,23 @@ export default async function OurWorkPage({ searchParams }: { searchParams: Prom
           )}
           <Pagination path="/our-work" params={{ q, sector }} page={page} pages={pages} total={total} pageSize={PROJECT_PAGE_SIZE} noun="projects" />
 
-          <div className="mt-14 flex flex-col items-start justify-between gap-4 rounded-2xl border border-navy-100 bg-navy-50/60 p-6 sm:flex-row sm:items-center">
-            <p className="text-navy-700">
-              <span className="font-semibold text-navy-900">Clients & partners.</span> See the organizations we work with across Tanzania.
-            </p>
-            <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
-              View clients & partners <ArrowRight className="h-4 w-4" />
-            </Link>
+          <div className="mt-14 grid gap-4 md:grid-cols-2">
+            <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-navy-100 bg-navy-50/60 p-6">
+              <p className="text-navy-700">
+                <span className="font-semibold text-navy-900">Our own products.</span> The platforms Britech builds, runs and supports itself.
+              </p>
+              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+                View products <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
+            <div className="flex flex-col items-start justify-between gap-4 rounded-2xl border border-navy-100 bg-navy-50/60 p-6">
+              <p className="text-navy-700">
+                <span className="font-semibold text-navy-900">Clients & partners.</span> See the organizations we work with across Tanzania.
+              </p>
+              <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+                View clients & partners <ArrowRight className="h-4 w-4" />
+              </Link>
+            </div>
           </div>
         </Container>
       </section>
