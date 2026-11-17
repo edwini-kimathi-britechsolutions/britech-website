@@ -143,7 +143,7 @@ function product_panel(array $p): string
         ? '<img src="' . e($p['logo']) . '" alt="' . e($p['name']) . '" width="280" height="110" loading="lazy" decoding="async" class="h-auto max-h-20 w-auto max-w-[80%] object-contain">'
         : '<span class="text-2xl font-bold text-navy-900">' . e($p['name']) . '</span>';
     $h .= '</div>';
-    $highlights = array_slice(lines($p['highlights']), 0, 6);
+    $highlights = array_slice(lines($p["highlights"]), 0, 8);
     if ($highlights) {
         $h .= '<ul class="relative mt-5 grid gap-3 sm:grid-cols-2">';
         foreach ($highlights as $hl) {

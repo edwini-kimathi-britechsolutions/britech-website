@@ -9,6 +9,7 @@ import { services, telHref } from "@/lib/data";
 import Icon from "./Icon";
 
 const nav = [
+  { href: "/", label: "Home" },
   { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions", mega: true },
   { href: "/industries", label: "Industries" },
@@ -71,7 +72,7 @@ export default function Header({ phone, announcement }: { phone: string; announc
                 <div key={item.href} className="group relative">
                   <Link
                     href={item.href}
-                    className={`flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-medium transition xl:px-4 ${
+                    className={`flex items-center gap-1 rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 ${
                       isActive(item.href) ? "bg-navy-50 text-navy-900 ring-1 ring-navy-100" : "text-navy-700 hover:text-navy-900"
                     }`}
                   >
@@ -108,7 +109,7 @@ export default function Header({ phone, announcement }: { phone: string; announc
                 <Link
                   key={item.href}
                   href={item.href}
-                  className={`rounded-full px-3 py-2 text-[15px] font-medium transition xl:px-4 ${
+                  className={`rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 ${
                     isActive(item.href) ? "bg-navy-50 text-navy-900 ring-1 ring-navy-100" : "text-navy-700 hover:text-navy-900"
                   }`}
                 >

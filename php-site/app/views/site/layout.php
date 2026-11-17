@@ -35,6 +35,7 @@ $jsonLd = [
 ];
 
 $nav = [
+    ['/', 'Home', false],
     ['/about', 'About', false],
     ['/solutions', 'Solutions', true],
     ['/industries', 'Industries', false],
@@ -94,7 +95,7 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
       <?php foreach ($nav as [$href, $label, $mega]): ?>
         <?php if ($mega): ?>
         <div class="group relative">
-          <a href="<?= $href ?>" class="flex items-center gap-1 rounded-full px-3 py-2 text-[15px] font-medium transition xl:px-4 <?= $navCls($href) ?>"><?= e($label) ?><?= icon('ChevronDown', 'h-4 w-4 transition group-hover:rotate-180') ?></a>
+          <a href="<?= $href ?>" class="flex items-center gap-1 rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 <?= $navCls($href) ?>"><?= e($label) ?><?= icon('ChevronDown', 'h-4 w-4 transition group-hover:rotate-180') ?></a>
           <div class="invisible absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
             <div class="grid grid-cols-2 gap-1 rounded-2xl border border-navy-100 bg-white p-3 shadow-xl shadow-navy-900/10">
               <?php foreach (data('services') as $sv): ?>
@@ -108,7 +109,7 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
           </div>
         </div>
         <?php else: ?>
-        <a href="<?= $href ?>" class="rounded-full px-3 py-2 text-[15px] font-medium transition xl:px-4 <?= $navCls($href) ?>"><?= e($label) ?></a>
+        <a href="<?= $href ?>" class="rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 <?= $navCls($href) ?>"><?= e($label) ?></a>
         <?php endif; ?>
       <?php endforeach; ?>
     </nav>
