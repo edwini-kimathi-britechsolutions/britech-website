@@ -1,27 +1,53 @@
 {
-  "name": "bri-website",
+  "name": "britech-website",
   "version": "0.1.0",
   "private": true,
   "scripts": {
     "dev": "next dev",
     "build": "next build",
     "start": "next start",
-    "lint": "eslint"
+    "lint": "eslint",
+    "postinstall": "prisma generate",
+    "db:migrate": "prisma migrate deploy",
+    "db:seed": "tsx prisma/seed.ts",
+    "admin:create": "tsx scripts/create-admin.ts",
+    "php:build": "node scripts/php-build/build.mjs",
+    "php:package": "bash scripts/php-build/package.sh"
   },
   "dependencies": {
+    "@prisma/client": "^6.19.0",
+    "@tiptap/extension-image": "^2.26.1",
+    "@tiptap/extension-link": "^2.26.1",
+    "@tiptap/extension-placeholder": "^2.26.1",
+    "@tiptap/react": "^2.26.1",
+    "@tiptap/starter-kit": "^2.26.1",
+    "bcryptjs": "^3.0.2",
+    "lucide-react": "^1.72.0",
+    "next": "15.5.29",
+    "nodemailer": "^10.5.0",
+    "prisma": "^6.19.0",
     "react": "19.1.0",
     "react-dom": "19.1.0",
-    "next": "15.5.29"
+    "sanitize-html": "^2.18.2",
+    "server-only": "^0.0.1",
+    "tsx": "^4.20.6",
+    "zod": "^4.6.7"
   },
   "devDependencies": {
-    "typescript": "^5",
+    "@eslint/eslintrc": "^3",
+    "@tailwindcss/postcss": "^4",
+    "@tailwindcss/typography": "^0.5.16",
     "@types/node": "^20",
+    "@types/nodemailer": "^8.0.2",
     "@types/react": "^19",
     "@types/react-dom": "^19",
-    "@tailwindcss/postcss": "^4",
-    "tailwindcss": "^4",
+    "@types/sanitize-html": "^2.16.0",
     "eslint": "^9",
     "eslint-config-next": "15.5.29",
-    "@eslint/eslintrc": "^3"
+    "tailwindcss": "^4",
+    "typescript": "^5"
+  },
+  "engines": {
+    "node": ">=20.9.0"
   }
 }

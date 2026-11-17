@@ -15,9 +15,17 @@ const eslintConfig = [
     ignores: [
       "node_modules/**",
       ".next/**",
+      ".next-*/**",
       "out/**",
       "build/**",
       "next-env.d.ts",
+      "figma-web/**",
+      // PHP edition (static browser scripts + minified editor bundle)
+      "php-site/**",
+      "dist/**",
+      // CommonJS by design (cPanel Passenger startup file, PM2 config)
+      "server.js",
+      "ecosystem.config.cjs",
     ],
   },
 ];

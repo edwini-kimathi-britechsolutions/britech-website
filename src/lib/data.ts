@@ -1,0 +1,499 @@
+export const company = {
+  name: "Britech Solutions",
+  tagline: "Driven by Innovation. Powered by Technology",
+  address: "25 Mallyse Street, Arusha, Tanzania",
+  email: "info@britechsolutions.co.tz",
+  phones: ["+255 795 005 903", "+255 763 981 298"],
+  social: {
+    linkedin: "https://linkedin.com",
+    twitter: "https://twitter.com",
+    facebook: "https://facebook.com",
+    instagram: "https://instagram.com",
+  },
+};
+
+export const telHref = (p: string) => `tel:${p.replace(/\s/g, "")}`;
+
+export type Service = {
+  slug: string;
+  title: string;
+  short: string;
+  headline: string;
+  intro: string[];
+  features: { title: string; text: string }[];
+  icon: string;
+};
+
+export const services: Service[] = [
+  {
+    slug: "mobile-software-development",
+    icon: "Smartphone",
+    title: "Mobile & Software Development",
+    short:
+      "High-quality web and mobile applications that keep your organization connected and efficient.",
+    headline: "Digital solutions that are accessible anytime, anywhere.",
+    intro: [
+      "Today’s world demands digital solutions that are accessible anytime, anywhere. At Britech Solutions, we empower organizations to stay connected and efficient through high-quality web and mobile application development.",
+      "With years of experience delivering full-cycle software development services, we specialize in building tailor-made applications that meet the unique needs of each client. Whether you’re launching a new digital service or transforming internal operations, our end-to-end approach ensures smooth, scalable, and secure user experiences.",
+    ],
+    features: [
+      { title: "Native iOS & Android", text: "Apps optimized for specific platforms for the best performance and user experience." },
+      { title: "Cross-platform Apps", text: "Run seamlessly across multiple devices using Flutter and React Native." },
+      { title: "Web Applications", text: "Modern, responsive web platforms and portals built to scale." },
+      { title: "Custom Software", text: "Tailor-made systems designed around your workflows and goals." },
+      { title: "Full-cycle Delivery", text: "From discovery and UX design to deployment, maintenance and support." },
+      { title: "Secure by Design", text: "Security and performance baked into every stage of development." },
+    ],
+  },
+  {
+    slug: "ai-powered-digital-transformation",
+    icon: "Sparkles",
+    title: "AI-Powered Digital Transformation",
+    short:
+      "Integrate generative and agentic AI into your operations to optimize processes and accelerate growth.",
+    headline: "Revolutionizing Operations. Creating New Value. Enhancing Experiences.",
+    intro: [
+      "At Britech Solutions, we empower organizations to transform their operations, unlock new revenue streams, and deliver exceptional customer experiences through cutting-edge digital solutions. Our end-to-end services span strategic consulting, platform development, industry-specific applications, infrastructure management, and value chain transformation.",
+      "Our agentic AI capabilities go beyond innovation hype — integrating AI directly into enterprise operations to optimize processes, enhance decision-making, and accelerate growth. With Britech Solutions, you gain a trusted partner dedicated to helping you harness generative AI securely, responsibly, and strategically.",
+    ],
+    features: [
+      { title: "AI Strategy & Consulting", text: "Identify where generative AI and emerging technologies deliver the greatest value." },
+      { title: "Agentic AI Integration", text: "Embed AI agents directly into enterprise workflows and operations." },
+      { title: "Model Selection & Architecture", text: "Choose the right models and design robust, scalable AI architectures." },
+      { title: "Partnership Enablement", text: "Leverage our technology partner ecosystem to accelerate adoption." },
+      { title: "Talent Development", text: "Upskill your teams to work confidently alongside AI." },
+      { title: "Compliance & Risk", text: "Adopt AI responsibly with governance, compliance and risk management." },
+    ],
+  },
+  {
+    slug: "training-support-capacity-building",
+    icon: "GraduationCap",
+    title: "Training, Support & Capacity Building",
+    short:
+      "We equip your teams with the skills, tools, and ongoing support needed to fully adopt and sustain digital systems.",
+    headline: "Technology alone is not enough — people need the skills and confidence to use it.",
+    intro: [
+      "At Britech Solutions, we provide comprehensive training, technical support, and capacity-building services to ensure that our digital solutions are fully adopted, sustainable, and impactful.",
+      "We work closely with clients to build internal capacity, reduce dependency on external support, and empower users at all levels to manage and maintain the systems we deliver — with bilingual delivery in English and Kiswahili where needed.",
+    ],
+    features: [
+      { title: "User Training & Onboarding", text: "Tailored on-site or virtual sessions, from basic usage to advanced features." },
+      { title: "Documentation & User Manuals", text: "Easy-to-follow guides, video tutorials, and SOPs for long-term knowledge retention." },
+      { title: "Helpdesk & Technical Support", text: "Ongoing support via email, phone and ticketing to ensure uninterrupted performance." },
+      { title: "Train-the-Trainer Programs", text: "Empower client-side trainers and IT teams to cascade knowledge internally." },
+      { title: "Capacity Building Workshops", text: "Strengthen digital skills, data management practices, and change management." },
+      { title: "Post-Deployment Support", text: "Maintenance contracts and SLA-driven support for continued optimization." },
+    ],
+  },
+  {
+    slug: "enterprise-software-erp-development",
+    icon: "Layers",
+    title: "Enterprise Software & ERP Development",
+    short:
+      "Scalable ERP and enterprise solutions that streamline workflows and improve business efficiency.",
+    headline: "ERP solutions that are intuitive, fully integrated, highly secure, and scalable.",
+    intro: [
+      "We specialize in building robust, scalable enterprise software tailored to complex operational needs. From custom business applications to full-scale ERP systems, our solutions streamline workflows, enhance decision-making, and improve organizational efficiency.",
+      "We design ERP systems that integrate finance, inventory, procurement, HR, project management, and CRM into a single unified platform — centralizing operations, providing real-time data visibility, and supporting scalable growth.",
+    ],
+    features: [
+      { title: "Unified ERP Platforms", text: "Finance, inventory, procurement, HR, projects and CRM in one system." },
+      { title: "Process-driven Design", text: "Built on a deep understanding of business processes and operational challenges." },
+      { title: "Seamless Integrations", text: "Connect payment gateways, APIs, GIS platforms and third-party systems." },
+      { title: "Agile Delivery", text: "Rapid, adaptive development that responds to your changing needs." },
+      { title: "Real-time Visibility", text: "Live dashboards and reporting across every department." },
+      { title: "Local Support & Training", text: "On-the-ground support to drive user adoption." },
+    ],
+  },
+  {
+    slug: "business-intelligence-services",
+    icon: "BarChart3",
+    title: "Business Intelligence Services",
+    short:
+      "Turn raw data into real-time insights with dashboards, analytics, and reporting tools for smarter decisions.",
+    headline: "Transform raw data into meaningful, real-time insights.",
+    intro: [
+      "In a data-driven world, organizations that can quickly analyze and act on information gain a clear competitive advantage. We design and implement dynamic dashboards and BI solutions that transform raw data into meaningful, real-time insights.",
+      "Our tools help organizations track KPIs, monitor program outcomes, and inform strategic decision-making across agriculture, health, education, conservation, and finance.",
+    ],
+    features: [
+      { title: "Custom Dashboards", text: "Interactive dashboards in Power BI, Tableau and open-source tools." },
+      { title: "Data Integration", text: "Unify ERP, CRM, GIS, mobile apps, Excel and SQL databases into one view." },
+      { title: "KPIs & Performance", text: "Define and visualize KPIs for operations, donor reporting, or executive oversight." },
+      { title: "Predictive Analytics", text: "Forecast outcomes and identify areas for strategic intervention." },
+      { title: "Automated Reporting", text: "Auto-updating dashboards with exportable visuals for regular reviews." },
+      { title: "GIS-Enabled Dashboards", text: "Combine spatial and statistical data for field monitoring and planning." },
+    ],
+  },
+  {
+    slug: "cybersecurity-it-audit",
+    icon: "ShieldCheck",
+    title: "Cybersecurity & IT Audit Services",
+    short:
+      "End-to-end cybersecurity and IT audit services to stay secure, compliant, and resilient against evolving threats.",
+    headline: "Safeguarding Digital Ecosystems. Building Trust. Ensuring Resilience.",
+    intro: [
+      "In today’s hyper-connected digital landscape, cybersecurity is no longer a peripheral IT concern — it is a critical business priority that demands strategic attention, technical expertise, and proactive action.",
+      "We serve enterprises, government agencies, NGOs, and development partners across finance, health, agriculture, education, conservation, and governance. Our services meet local and international compliance standards, ensuring your systems are protected, audit-ready, and future-proof.",
+    ],
+    features: [
+      { title: "Penetration Testing (VAPT)", text: "Controlled attack simulations that uncover weaknesses before they are exploited." },
+      { title: "Information Security Audits", text: "Audits aligned to ISO 27001, NIST, COBIT and sector-specific requirements." },
+      { title: "IT Risk & Compliance", text: "Risk mapping and mitigation aligned with TCRA, GDPR and HIPAA protocols." },
+      { title: "Network & Endpoint Security", text: "Firewalls, IDS/IPS and advanced endpoint protection, continuously monitored." },
+      { title: "Certified Experts", text: "Leadership certified in CISA, CISSP, PMP and ITIL." },
+      { title: "Security Awareness", text: "Equip your people to recognize and respond to modern threats." },
+    ],
+  },
+  {
+    slug: "digital-strategy-it-consulting",
+    icon: "Compass",
+    title: "Digital Strategy & IT Consulting",
+    short:
+      "Align IT investments with business objectives to ensure maximum return and long-term value.",
+    headline: "Align IT investments with business objectives for maximum return.",
+    intro: [
+      "We help organizations harness the power of technology to drive innovation, improve efficiency, and achieve strategic goals.",
+      "Our Digital Strategy & IT Consulting services guide companies, institutions, and development partners through their digital transformation journeys — whether starting from scratch or scaling existing systems.",
+    ],
+    features: [
+      { title: "Transformation Roadmaps", text: "Assess digital maturity and build actionable plans to modernize." },
+      { title: "Infrastructure Planning", text: "Design on-prem or cloud infrastructure for scale, performance and resilience." },
+      { title: "Enterprise Architecture", text: "Structure ecosystems for integration, data flow and scalability." },
+      { title: "ERP Advisory & Selection", text: "Process mapping and system evaluation to pick the right ERP." },
+      { title: "IT Governance & Policy", text: "Policies, SOPs and data protection frameworks for compliance." },
+      { title: "Feasibility & Scoping", text: "Proposal development, ROI analysis and pilots for donor-funded or internal projects." },
+    ],
+  },
+];
+
+export const stats = [
+  { value: "300+", label: "Clients Served" },
+  { value: "~200", label: ".tz Domains Hosted" },
+  { value: "10+", label: "Mobile Apps Shipped" },
+  { value: "7 Years", label: "Of Impact" },
+];
+
+export const highlights = [
+  { title: "Compliance & Integrity", text: "We operate in full compliance with Tanzanian laws and ICT regulations, upholding integrity, transparency, and accountability.", icon: "Scale" },
+  { title: "Domain Registrar & Hosting", text: "Accredited .tz domain registrar with nearly 200 domains and hosted accounts on secure, high-performance infrastructure.", icon: "Globe" },
+  { title: "Custom Mobile Applications", text: "10+ custom iOS and Android apps built with Flutter and React Native for agriculture, health, and finance.", icon: "Smartphone" },
+  { title: "Professional Expertise", text: "Leadership certified in PMP, CISA, ITIL, and CISSP — global best practice in delivery, security and governance.", icon: "BadgeCheck" },
+  { title: "Client Base", text: "Over 300 clients across agriculture, health, education, and finance with long-term partnerships.", icon: "Users" },
+  { title: "Bilingual Training & Support", text: "Human-centered training and helpdesk support delivered in English and Kiswahili, matched to each user’s role.", icon: "GraduationCap" },
+];
+
+export const values = [
+  { title: "Quality", text: "We combine creativity and innovation to deliver solutions that provide real, lasting value: simple yet impactful." },
+  { title: "People", text: "We attract top talent, invest in their growth, and recognize their contributions. Our team is our greatest asset." },
+  { title: "Teamwork", text: "We believe in the power of collaboration. By leveraging our collective strengths, we achieve excellence together." },
+  { title: "Customers", text: "Our clients are at the heart of our business — we build lasting relationships through responsive, personalized service." },
+  { title: "Integrity", text: "We act with honesty, transparency, and accountability. Doing the right thing is non-negotiable." },
+];
+
+export const partners = [
+  { name: "Microsoft", file: "microsoft" },
+  { name: "Google", file: "google" },
+  { name: "AWS", file: "aws" },
+  { name: "Fortinet", file: "fortinet" },
+  { name: "Sophos", file: "sophos" },
+  { name: "Hewlett Packard Enterprise", file: "hpe" },
+  { name: "VMware", file: "vmware" },
+  { name: "SAP", file: "sap" },
+  { name: "Sage", file: "sage" },
+  { name: "Yealink", file: "yealink" },
+];
+
+
+/* ------------------------------------------------------------------ */
+/* Content adapted from the Figma template (reviewed — methodology    */
+/* only; no client names, figures or unverified claims).              */
+/* ------------------------------------------------------------------ */
+
+/** How each service is delivered. ERP has no entry yet, so its page omits the section. */
+export const serviceProcess: Record<string, { approach: string[]; deliverables: string[] }> = {
+  "digital-strategy-it-consulting": {
+    approach: [
+      "Institutional assessment and stakeholder consultation",
+      "Current-state analysis and benchmarking",
+      "Future-state design and priority setting",
+      "Roadmap development and implementation planning",
+    ],
+    deliverables: ["Digital transformation strategy", "Technology roadmap", "Implementation plan", "IT governance framework"],
+  },
+  "mobile-software-development": {
+    approach: [
+      "Requirements gathering and process mapping",
+      "User-centered design and prototyping",
+      "Agile development with regular stakeholder reviews",
+      "Testing, deployment, and handover",
+    ],
+    deliverables: [
+      "Custom web and mobile applications",
+      "API development and integration",
+      "System architecture documentation",
+      "User training materials",
+    ],
+  },
+  "cybersecurity-it-audit": {
+    approach: [
+      "Security assessment and vulnerability scanning",
+      "Risk identification and prioritization",
+      "Remediation planning and implementation support",
+      "Continuous monitoring and improvement",
+    ],
+    deliverables: ["Security assessment report", "Risk mitigation plan", "Security policy framework", "Incident response procedures"],
+  },
+  "business-intelligence-services": {
+    approach: [
+      "Data source mapping and quality assessment",
+      "Analytics architecture design",
+      "Dashboard development and visualization",
+      "User training and adoption support",
+    ],
+    deliverables: ["Interactive BI dashboards", "Predictive analytics models", "Automated reporting", "Data governance framework"],
+  },
+  "ai-powered-digital-transformation": {
+    approach: [
+      "Process analysis and automation opportunity identification",
+      "Model selection and solution design",
+      "Integration with existing systems",
+      "Performance monitoring and refinement",
+    ],
+    deliverables: ["Automation workflows", "AI models and integrations", "Integration APIs", "Model performance reports"],
+  },
+  "training-support-capacity-building": {
+    approach: [
+      "Training needs assessment",
+      "Curriculum development and materials preparation",
+      "Workshop delivery and hands-on practice",
+      "Post-training evaluation and follow-up",
+    ],
+    deliverables: ["Training curriculum", "Workshop materials", "User manuals and guides", "Training evaluation report"],
+  },
+};
+
+/** Britech's engagement model, used on the About page. */
+export const engagementProcess = [
+  {
+    title: "Discovery & Assessment",
+    text: "We begin every engagement by understanding your institutional context, stakeholders, technical environment, and objectives.",
+  },
+  {
+    title: "Strategy & Design",
+    text: "We develop evidence-based strategies and user-centered designs that align technology with your priorities and users’ needs.",
+  },
+  {
+    title: "Implementation & Delivery",
+    text: "We build and deploy using agile methods, with regular stakeholder engagement, quality assurance, and iterative improvement.",
+  },
+  {
+    title: "Capacity Building & Handover",
+    text: "We transfer knowledge and build internal capacity for sustainable adoption, with full documentation and ongoing support.",
+  },
+];
+
+export type Industry = {
+  slug: string;
+  icon: string;
+  title: string;
+  short: string;
+  intro: string;
+  challenges: string[];
+  /** Only capabilities backed by Britech's services/products. */
+  help: string[];
+  related: string[]; // service slugs
+};
+
+export const industries: Industry[] = [
+  {
+    slug: "government-public-sector",
+    icon: "Landmark",
+    title: "Government & Public Sector",
+    short: "Digital governance, service delivery, and institutional systems.",
+    intro:
+      "We work with public institutions to modernize service delivery, strengthen institutional capacity, and improve transparency — in full compliance with Tanzanian laws and ICT regulations.",
+    challenges: [
+      "Legacy systems and fragmented data",
+      "Limited technical capacity and budget constraints",
+      "Complex stakeholder coordination",
+      "Pressure for better service delivery and transparency",
+    ],
+    help: [
+      "Digital portals, workflows, and records systems",
+      "Performance monitoring and reporting dashboards",
+      "IT audits, cybersecurity, and governance frameworks",
+      "Digital transformation roadmaps and IT policy development",
+    ],
+    related: ["digital-strategy-it-consulting", "cybersecurity-it-audit", "business-intelligence-services"],
+  },
+  {
+    slug: "ngos-development-partners",
+    icon: "HeartHandshake",
+    title: "NGOs & Development Partners",
+    short: "Data collection, M&E dashboards, and donor reporting.",
+    intro:
+      "We support NGOs and donor-funded programmes with technology that improves programme effectiveness, simplifies reporting, and turns field data into evidence.",
+    challenges: [
+      "Complex reporting requirements across multiple donors",
+      "Difficulty tracking results and measuring impact",
+      "Fragmented data across implementing partners",
+      "Need for real-time visibility into programme performance",
+    ],
+    help: [
+      "Mobile data collection tools",
+      "Monitoring & evaluation dashboards and KPI tracking",
+      "Data integration and automated donor reporting",
+      "Feasibility studies and digital project scoping",
+    ],
+    related: ["business-intelligence-services", "mobile-software-development", "digital-strategy-it-consulting"],
+  },
+  {
+    slug: "agriculture-natural-resources",
+    icon: "Sprout",
+    title: "Agriculture & Natural Resources",
+    short: "Field apps, traceability, and resource monitoring.",
+    intro:
+      "We build digital tools for agricultural organizations and natural-resource institutions to improve productivity, traceability, and data-driven decision-making.",
+    challenges: [
+      "Limited access to timely market and field information",
+      "Inefficient supply chains and weak traceability",
+      "Climate impacts and resource degradation",
+      "Need for data-driven decision making",
+    ],
+    help: [
+      "Mobile apps for field officers and farmer engagement",
+      "Supply-chain traceability systems",
+      "GIS-enabled monitoring of natural resources",
+      "Dashboards for programme and production data",
+    ],
+    related: ["mobile-software-development", "business-intelligence-services", "enterprise-software-erp-development"],
+  },
+  {
+    slug: "financial-services",
+    icon: "Banknote",
+    title: "Financial Services",
+    short: "Secure digital channels, integrations, and compliance.",
+    intro:
+      "We help financial institutions build secure, scalable digital services and stay compliant in the face of evolving threats.",
+    challenges: [
+      "High cost of serving remote and rural customers",
+      "Legacy systems that slow down innovation",
+      "Strict regulatory and security requirements",
+      "Competition from mobile money and digital-first players",
+    ],
+    help: [
+      "Secure web and mobile applications",
+      "Payment gateway and third-party API integration",
+      "Penetration testing, IT audits, and compliance",
+      "BI dashboards for portfolio and performance tracking",
+    ],
+    related: ["cybersecurity-it-audit", "mobile-software-development", "business-intelligence-services"],
+  },
+  {
+    slug: "healthcare",
+    icon: "Stethoscope",
+    title: "Healthcare",
+    short: "Electronic medical records and health data systems.",
+    intro:
+      "We develop digital health solutions that improve patient record-keeping, strengthen health data, and support evidence-based planning.",
+    challenges: [
+      "Fragmented patient records and data silos",
+      "Limited access to care in remote areas",
+      "Need for timely, reliable health data",
+    ],
+    help: [
+      "Electronic medical records (EMR)",
+      "Mobile health applications",
+      "Health data dashboards and reporting",
+      "Security and data protection for sensitive records",
+    ],
+    related: ["mobile-software-development", "business-intelligence-services", "cybersecurity-it-audit"],
+  },
+  {
+    slug: "education",
+    icon: "GraduationCap",
+    title: "Education",
+    short: "E-learning platforms and institution management.",
+    intro:
+      "We support educational institutions with technology that improves administration, expands access to learning, and builds digital skills.",
+    challenges: [
+      "Limited access to quality learning resources",
+      "Inefficient administration and data management",
+      "Need for distance and blended learning",
+    ],
+    help: [
+      "E-learning platforms",
+      "Institution management and ERP systems",
+      "Digital skills and capacity-building programmes",
+      "Reporting dashboards for administrators",
+    ],
+    related: ["mobile-software-development", "enterprise-software-erp-development", "training-support-capacity-building"],
+  },
+  {
+    slug: "environment-conservation",
+    icon: "TreePine",
+    title: "Environment & Conservation",
+    short: "GIS monitoring and conservation data.",
+    intro:
+      "We build GIS-enabled tools that help governments, conservation agencies, and research institutions map assets, monitor resources, and act on reliable data.",
+    challenges: [
+      "Limited real-time environmental data",
+      "Difficulty proving the origin of natural products",
+      "Coordinating field teams across large areas",
+    ],
+    help: [
+      "GIS-enabled monitoring of natural resources",
+      "GIS-enabled dashboards for field activities",
+      "Mobile data collection for field teams",
+      "Conservation programme reporting",
+    ],
+    related: ["business-intelligence-services", "mobile-software-development", "ai-powered-digital-transformation"],
+  },
+];
+
+/** Options for the contact form “How can we help you?” field. */
+export const INQUIRY_SERVICES = [
+  "Mobile & Software Development",
+  "AI-Powered Digital Transformation",
+  "Enterprise Software & ERP",
+  "Business Intelligence",
+  "Cybersecurity & IT Audit",
+  "Digital Strategy & IT Consulting",
+  "Training & Support",
+  "Bulk SMS (Njiwa)",
+  "Product demo",
+  "Domain & Hosting",
+  "Other",
+] as const;
+
+type InquiryService = (typeof INQUIRY_SERVICES)[number];
+
+const SERVICE_FOR_SOLUTION: Record<string, InquiryService> = {
+  "mobile-software-development": "Mobile & Software Development",
+  "ai-powered-digital-transformation": "AI-Powered Digital Transformation",
+  "training-support-capacity-building": "Training & Support",
+  "enterprise-software-erp-development": "Enterprise Software & ERP",
+  "business-intelligence-services": "Business Intelligence",
+  "cybersecurity-it-audit": "Cybersecurity & IT Audit",
+  "digital-strategy-it-consulting": "Digital Strategy & IT Consulting",
+};
+
+/** Link to the contact form with the “How can we help?” option (and optionally a message) pre-filled. */
+export function contactHref({ service, message }: { service?: InquiryService; message?: string } = {}) {
+  const q = new URLSearchParams();
+  if (service) q.set("service", service);
+  if (message) q.set("message", message);
+  const s = q.toString();
+  return s ? `/contact?${s}#form` : "/contact#form";
+}
+
+export const contactForSolution = (slug: string) => contactHref({ service: SERVICE_FOR_SOLUTION[slug] });
+
+export const contactForProduct = (p: { slug: string; name: string }) =>
+  p.slug === "njiwa"
+    ? contactHref({ service: "Bulk SMS (Njiwa)", message: "I’d like to learn more about Njiwa bulk SMS." })
+    : contactHref({ service: "Product demo", message: `I’d like a demo of ${p.name}.` });
+
+export const isInquiryService = (v: string | undefined): v is InquiryService =>
+  (INQUIRY_SERVICES as readonly string[]).includes(v ?? "");

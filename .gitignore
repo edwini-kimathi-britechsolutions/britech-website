@@ -39,3 +39,20 @@ yarn-error.log*
 # typescript
 *.tsbuildinfo
 next-env.d.ts
+
+# uploaded media
+/storage
+/.next-*
+
+# local secrets
+/credentials
+!.env.example
+
+# PHP edition: local config, uploads and build output
+/php-site/app/config.php
+/php-site/storage/uploads/*
+!/php-site/storage/uploads/.gitkeep
+/dist
+
+# design reference export (not part of the site)
+/figma-web
