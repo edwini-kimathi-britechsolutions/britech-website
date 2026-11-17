@@ -14,17 +14,17 @@ $btn = 'inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm fon
         <h1 class="text-xl font-bold text-navy-900"><?= e($name) ?></h1>
         <p class="text-sm text-navy-500"><?= $inq['company'] ? e($inq['company']) . ' · ' : '' ?><?= e(format_datetime($inq['createdAt'])) ?></p>
       </div>
-      <span class="rounded-full bg-mint-50 px-3 py-1 text-xs font-semibold text-mint-700"><?= e($inq['service']) ?></span>
+      <span class="rounded-full bg-navy-50 px-3 py-1 text-xs font-semibold text-navy-900"><?= e($inq['service']) ?></span>
     </div>
 
     <dl class="grid gap-4 border-b border-navy-100 p-6 sm:grid-cols-2">
       <div>
         <dt class="text-xs font-semibold uppercase tracking-wider text-navy-400">Email</dt>
-        <dd><a href="mailto:<?= e($inq['email']) ?>" class="break-all font-medium text-navy-800 hover:text-mint-700"><?= e($inq['email']) ?></a></dd>
+        <dd><a href="mailto:<?= e($inq['email']) ?>" class="break-all font-medium text-navy-800 hover:text-navy-950 hover:underline underline-offset-4"><?= e($inq['email']) ?></a></dd>
       </div>
       <div>
         <dt class="text-xs font-semibold uppercase tracking-wider text-navy-400">Phone</dt>
-        <dd><?= $inq['phone'] ? '<a href="' . e(tel_href($inq['phone'])) . '" class="font-medium text-navy-800 hover:text-mint-700">' . e($inq['phone']) . '</a>' : '<span class="text-navy-400">Not provided</span>' ?></dd>
+        <dd><?= $inq['phone'] ? '<a href="' . e(tel_href($inq['phone'])) . '" class="font-medium text-navy-800 hover:text-navy-950 hover:underline underline-offset-4">' . e($inq['phone']) . '</a>' : '<span class="text-navy-400">Not provided</span>' ?></dd>
       </div>
     </dl>
 

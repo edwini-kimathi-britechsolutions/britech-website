@@ -10,7 +10,7 @@ const CONTAINER = 'mx-auto max-w-7xl px-4 sm:px-6 lg:px-8';
 
 function eyebrow(string $text): string
 {
-    return '<span class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-mint-700"><span class="h-px w-8 bg-mint-500"></span>' . e($text) . '</span>';
+    return '<span class="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><span class="h-px w-8 bg-navy-300"></span>' . e($text) . '</span>';
 }
 
 /** $titleHtml is trusted HTML (code-defined). */
@@ -90,7 +90,7 @@ function partner_logos(array $partners, bool $showNames = false, ?int $mobileLim
             : $img;
         $hide = ($mobileLimit !== null && $i >= $mobileLimit) ? 'max-sm:hidden' : '';
         $height = $showNames ? 'h-36' : 'h-28';
-        $h .= '<li title="' . e($p['name']) . '" class="group ' . $hide . ' flex ' . $height . ' w-[calc(50%-0.375rem)] items-center justify-center rounded-xl border border-navy-100 bg-white p-4 transition hover:border-mint-300 hover:shadow-md hover:shadow-navy-900/5 sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(20%-0.6rem)]">';
+        $h .= '<li title="' . e($p['name']) . '" class="group ' . $hide . ' flex ' . $height . ' w-[calc(50%-0.375rem)] items-center justify-center rounded-xl border border-navy-100 bg-white p-4 transition hover:border-navy-300 hover:shadow-md hover:shadow-navy-900/5 sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(20%-0.6rem)]">';
         $h .= $p['url']
             ? '<a href="' . e($p['url']) . '" target="_blank" rel="noopener noreferrer" class="flex h-full w-full items-center justify-center">' . $logo . '</a>'
             : $logo;
@@ -103,14 +103,14 @@ function partner_logos(array $partners, bool $showNames = false, ?int $mobileLim
 
 function project_card(array $p): string
 {
-    $h = '<article id="' . e($p['slug']) . '" class="flex h-full scroll-mt-28 flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">';
+    $h = '<article id="' . e($p['slug']) . '" class="flex h-full scroll-mt-28 flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5">';
     $h .= '<div class="flex h-16 items-center">';
     $h .= $p['logo']
         ? '<img src="' . e($p['logo']) . '" alt="' . e($p['name']) . '" width="240" height="96" loading="lazy" decoding="async" class="h-14 w-auto max-w-[220px] object-contain object-left">'
         : '<span class="text-2xl font-bold text-navy-900">' . e($p['name']) . '</span>';
     $h .= '</div><div class="mt-5 flex flex-wrap gap-2 text-xs font-medium">';
     if ($p['sector']) {
-        $h .= '<span class="rounded-full bg-mint-50 px-2.5 py-1 text-mint-700">' . e($p['sector']) . '</span>';
+        $h .= '<span class="rounded-full bg-navy-50 px-2.5 py-1 text-navy-900">' . e($p['sector']) . '</span>';
     }
     if ($p['client']) {
         $h .= '<span class="rounded-full bg-navy-50 px-2.5 py-1 text-navy-600">Client: ' . e($p['client']) . '</span>';
@@ -128,7 +128,7 @@ function project_card(array $p): string
     }
     $h .= '<div class="mt-auto pt-6">';
     if ($p['url']) {
-        $h .= '<a href="' . e($p['url']) . '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-semibold text-mint-700 hover:text-mint-600">Visit ' . e($p['name']) . ' ' . icon('ArrowUpRight', 'h-4 w-4') . '</a>';
+        $h .= '<a href="' . e($p['url']) . '" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-sm font-semibold text-navy-900 underline-offset-4 hover:underline">Visit ' . e($p['name']) . ' ' . icon('ArrowUpRight', 'h-4 w-4') . '</a>';
     }
     return $h . '</div></article>';
 }
@@ -172,10 +172,10 @@ function post_meta(array $post): string
 
 function post_card(array $post): string
 {
-    return '<a href="/blog/' . e($post['slug']) . '" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">'
+    return '<a href="/blog/' . e($post['slug']) . '" class="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5">'
         . post_cover($post['coverImage'], $post['title'], 'aspect-[16/9]')
         . '<div class="flex flex-1 flex-col p-6">'
-        . '<span class="text-xs font-semibold uppercase tracking-[0.15em] text-mint-700">' . e($post['category']) . '</span>'
+        . '<span class="text-xs font-semibold uppercase tracking-[0.15em] text-navy-500">' . e($post['category']) . '</span>'
         . '<h3 class="mt-2 text-lg font-semibold leading-snug text-navy-900 group-hover:text-navy-700">' . e($post['title']) . '</h3>'
         . '<p class="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-navy-500">' . e($post['excerpt']) . '</p>'
         . '<div class="mt-5 flex items-center justify-between">' . post_meta($post) . icon('ArrowRight', 'h-4 w-4 text-navy-900 transition group-hover:translate-x-1') . '</div>'
@@ -184,10 +184,10 @@ function post_card(array $post): string
 
 function featured_post(array $post): string
 {
-    return '<a href="/blog/' . e($post['slug']) . '" class="group grid overflow-hidden rounded-3xl border border-navy-100 bg-white transition hover:border-mint-300 hover:shadow-xl hover:shadow-navy-900/5 lg:grid-cols-2">'
+    return '<a href="/blog/' . e($post['slug']) . '" class="group grid overflow-hidden rounded-3xl border border-navy-100 bg-white transition hover:border-navy-300 hover:shadow-xl hover:shadow-navy-900/5 lg:grid-cols-2">'
         . post_cover($post['coverImage'], $post['title'], 'aspect-[16/10] lg:aspect-auto lg:min-h-[340px]')
         . '<div class="flex flex-col justify-center p-8 lg:p-10">'
-        . '<span class="text-xs font-semibold uppercase tracking-[0.15em] text-mint-700">Featured · ' . e($post['category']) . '</span>'
+        . '<span class="text-xs font-semibold uppercase tracking-[0.15em] text-navy-500">Featured · ' . e($post['category']) . '</span>'
         . '<h2 class="mt-3 text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">' . e($post['title']) . '</h2>'
         . '<p class="mt-4 leading-relaxed text-navy-500">' . e($post['excerpt']) . '</p>'
         . '<div class="mt-6 flex items-center gap-3"><span class="font-medium text-navy-800">' . e($post['authorName']) . '</span>' . post_meta($post) . '</div>'
@@ -284,7 +284,7 @@ function empty_state(string $title, string $text = '', string $resetHref = ''): 
     return '<div class="rounded-2xl border border-dashed border-navy-200 bg-navy-50/50 px-6 py-14 text-center">'
         . '<p class="font-semibold text-navy-900">' . e($title) . '</p>'
         . ($text !== '' ? '<p class="mt-1 text-sm text-navy-500">' . e($text) . '</p>' : '')
-        . ($resetHref !== '' ? '<a href="' . e($resetHref) . '" class="mt-4 inline-block text-sm font-semibold text-mint-700 hover:text-mint-600">Clear filters</a>' : '')
+        . ($resetHref !== '' ? '<a href="' . e($resetHref) . '" class="mt-4 inline-block text-sm font-semibold text-navy-900 underline-offset-4 hover:underline">Clear filters</a>' : '')
         . '</div>';
 }
 

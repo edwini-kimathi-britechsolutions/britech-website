@@ -61,7 +61,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
 
       <div className="mt-8 grid gap-4 sm:grid-cols-3 xl:grid-cols-6">
         {cards.map(({ label, value, href, Icon }) => (
-          <Link key={label} href={href} className="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-mint-300">
+          <Link key={label} href={href} className="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-navy-300">
             <Icon className="h-5 w-5 text-navy-900" />
             <p className="mt-3 text-3xl font-bold text-navy-900">{value}</p>
             <p className="text-sm text-navy-500">{label}</p>
@@ -72,7 +72,7 @@ export default async function Dashboard({ searchParams }: { searchParams: Promis
       <section className="mt-10">
         <div className="flex items-center justify-between">
           <h2 className="font-semibold text-navy-900">Recently updated posts</h2>
-          <Link href="/admin/posts" className="inline-flex items-center gap-1 text-sm font-medium text-mint-700">
+          <Link href="/admin/posts" className="inline-flex items-center gap-1 text-sm font-medium text-navy-900">
             All posts <ArrowRight className="h-4 w-4" />
           </Link>
         </div>

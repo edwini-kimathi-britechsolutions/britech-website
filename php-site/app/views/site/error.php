@@ -17,7 +17,7 @@ defined('BRITECH') || exit;
 </header>
 <section class="flex min-h-[60vh] items-center justify-center px-4 py-24">
   <div class="max-w-lg text-center">
-    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-mint-700">Something went wrong</p>
+    <p class="text-sm font-semibold uppercase tracking-[0.2em] text-navy-500">Something went wrong</p>
     <h1 class="mt-4 text-3xl font-bold text-navy-900">We couldn’t load this page</h1>
     <p class="mt-3 text-navy-500">Please try again in a moment. If the problem continues, contact us directly.</p>
     <div class="mt-8 flex flex-wrap justify-center gap-3">

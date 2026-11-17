@@ -88,7 +88,7 @@ export default async function ProjectsAdmin({
                   </td>
                   <td className="px-5 py-3 text-navy-600">{p.client ?? "Not set"}</td>
                   <td className="px-5 py-3">
-                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${p.isProduct ? "bg-mint-50 text-mint-700" : "bg-navy-50 text-navy-600"}`}>
+                    <span className={`rounded-full px-2.5 py-0.5 text-xs font-semibold ${p.isProduct ? "bg-navy-900 text-white" : "bg-navy-50 text-navy-600"}`}>
                       {p.isProduct ? "Product" : "Client work"}
                     </span>
                   </td>

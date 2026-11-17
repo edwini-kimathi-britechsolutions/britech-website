@@ -22,7 +22,7 @@ $v = fn (string $k) => e($old[$k] ?? '');
           <h2 class="font-semibold text-navy-900"><?= e($title) ?></h2>
           <?php foreach ($lines as [$text, $href]): ?>
             <?php if ($href): ?>
-            <a href="<?= e($href) ?>" class="block break-words text-navy-500 hover:text-mint-600"><?= e($text) ?></a>
+            <a href="<?= e($href) ?>" class="block break-words text-navy-500 underline-offset-4 hover:underline"><?= e($text) ?></a>
             <?php else: ?>
             <p class="text-navy-500"><?= e($text) ?></p>
             <?php endif; ?>
@@ -40,7 +40,7 @@ $v = fn (string $k) => e($old[$k] ?? '');
       <p class="mb-8 mt-2 text-navy-500">Fill in the form and we’ll get back to you shortly.</p>
 
       <?php if ($sent): ?>
-      <div role="status" class="rounded-2xl bg-mint-50 p-8 text-center">
+      <div role="status" class="rounded-2xl bg-navy-50 p-8 text-center">
         <?= icon('CheckCircle2', 'mx-auto h-12 w-12 text-navy-900') ?>
         <h3 class="mt-4 text-xl font-semibold text-navy-900">Thank you. We’ve received your message.</h3>
         <p class="mt-2 text-navy-600">Our team will get back to you shortly.</p>

@@ -15,7 +15,7 @@ $tags = array_values(array_filter(array_map('trim', explode(',', $post['tags']))
   <header class="border-b border-navy-100 bg-navy-50/50">
     <div class="<?= CONTAINER ?> max-w-4xl py-14 sm:py-16">
       <a href="/blog" class="inline-flex items-center gap-1 text-sm font-medium text-navy-500 hover:text-navy-900"><?= icon('ArrowLeft', 'h-4 w-4') ?> All articles</a>
-      <p class="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-mint-700"><?= e($post['category']) ?></p>
+      <p class="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500"><?= e($post['category']) ?></p>
       <h1 class="mt-3 text-3xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl"><?= e($post['title']) ?></h1>
       <p class="mt-5 text-lg leading-relaxed text-navy-500"><?= e($post['excerpt']) ?></p>
       <div class="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-navy-500">

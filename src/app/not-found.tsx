@@ -24,13 +24,13 @@ export default function NotFound() {
       <main className="relative flex flex-1 items-center justify-center px-4 pb-24">
         <div className="max-w-xl text-center">
           <p className="text-8xl font-extrabold tracking-tight text-navy-900 sm:text-9xl">
-            4<span className="text-mint-500">0</span>4
+            4<span className="text-navy-300">0</span>4
           </p>
           <h1 className="mt-6 text-2xl font-bold text-navy-900 sm:text-3xl">We couldn’t find that page</h1>
           <p className="mt-3 text-navy-500">The link may be broken, or the page may have moved. Try one of these instead:</p>
           <div className="mt-8 flex flex-wrap justify-center gap-2">
             {links.map((l) => (
-              <Link key={l.href} href={l.href} className="rounded-full border border-navy-200 px-4 py-2 text-sm font-medium text-navy-700 transition hover:border-mint-400 hover:bg-mint-50">
+              <Link key={l.href} href={l.href} className="rounded-full border border-navy-200 px-4 py-2 text-sm font-medium text-navy-700 transition hover:border-navy-400 hover:bg-navy-50">
                 {l.label}
               </Link>
             ))}

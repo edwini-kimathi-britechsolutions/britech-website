@@ -36,7 +36,7 @@ export default function AdminNav({ role, newInquiries = 0 }: { role: Role; newIn
               <Icon className={`h-4 w-4 ${active ? "text-white" : ""}`} />
               {label}
               {href === "/admin/inquiries" && newInquiries > 0 && (
-                <span className="ml-auto rounded-full bg-mint-500 px-2 py-0.5 text-xs font-bold text-navy-950">{newInquiries}</span>
+                <span className="ml-auto rounded-full bg-white px-2 py-0.5 text-xs font-bold text-navy-950">{newInquiries}</span>
               )}
             </Link>
           );

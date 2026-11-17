@@ -1,7 +1,7 @@
 import type { PostStatus } from "@prisma/client";
 
 const styles: Record<PostStatus, string> = {
-  PUBLISHED: "bg-mint-50 text-mint-700 ring-mint-200",
+  PUBLISHED: "bg-navy-900 text-white ring-navy-900",
   REVIEW: "bg-amber-50 text-amber-700 ring-amber-200",
   DRAFT: "bg-navy-50 text-navy-600 ring-navy-200",
 };
@@ -25,7 +25,7 @@ export function PageTitle({ title, text, action }: { title: string; text?: strin
 
 export function Notice({ children, tone = "ok" }: { children: React.ReactNode; tone?: "ok" | "warn" }) {
   return (
-    <p className={`mb-6 rounded-lg px-4 py-3 text-sm ${tone === "ok" ? "bg-mint-50 text-mint-700" : "bg-amber-50 text-amber-800"}`}>
+    <p className={`mb-6 rounded-lg px-4 py-3 text-sm ${tone === "ok" ? "bg-navy-50 text-navy-900" : "bg-amber-50 text-amber-800"}`}>
       {children}
     </p>
   );

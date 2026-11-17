@@ -40,7 +40,7 @@ export default async function ContactPage({ searchParams }: { searchParams: Prom
                   <h2 className="font-semibold text-navy-900">{title}</h2>
                   {lines.map((l) =>
                     "href" in l && l.href ? (
-                      <a key={l.text} href={l.href} className="block break-words text-navy-500 hover:text-mint-600">
+                      <a key={l.text} href={l.href} className="block break-words text-navy-500 underline-offset-4 hover:underline">
                         {l.text}
                       </a>
                     ) : (

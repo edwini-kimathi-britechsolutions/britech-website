@@ -50,7 +50,7 @@ export default async function Home() {
               <PartnerLogos partners={partners} mobileLimit={8} />
             </div>
             <div className="mt-8 text-center">
-              <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+              <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                 {partnerTotal > 8 ? `View all ${partnerTotal} clients & partners` : "View all clients & partners"}
                 <ArrowRight className="h-4 w-4" />
               </Link>
@@ -74,14 +74,14 @@ export default async function Home() {
               <Reveal key={s.slug} delay={(i % 4) * 80} className="w-[82%] shrink-0 snap-start sm:w-auto">
                 <Link
                   href={`/solutions/${s.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5"
+                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white transition group-hover:bg-navy-700">
                     <Icon name={s.icon} className="h-5 w-5" />
                   </span>
                   <h3 className="mt-5 font-semibold text-navy-900">{s.title}</h3>
                   <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-500">{s.short}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
                     Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                   </span>
                 </Link>
@@ -121,7 +121,7 @@ export default async function Home() {
               <ProductTabs products={products} />
             </div>
             <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3">
-              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                 All products <ArrowRight className="h-4 w-4" />
               </Link>
               <Link href="/our-work" className="inline-flex items-center gap-1 font-semibold text-navy-600 hover:text-navy-900">
@@ -152,7 +152,7 @@ export default async function Home() {
               <Reveal key={ind.slug} delay={(i % 4) * 80}>
                 <Link
                   href={`/industries/${ind.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5"
+                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5"
                 >
                   <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-50 text-navy-900">
                     <Icon name={ind.icon} className="h-5 w-5" />
@@ -166,11 +166,11 @@ export default async function Home() {
             <Reveal delay={240}>
               <Link
                 href="/industries"
-                className="group flex h-full flex-col justify-between rounded-2xl border border-dashed border-navy-200 p-6 transition hover:border-mint-400 hover:bg-white"
+                className="group flex h-full flex-col justify-between rounded-2xl border border-dashed border-navy-200 p-6 transition hover:border-navy-400 hover:bg-white"
               >
                 <p className="font-semibold text-navy-900">Don’t see your sector?</p>
                 <p className="mt-2 text-sm text-navy-500">Our solutions adapt to any organization.</p>
-                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
+                <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
                   All industries <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </span>
               </Link>
@@ -208,8 +208,8 @@ export default async function Home() {
       {testimonials.length > 0 && (
         <section className="bg-navy-950 py-20 text-white sm:py-28">
           <Container>
-            <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-mint-400">
-              <span className="h-px w-8 bg-mint-400" /> What clients say
+            <p className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-white">
+              <span className="h-px w-8 bg-white/40" /> What clients say
             </p>
             <h2 className="mt-4 text-3xl font-bold tracking-tight sm:text-4xl">In our clients’ words</h2>
             <div className={`mt-12 grid gap-5 ${testimonials.length === 1 ? "max-w-3xl" : testimonials.length === 2 ? "md:grid-cols-2" : "md:grid-cols-2 lg:grid-cols-3"}`}>
@@ -261,7 +261,7 @@ export default async function Home() {
               <div className="relative h-full overflow-hidden rounded-3xl bg-navy-900 p-8 text-white sm:p-10">
                 <div className="bg-grid-dark absolute inset-0 [mask-image:linear-gradient(to_bottom_left,black,transparent_70%)]" />
                 <div className="relative">
-                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-mint-400">
+                  <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-white">
                     <Target className="h-4 w-4" /> Mission
                   </span>
                   <p className="mt-6 text-2xl font-semibold leading-snug sm:text-[28px]">
@@ -273,15 +273,15 @@ export default async function Home() {
             </Reveal>
 
             <Reveal delay={80} className="lg:col-span-2">
-              <div className="flex h-full flex-col justify-between gap-6 rounded-3xl border border-mint-200 bg-mint-50 p-8 sm:p-10">
-                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-mint-700">
+              <div className="flex h-full flex-col justify-between gap-6 rounded-3xl border border-navy-100 bg-navy-50 p-8 sm:p-10">
+                <span className="inline-flex items-center gap-2 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500">
                   <Eye className="h-4 w-4" /> Vision
                 </span>
                 <div className="flex flex-col-reverse gap-3 sm:flex-row sm:items-end sm:justify-between sm:gap-6">
                   <p className="max-w-sm text-lg font-medium leading-relaxed text-navy-800">
                     To become Africa’s most trusted digital transformation and cybersecurity solutions provider.
                   </p>
-                  <p className="text-6xl font-extrabold tracking-tight text-mint-700 sm:text-7xl" aria-label="by 2030">
+                  <p className="text-6xl font-extrabold tracking-tight text-navy-900 sm:text-7xl" aria-label="by 2030">
                     2030
                   </p>
                 </div>
@@ -295,7 +295,7 @@ export default async function Home() {
                 </span>
                 <div className="mt-5 flex flex-wrap gap-2">
                   {["PMP", "CISA", "ITIL", "CISSP"].map((c) => (
-                    <span key={c} className="rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-bold text-mint-300">
+                    <span key={c} className="rounded-lg bg-navy-900 px-3 py-1.5 text-sm font-bold text-white">
                       {c}
                     </span>
                   ))}
@@ -331,7 +331,7 @@ export default async function Home() {
           <Container>
             <div className="flex flex-wrap items-end justify-between gap-6">
               <SectionHeading center={false} eyebrow="From the blog" title="Latest insights" />
-              <Link href="/blog" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+              <Link href="/blog" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                 All articles <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

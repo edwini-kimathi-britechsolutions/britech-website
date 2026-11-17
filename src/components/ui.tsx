@@ -9,8 +9,8 @@ export function Container({ className = "", children }: { className?: string; ch
 
 export function Eyebrow({ children }: { children: React.ReactNode }) {
   return (
-    <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-mint-700">
-      <span className="h-px w-8 bg-mint-500" />
+    <span className="inline-flex items-center gap-3 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500">
+      <span className="h-px w-8 bg-navy-300" />
       {children}
     </span>
   );

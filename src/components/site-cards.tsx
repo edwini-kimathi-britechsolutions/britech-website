@@ -43,7 +43,7 @@ export function PartnerLogos({
           <li
             key={p.id}
             title={p.name}
-            className={`group ${mobileLimit !== undefined && i >= mobileLimit ? "max-sm:hidden" : ""} flex ${showNames ? "h-36" : "h-28"} w-[calc(50%-0.375rem)] items-center justify-center rounded-xl border border-navy-100 bg-white p-4 transition hover:border-mint-300 hover:shadow-md hover:shadow-navy-900/5 sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(20%-0.6rem)]`}
+            className={`group ${mobileLimit !== undefined && i >= mobileLimit ? "max-sm:hidden" : ""} flex ${showNames ? "h-36" : "h-28"} w-[calc(50%-0.375rem)] items-center justify-center rounded-xl border border-navy-100 bg-white p-4 transition hover:border-navy-300 hover:shadow-md hover:shadow-navy-900/5 sm:w-[calc(33.333%-0.5rem)] lg:w-[calc(20%-0.6rem)]`}
           >
             {p.url ? (
               <a href={p.url} target="_blank" rel="noopener noreferrer" className="flex h-full w-full items-center justify-center">
@@ -64,7 +64,7 @@ export function PartnerLogos({
 export function ProjectCard({ project, compact = false }: { project: Project; compact?: boolean }) {
   const highlights = project.highlights.split("\n").filter(Boolean);
   return (
-    <article id={project.slug} className="flex h-full scroll-mt-28 flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">
+    <article id={project.slug} className="flex h-full scroll-mt-28 flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5">
       <div className="flex h-16 items-center">
         {project.logo ? (
           <Image
@@ -80,7 +80,7 @@ export function ProjectCard({ project, compact = false }: { project: Project; co
         )}
       </div>
       <div className="mt-5 flex flex-wrap gap-2 text-xs font-medium">
-        {project.sector && <span className="rounded-full bg-mint-50 px-2.5 py-1 text-mint-700">{project.sector}</span>}
+        {project.sector && <span className="rounded-full bg-navy-50 px-2.5 py-1 text-navy-900">{project.sector}</span>}
         {project.client && <span className="rounded-full bg-navy-50 px-2.5 py-1 text-navy-600">Client: {project.client}</span>}
       </div>
       <h3 className="mt-4 text-xl font-semibold text-navy-900">{project.name}</h3>
@@ -97,7 +97,7 @@ export function ProjectCard({ project, compact = false }: { project: Project; co
       )}
       <div className="mt-auto pt-6">
         {compact ? (
-          <Link href={`/our-work#${project.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
+          <Link href={`/our-work#${project.slug}`} className="inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
             View project <ArrowRight className="h-4 w-4" />
           </Link>
         ) : (
@@ -106,7 +106,7 @@ export function ProjectCard({ project, compact = false }: { project: Project; co
               href={project.url}
               target="_blank"
               rel="noopener noreferrer"
-              className="inline-flex items-center gap-1 text-sm font-semibold text-mint-700 hover:text-mint-600"
+              className="inline-flex items-center gap-1 text-sm font-semibold text-navy-900 underline-offset-4 hover:underline"
             >
               Visit {project.name} <ArrowUpRight className="h-4 w-4" />
             </a>
@@ -144,10 +144,10 @@ export function PostMeta({ post }: { post: PublicPost }) {
 
 export function PostCard({ post }: { post: PublicPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition hover:border-mint-300 hover:shadow-lg hover:shadow-navy-900/5">
+    <Link href={`/blog/${post.slug}`} className="group flex h-full flex-col overflow-hidden rounded-2xl border border-navy-100 bg-white transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5">
       <Cover src={post.coverImage} alt={post.title} className="aspect-[16/9]" />
       <div className="flex flex-1 flex-col p-6">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-mint-700">{post.category}</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-navy-500">{post.category}</span>
         <h3 className="mt-2 text-lg font-semibold leading-snug text-navy-900 group-hover:text-navy-700">{post.title}</h3>
         <p className="mt-2 line-clamp-3 flex-1 text-sm leading-relaxed text-navy-500">{post.excerpt}</p>
         <div className="mt-5 flex items-center justify-between">
@@ -161,10 +161,10 @@ export function PostCard({ post }: { post: PublicPost }) {
 
 export function FeaturedPost({ post }: { post: PublicPost }) {
   return (
-    <Link href={`/blog/${post.slug}`} className="group grid overflow-hidden rounded-3xl border border-navy-100 bg-white transition hover:border-mint-300 hover:shadow-xl hover:shadow-navy-900/5 lg:grid-cols-2">
+    <Link href={`/blog/${post.slug}`} className="group grid overflow-hidden rounded-3xl border border-navy-100 bg-white transition hover:border-navy-300 hover:shadow-xl hover:shadow-navy-900/5 lg:grid-cols-2">
       <Cover src={post.coverImage} alt={post.title} className="aspect-[16/10] lg:aspect-auto lg:min-h-[340px]" />
       <div className="flex flex-col justify-center p-8 lg:p-10">
-        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-mint-700">Featured · {post.category}</span>
+        <span className="text-xs font-semibold uppercase tracking-[0.15em] text-navy-500">Featured · {post.category}</span>
         <h2 className="mt-3 text-2xl font-bold leading-tight text-navy-900 sm:text-3xl">{post.title}</h2>
         <p className="mt-4 leading-relaxed text-navy-500">{post.excerpt}</p>
         <div className="mt-6 flex items-center gap-3">

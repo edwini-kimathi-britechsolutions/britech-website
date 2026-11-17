@@ -28,11 +28,11 @@ $showTools = $q || $sector || $total > PROJECT_PAGE_SIZE;
     <div class="mt-14 grid gap-4 md:grid-cols-2">
       <div class="flex flex-col items-start justify-between gap-4 rounded-2xl border border-navy-100 bg-navy-50/60 p-6">
         <p class="text-navy-700"><span class="font-semibold text-navy-900">Our own products.</span> The platforms Britech builds, runs and supports itself.</p>
-        <a href="/products" class="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">View products <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+        <a href="/products" class="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">View products <?= icon('ArrowRight', 'h-4 w-4') ?></a>
       </div>
       <div class="flex flex-col items-start justify-between gap-4 rounded-2xl border border-navy-100 bg-navy-50/60 p-6">
         <p class="text-navy-700"><span class="font-semibold text-navy-900">Clients &amp; partners.</span> See the organizations we work with across Tanzania.</p>
-        <a href="/clients" class="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">View clients &amp; partners <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+        <a href="/clients" class="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">View clients &amp; partners <?= icon('ArrowRight', 'h-4 w-4') ?></a>
       </div>
     </div>
   </div>

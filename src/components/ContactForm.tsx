@@ -20,7 +20,7 @@ export default function ContactForm({
   const [state, dispatch, pending] = useActionState(submitInquiry, undefined);
   if (state?.ok) {
     return (
-      <div role="status" className="rounded-2xl bg-mint-50 p-8 text-center">
+      <div role="status" className="rounded-2xl bg-navy-50 p-8 text-center">
         <CheckCircle2 className="mx-auto h-12 w-12 text-navy-900" />
         <h3 className="mt-4 text-xl font-semibold text-navy-900">Thank you. We’ve received your message.</h3>
         <p className="mt-2 text-navy-600">Our team will get back to you shortly.</p>

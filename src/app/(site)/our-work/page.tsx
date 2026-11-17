@@ -71,7 +71,7 @@ export default async function OurWorkPage({ searchParams }: { searchParams: Prom
               <p className="text-navy-700">
                 <span className="font-semibold text-navy-900">Our own products.</span> The platforms Britech builds, runs and supports itself.
               </p>
-              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                 View products <ArrowRight className="h-4 w-4" />
               </Link>
             </div>
@@ -79,7 +79,7 @@ export default async function OurWorkPage({ searchParams }: { searchParams: Prom
               <p className="text-navy-700">
                 <span className="font-semibold text-navy-900">Clients & partners.</span> See the organizations we work with across Tanzania.
               </p>
-              <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+              <Link href="/clients" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                 View clients & partners <ArrowRight className="h-4 w-4" />
               </Link>
             </div>

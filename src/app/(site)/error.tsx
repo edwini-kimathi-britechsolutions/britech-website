@@ -8,7 +8,7 @@ export default function SiteError({ reset }: { error: Error & { digest?: string 
   return (
     <section className="flex min-h-[60vh] items-center justify-center px-4 py-24">
       <div className="max-w-lg text-center">
-        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-mint-700">Something went wrong</p>
+        <p className="text-sm font-semibold uppercase tracking-[0.2em] text-navy-500">Something went wrong</p>
         <h1 className="mt-4 text-3xl font-bold text-navy-900">We couldn’t load this page</h1>
         <p className="mt-3 text-navy-500">Please try again in a moment. If the problem continues, contact us directly.</p>
         <div className="mt-8 flex flex-wrap justify-center gap-3">

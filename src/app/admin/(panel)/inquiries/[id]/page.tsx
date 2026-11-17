@@ -37,14 +37,14 @@ export default async function InquiryPage({ params }: { params: Promise<{ id: st
               {dateTime(inq.createdAt)}
             </p>
           </div>
-          <span className="rounded-full bg-mint-50 px-3 py-1 text-xs font-semibold text-mint-700">{inq.service}</span>
+          <span className="rounded-full bg-navy-50 px-3 py-1 text-xs font-semibold text-navy-900">{inq.service}</span>
         </div>
 
         <dl className="grid gap-4 border-b border-navy-100 p-6 sm:grid-cols-2">
           <div>
             <dt className="text-xs font-semibold uppercase tracking-wider text-navy-400">Email</dt>
             <dd>
-              <a href={`mailto:${inq.email}`} className="break-all font-medium text-navy-800 hover:text-mint-700">
+              <a href={`mailto:${inq.email}`} className="break-all font-medium text-navy-800 hover:text-navy-950 hover:underline underline-offset-4">
                 {inq.email}
               </a>
             </dd>
@@ -53,7 +53,7 @@ export default async function InquiryPage({ params }: { params: Promise<{ id: st
             <dt className="text-xs font-semibold uppercase tracking-wider text-navy-400">Phone</dt>
             <dd>
               {inq.phone ? (
-                <a href={telHref(inq.phone)} className="font-medium text-navy-800 hover:text-mint-700">
+                <a href={telHref(inq.phone)} className="font-medium text-navy-800 hover:text-navy-950 hover:underline underline-offset-4">
                   {inq.phone}
                 </a>
               ) : (

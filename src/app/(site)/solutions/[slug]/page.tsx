@@ -120,11 +120,11 @@ export default async function ServicePage({ params }: Props) {
               <Link
                 key={s.slug}
                 href={`/solutions/${s.slug}`}
-                className="group rounded-2xl border border-navy-100 p-6 transition hover:border-mint-300 hover:shadow-lg"
+                className="group rounded-2xl border border-navy-100 p-6 transition hover:border-navy-300 hover:shadow-lg"
               >
                 <Icon name={s.icon} className="h-6 w-6 text-navy-900" />
                 <h3 className="mt-4 font-semibold text-navy-900">{s.title}</h3>
-                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">
+                <span className="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
                   Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
                 </span>
               </Link>

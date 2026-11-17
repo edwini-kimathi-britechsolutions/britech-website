@@ -75,12 +75,12 @@ export function FormMessage({ state }: { state: FormState }) {
       <AlertCircle className="mt-0.5 h-4 w-4 shrink-0" /> {state.error}
     </p>
   ) : (
-    <div role="status" className="rounded-lg bg-mint-50 px-3.5 py-2.5 text-sm text-mint-700">
+    <div role="status" className="rounded-lg bg-navy-50 px-3.5 py-2.5 text-sm text-navy-900">
       <p className="flex items-start gap-2">
         <CheckCircle2 className="mt-0.5 h-4 w-4 shrink-0" /> {state.ok}
       </p>
       {state.secret && (
-        <code className="mt-2 block select-all rounded bg-white px-3 py-2 font-mono text-base text-navy-900 ring-1 ring-mint-200">
+        <code className="mt-2 block select-all rounded bg-white px-3 py-2 font-mono text-base text-navy-900 ring-1 ring-navy-200">
           {state.secret}
         </code>
       )}

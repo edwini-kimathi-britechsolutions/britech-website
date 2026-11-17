@@ -47,7 +47,7 @@ export default function Header({ phone, announcement }: { phone: string; announc
             {announcement.link && (
               <Link
                 href={announcement.link}
-                className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-mint-400 transition hover:text-mint-300"
+                className="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-white transition hover:text-navy-200"
               >
                 Learn more <ArrowRight className="h-3.5 w-3.5" />
               </Link>

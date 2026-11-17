@@ -32,7 +32,7 @@ export default function ProductTabs({ products }: { products: ProductData[] }) {
 
       <div key={p.id} className="mt-10 grid animate-fade-up items-center gap-10 rounded-3xl border border-navy-100 bg-white p-6 shadow-xl shadow-navy-900/5 sm:p-10 lg:grid-cols-2">
         <div>
-          <span className="text-sm font-semibold uppercase tracking-wider text-mint-700">{p.tagline}</span>
+          <span className="text-sm font-semibold uppercase tracking-wider text-navy-500">{p.tagline}</span>
           <h3 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">{p.name}</h3>
           <p className="mt-4 leading-relaxed text-navy-500">{p.description}</p>
           <div className="mt-8 flex flex-wrap items-center gap-4">
@@ -42,7 +42,7 @@ export default function ProductTabs({ products }: { products: ProductData[] }) {
                 href={p.url}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600"
+                className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline"
               >
                 Visit {p.name} <ArrowUpRight className="h-4 w-4" />
               </a>

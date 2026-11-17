@@ -72,7 +72,7 @@ export default async function PartnersAdmin({
       ) : (
         <div className="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">
           {partners.map((p) => (
-            <Link key={p.id} href={`/admin/partners/${p.id}`} className="rounded-xl border border-navy-100 bg-white p-4 transition hover:border-mint-300">
+            <Link key={p.id} href={`/admin/partners/${p.id}`} className="rounded-xl border border-navy-100 bg-white p-4 transition hover:border-navy-300">
               <div className="flex h-14 items-center justify-center">
                 {/* eslint-disable-next-line @next/next/no-img-element */}
                 <img src={p.logo} alt="" className={`max-h-12 max-w-[140px] object-contain ${p.active ? "" : "opacity-40"}`} />

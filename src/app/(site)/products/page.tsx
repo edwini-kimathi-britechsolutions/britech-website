@@ -38,13 +38,13 @@ export default async function ProductsPage({ searchParams }: { searchParams: Pro
                     className="grid scroll-mt-28 items-center gap-10 rounded-3xl border border-navy-100 bg-white p-6 shadow-lg shadow-navy-900/5 sm:p-10 lg:grid-cols-2"
                   >
                     <div className={i % 2 ? "lg:order-2" : ""}>
-                      <span className="text-sm font-semibold uppercase tracking-wider text-mint-700">{p.tagline}</span>
+                      <span className="text-sm font-semibold uppercase tracking-wider text-navy-500">{p.tagline}</span>
                       <h2 className="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl">{p.name}</h2>
                       <p className="mt-4 text-lg leading-relaxed text-navy-500">{p.description}</p>
                       <div className="mt-8 flex flex-wrap items-center gap-4">
                         <ButtonLink href={contactForProduct(p)}>Request a Demo</ButtonLink>
                         {p.url && (
-                          <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-semibold text-mint-700 hover:text-mint-600">
+                          <a href={p.url} target="_blank" rel="noopener noreferrer" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
                             Visit {p.name} <ArrowUpRight className="h-4 w-4" />
                           </a>
                         )}

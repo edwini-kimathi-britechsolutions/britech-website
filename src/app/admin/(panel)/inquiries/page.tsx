@@ -84,7 +84,7 @@ export default async function InquiriesPage({
         <div className="divide-y divide-navy-100 overflow-hidden rounded-xl border border-navy-100 bg-white">
           {rows.map((r) => (
             <Link key={r.id} href={`/admin/inquiries/${r.id}`} className="flex items-start gap-4 px-5 py-4 hover:bg-navy-50/60">
-              <span className={`mt-2 h-2 w-2 shrink-0 rounded-full ${r.status === "NEW" ? "bg-mint-500" : "bg-transparent"}`} />
+              <span className={`mt-2 h-2 w-2 shrink-0 rounded-full ${r.status === "NEW" ? "bg-navy-900" : "bg-transparent"}`} />
               <div className="min-w-0 flex-1">
                 <div className="flex flex-wrap items-baseline gap-x-2">
                   <span className={`text-navy-900 ${r.status === "NEW" ? "font-semibold" : "font-medium"}`}>

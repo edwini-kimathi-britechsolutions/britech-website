@@ -105,8 +105,8 @@ export default function Hero({ logos }: { logos: Pick<Partner, "id" | "name" | "
 
       <div className="relative mx-auto grid max-w-7xl items-center gap-12 px-4 pb-20 pt-14 sm:px-6 sm:pt-20 lg:grid-cols-2 lg:px-8 lg:pb-24">
         <div>
-          <p className="flex animate-fade-up items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-mint-700">
-            <span className="h-px w-10 bg-mint-500" />
+          <p className="flex animate-fade-up items-center gap-3 text-sm font-semibold uppercase tracking-[0.2em] text-navy-500">
+            <span className="h-px w-10 bg-navy-300" />
             Driven by Innovation
           </p>
 

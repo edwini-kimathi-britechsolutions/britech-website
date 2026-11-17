@@ -84,7 +84,7 @@
 <section class="pb-8">
   <div class="<?= CONTAINER ?>">
     <div class="rounded-3xl bg-navy-900 p-8 sm:p-12">
-      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-mint-400">Our team</p>
+      <p class="text-xs font-semibold uppercase tracking-[0.2em] text-white">Our team</p>
       <p class="mt-4 text-3xl font-bold tracking-tight text-white sm:text-4xl">“Run it like you own it.”</p>
       <p class="mt-5 max-w-3xl text-lg leading-relaxed text-navy-200">The key to our success lies in our passionate, professional, and highly skilled team, which brings together years of experience across transformative projects. Our team blends youthful energy and innovation with the depth and wisdom of seasoned experts, united by a shared vision, creativity, and purpose.</p>
     </div>

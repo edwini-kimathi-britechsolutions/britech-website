@@ -49,7 +49,7 @@ export default async function TestimonialsAdmin({
       ) : (
         <div className="grid gap-4 md:grid-cols-2">
           {items.map((t) => (
-            <Link key={t.id} href={`/admin/testimonials/${t.id}`} className="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-mint-300">
+            <Link key={t.id} href={`/admin/testimonials/${t.id}`} className="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-navy-300">
               <Quote className="h-5 w-5 text-navy-900" />
               <p className="mt-2 line-clamp-3 text-navy-700">{t.quote}</p>
               <p className="mt-3 text-sm font-semibold text-navy-900">{t.name}</p>

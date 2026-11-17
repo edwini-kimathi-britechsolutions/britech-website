@@ -49,7 +49,7 @@ export default async function Footer() {
             <ul className="mt-5 space-y-3">
               {services.map((s) => (
                 <li key={s.slug}>
-                  <Link href={`/solutions/${s.slug}`} className="transition hover:text-mint-400">
+                  <Link href={`/solutions/${s.slug}`} className="transition hover:text-white">
                     {s.title}
                   </Link>
                 </li>
@@ -70,7 +70,7 @@ export default async function Footer() {
                 ["/contact", "Contact"],
               ].map(([href, label]) => (
                 <li key={label}>
-                  <Link href={href} className="transition hover:text-mint-400">
+                  <Link href={href} className="transition hover:text-white">
                     {label}
                   </Link>
                 </li>
@@ -87,14 +87,14 @@ export default async function Footer() {
               </li>
               <li className="flex gap-3">
                 <Mail className="mt-0.5 h-4 w-4 shrink-0 text-white" />
-                <a href={`mailto:${settings.email}`} className="hover:text-mint-400">
+                <a href={`mailto:${settings.email}`} className="hover:text-white">
                   {settings.email}
                 </a>
               </li>
               {phones.map((p) => (
                 <li key={p} className="flex gap-3">
                   <Phone className="mt-0.5 h-4 w-4 shrink-0 text-white" />
-                  <a href={telHref(p)} className="hover:text-mint-400">
+                  <a href={telHref(p)} className="hover:text-white">
                     {p}
                   </a>
                 </li>

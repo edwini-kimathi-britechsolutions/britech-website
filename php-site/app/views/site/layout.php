@@ -79,7 +79,7 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
   <div class="mx-auto flex max-w-7xl items-center justify-between gap-4 px-4 py-2.5 sm:px-6 lg:px-8">
     <p class="flex min-w-0 items-center gap-2 text-sm text-navy-200"><?= icon('Sparkles', 'h-4 w-4 shrink-0 text-white') ?><span class="truncate"><?= e($s['announcement_text']) ?></span></p>
     <?php if ($s['announcement_link'] !== ''): ?>
-    <a href="<?= e($s['announcement_link']) ?>" class="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-mint-400 transition hover:text-mint-300">Learn more <?= icon('ArrowRight', 'h-3.5 w-3.5') ?></a>
+    <a href="<?= e($s['announcement_link']) ?>" class="inline-flex shrink-0 items-center gap-1 text-sm font-medium text-white transition hover:text-navy-200">Learn more <?= icon('ArrowRight', 'h-3.5 w-3.5') ?></a>
     <?php endif; ?>
   </div>
 </div>
@@ -168,7 +168,7 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Solutions</h3>
         <ul class="mt-5 space-y-3">
           <?php foreach (data('services') as $sv): ?>
-          <li><a href="/solutions/<?= e($sv['slug']) ?>" class="transition hover:text-mint-400"><?= e($sv['title']) ?></a></li>
+          <li><a href="/solutions/<?= e($sv['slug']) ?>" class="transition hover:text-white"><?= e($sv['title']) ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>
@@ -177,7 +177,7 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
         <ul class="mt-5 space-y-3">
           <?php foreach ([['/about', 'About Britech'], ['/products', 'Products'], ['/industries', 'Industries'], ['/our-work', 'Our Work'], ['/clients', 'Clients & Partners'], ['/blog', 'Blog'], ['/contact', 'Contact']] as [$href, $label]): ?>
-          <li><a href="<?= $href ?>" class="transition hover:text-mint-400"><?= e($label) ?></a></li>
+          <li><a href="<?= $href ?>" class="transition hover:text-white"><?= e($label) ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>
@@ -186,9 +186,9 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Contact</h3>
         <ul class="mt-5 space-y-4 text-sm">
           <li class="flex gap-3"><?= icon('MapPin', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><?= e($s['address']) ?></li>
-          <li class="flex gap-3"><?= icon('Mail', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="mailto:<?= e($s['email']) ?>" class="hover:text-mint-400"><?= e($s['email']) ?></a></li>
+          <li class="flex gap-3"><?= icon('Mail', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="mailto:<?= e($s['email']) ?>" class="hover:text-white"><?= e($s['email']) ?></a></li>
           <?php foreach ($phones as $p): ?>
-          <li class="flex gap-3"><?= icon('Phone', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="<?= e(tel_href($p)) ?>" class="hover:text-mint-400"><?= e($p) ?></a></li>
+          <li class="flex gap-3"><?= icon('Phone', 'mt-0.5 h-4 w-4 shrink-0 text-white') ?><a href="<?= e(tel_href($p)) ?>" class="hover:text-white"><?= e($p) ?></a></li>
           <?php endforeach; ?>
         </ul>
       </div>

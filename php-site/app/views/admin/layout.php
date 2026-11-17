@@ -33,16 +33,16 @@ $items = [
     <div class="flex items-center justify-between px-5 py-4 lg:block lg:py-6">
       <a href="/admin" class="flex items-center gap-2">
         <img src="/images/logo.png" alt="Britech Solutions" width="110" height="42" class="h-9 w-auto">
-        <span class="rounded bg-navy-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-mint-400">Admin</span>
+        <span class="rounded bg-navy-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Admin</span>
       </a>
     </div>
     <nav class="flex gap-1 overflow-x-auto px-3 pb-3 lg:flex-col lg:overflow-visible lg:pb-0">
       <?php foreach ($items as [$href, $label, $ic, $roles]): if (!in_array($user['role'], $roles, true)) { continue; }
           $active = $href === '/admin' ? $path === '/admin' : str_starts_with($path, $href); ?>
       <a href="<?= $href ?>" class="flex shrink-0 items-center gap-3 rounded-lg px-3 py-2 text-sm font-medium transition <?= $active ? 'bg-navy-900 text-white' : 'text-navy-600 hover:bg-navy-50 hover:text-navy-900' ?>">
-        <?= icon($ic, 'h-4 w-4' . ($active ? ' text-mint-400' : '')) ?>
+        <?= icon($ic, 'h-4 w-4' . ($active ? ' text-white' : '')) ?>
         <?= e($label) ?>
-        <?php if ($href === '/admin/inquiries' && $newInquiries > 0): ?><span class="ml-auto rounded-full bg-mint-500 px-2 py-0.5 text-xs font-bold text-navy-950"><?= $newInquiries ?></span><?php endif; ?>
+        <?php if ($href === '/admin/inquiries' && $newInquiries > 0): ?><span class="ml-auto rounded-full bg-white px-2 py-0.5 text-xs font-bold text-navy-950"><?= $newInquiries ?></span><?php endif; ?>
       </a>
       <?php endforeach; ?>
     </nav>

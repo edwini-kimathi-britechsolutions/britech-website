@@ -72,8 +72,8 @@ function form_message(?string $error, ?string $ok = null, ?string $secret = null
         return '<p role="alert" class="flex items-start gap-2 rounded-lg bg-red-50 px-3.5 py-2.5 text-sm text-red-700">' . icon('AlertCircle', 'mt-0.5 h-4 w-4 shrink-0') . ' ' . e($error) . '</p>';
     }
     if ($ok) {
-        return '<div role="status" class="rounded-lg bg-mint-50 px-3.5 py-2.5 text-sm text-mint-700"><p class="flex items-start gap-2">' . icon('CheckCircle2', 'mt-0.5 h-4 w-4 shrink-0') . ' ' . e($ok) . '</p>'
-            . ($secret ? '<code class="mt-2 block select-all rounded bg-white px-3 py-2 font-mono text-base text-navy-900 ring-1 ring-mint-200">' . e($secret) . '</code>' : '')
+        return '<div role="status" class="rounded-lg bg-navy-50 px-3.5 py-2.5 text-sm text-navy-900"><p class="flex items-start gap-2">' . icon('CheckCircle2', 'mt-0.5 h-4 w-4 shrink-0') . ' ' . e($ok) . '</p>'
+            . ($secret ? '<code class="mt-2 block select-all rounded bg-white px-3 py-2 font-mono text-base text-navy-900 ring-1 ring-navy-200">' . e($secret) . '</code>' : '')
             . '</div>';
     }
     return '';
@@ -101,7 +101,7 @@ function image_field(string $name, string $label, ?string $value, string $hint =
 function status_badge(string $status): string
 {
     $styles = [
-        'PUBLISHED' => 'bg-mint-50 text-mint-700 ring-mint-200',
+        'PUBLISHED' => 'bg-navy-900 text-white ring-navy-900',
         'REVIEW' => 'bg-amber-50 text-amber-700 ring-amber-200',
         'DRAFT' => 'bg-navy-50 text-navy-600 ring-navy-200',
     ];
@@ -118,7 +118,7 @@ function page_title(string $title, string $text = '', string $actionHtml = ''): 
 /** $html is trusted (code-defined) markup. */
 function notice(string $html, string $tone = 'ok'): string
 {
-    return '<p class="mb-6 rounded-lg px-4 py-3 text-sm ' . ($tone === 'ok' ? 'bg-mint-50 text-mint-700' : 'bg-amber-50 text-amber-800') . '">' . $html . '</p>';
+    return '<p class="mb-6 rounded-lg px-4 py-3 text-sm ' . ($tone === 'ok' ? 'bg-navy-50 text-navy-900' : 'bg-amber-50 text-amber-800') . '">' . $html . '</p>';
 }
 
 function add_button(string $href, string $label, string $icon = 'Plus'): string

@@ -55,7 +55,7 @@ export default async function PostPage({ params }: Props) {
             <Link href="/blog" className="inline-flex items-center gap-1 text-sm font-medium text-navy-500 hover:text-navy-900">
               <ArrowLeft className="h-4 w-4" /> All articles
             </Link>
-            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-mint-700">{post.category}</p>
+            <p className="mt-6 text-xs font-semibold uppercase tracking-[0.2em] text-navy-500">{post.category}</p>
             <h1 className="mt-3 text-3xl font-bold leading-tight tracking-tight text-navy-900 sm:text-5xl">{post.title}</h1>
             <p className="mt-5 text-lg leading-relaxed text-navy-500">{post.excerpt}</p>
             <div className="mt-6 flex flex-wrap items-center gap-x-3 gap-y-1 text-sm text-navy-500">

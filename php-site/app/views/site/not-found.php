@@ -16,12 +16,12 @@
   </header>
   <main class="relative flex flex-1 items-center justify-center px-4 pb-24">
     <div class="max-w-xl text-center">
-      <p class="text-8xl font-extrabold tracking-tight text-navy-900 sm:text-9xl">4<span class="text-mint-500">0</span>4</p>
+      <p class="text-8xl font-extrabold tracking-tight text-navy-900 sm:text-9xl">4<span class="text-navy-300">0</span>4</p>
       <h1 class="mt-6 text-2xl font-bold text-navy-900 sm:text-3xl">We couldn’t find that page</h1>
       <p class="mt-3 text-navy-500">The link may be broken, or the page may have moved. Try one of these instead:</p>
       <div class="mt-8 flex flex-wrap justify-center gap-2">
         <?php foreach ([['/solutions', 'Solutions'], ['/products', 'Products'], ['/our-work', 'Our work'], ['/blog', 'Blog'], ['/contact', 'Contact']] as [$href, $label]): ?>
-        <a href="<?= $href ?>" class="rounded-full border border-navy-200 px-4 py-2 text-sm font-medium text-navy-700 transition hover:border-mint-400 hover:bg-mint-50"><?= e($label) ?></a>
+        <a href="<?= $href ?>" class="rounded-full border border-navy-200 px-4 py-2 text-sm font-medium text-navy-700 transition hover:border-navy-400 hover:bg-navy-50"><?= e($label) ?></a>
         <?php endforeach; ?>
       </div>
       <div class="mt-10 flex flex-wrap justify-center gap-3">

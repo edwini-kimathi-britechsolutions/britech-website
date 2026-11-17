@@ -182,7 +182,7 @@ export function EmptyState({ title, text, resetHref }: { title: string; text?: s
       <p className="font-semibold text-navy-900">{title}</p>
       {text && <p className="mt-1 text-sm text-navy-500">{text}</p>}
       {resetHref && (
-        <Link href={resetHref} className="mt-4 inline-block text-sm font-semibold text-mint-700 hover:text-mint-600">
+        <Link href={resetHref} className="mt-4 inline-block text-sm font-semibold text-navy-900 underline-offset-4 hover:underline">
           Clear filters
         </Link>
       )}

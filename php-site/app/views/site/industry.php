@@ -45,10 +45,10 @@ $related = array_values(array_filter(array_map(fn ($slug) => find_by_slug(data('
     <h2 class="text-2xl font-bold text-navy-900">Related solutions</h2>
     <div class="mt-8 grid gap-5 md:grid-cols-3">
       <?php foreach ($related as $s): ?>
-      <a href="/solutions/<?= e($s['slug']) ?>" class="group rounded-2xl border border-navy-100 p-6 transition hover:border-mint-300 hover:shadow-lg">
+      <a href="/solutions/<?= e($s['slug']) ?>" class="group rounded-2xl border border-navy-100 p-6 transition hover:border-navy-300 hover:shadow-lg">
         <?= icon($s['icon'], 'h-6 w-6 text-navy-900') ?>
         <h3 class="mt-4 font-semibold text-navy-900"><?= e($s['title']) ?></h3>
-        <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-mint-700">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>
+        <span class="mt-3 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>
       </a>
       <?php endforeach; ?>
     </div>

@@ -17,7 +17,7 @@ export default async function PanelLayout({ children }: { children: React.ReactN
         <div className="flex items-center justify-between px-5 py-4 lg:block lg:py-6">
           <Link href="/admin" className="flex items-center gap-2">
             <Image src="/images/logo.png" alt="Britech Solutions" width={110} height={42} className="h-9 w-auto" />
-            <span className="rounded bg-navy-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-mint-400">Admin</span>
+            <span className="rounded bg-navy-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Admin</span>
           </Link>
         </div>
         <AdminNav role={user.role} newInquiries={newInquiries} />

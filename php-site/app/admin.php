@@ -135,11 +135,11 @@ function admin_dashboard(array $user): void
         . '<p class="text-navy-500">Manage the Britech Solutions website.</p></div>' . add_button('/admin/posts/new', 'Write a post', 'PenLine') . '</div>';
     $h .= '<div class="mt-8 grid gap-4 sm:grid-cols-3 xl:grid-cols-6">';
     foreach ($cards as [$label, $value, $href, $ic]) {
-        $h .= '<a href="' . e($href) . '" class="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-mint-300">' . icon($ic, 'h-5 w-5 text-mint-700')
+        $h .= '<a href="' . e($href) . '" class="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-navy-300">' . icon($ic, 'h-5 w-5 text-navy-900')
             . '<p class="mt-3 text-3xl font-bold text-navy-900">' . $value . '</p><p class="text-sm text-navy-500">' . e($label) . '</p></a>';
     }
     $h .= '</div><section class="mt-10"><div class="flex items-center justify-between"><h2 class="font-semibold text-navy-900">Recently updated posts</h2>'
-        . '<a href="/admin/posts" class="inline-flex items-center gap-1 text-sm font-medium text-mint-700">All posts ' . icon('ArrowRight', 'h-4 w-4') . '</a></div>'
+        . '<a href="/admin/posts" class="inline-flex items-center gap-1 text-sm font-medium text-navy-900">All posts ' . icon('ArrowRight', 'h-4 w-4') . '</a></div>'
         . '<div class="mt-4 divide-y divide-navy-100 overflow-hidden rounded-xl border border-navy-100 bg-white">';
     if (!$recent) {
         $h .= '<p class="p-6 text-sm text-navy-500">No posts yet. Write the first one!</p>';
@@ -226,7 +226,7 @@ function admin_inquiries(array $user): void
         foreach ($list as $r) {
             $new = $r['status'] === 'NEW';
             $h .= '<a href="/admin/inquiries/' . e($r['id']) . '" class="flex items-start gap-4 px-5 py-4 hover:bg-navy-50/60">'
-                . '<span class="mt-2 h-2 w-2 shrink-0 rounded-full ' . ($new ? 'bg-mint-500' : 'bg-transparent') . '"></span>'
+                . '<span class="mt-2 h-2 w-2 shrink-0 rounded-full ' . ($new ? 'bg-navy-900' : 'bg-transparent') . '"></span>'
                 . '<div class="min-w-0 flex-1"><div class="flex flex-wrap items-baseline gap-x-2"><span class="text-navy-900 ' . ($new ? 'font-semibold' : 'font-medium') . '">' . e($r['firstName'] . ' ' . $r['lastName']) . '</span>'
                 . ($r['company'] ? '<span class="text-sm text-navy-500">· ' . e($r['company']) . '</span>' : '') . '</div>'
                 . '<p class="mt-0.5 truncate text-sm text-navy-500"><span class="font-medium text-navy-700">' . e($r['service']) . '</span>: ' . e($r['message']) . '</p></div>'
@@ -521,7 +521,7 @@ function admin_projects(array $user): void
                 . '<span class="flex h-10 w-16 shrink-0 items-center justify-center">' . ($p['logo'] ? '<img src="' . e($p['logo']) . '" alt="" class="max-h-10 max-w-16 object-contain">' : '') . '</span>'
                 . '<span><span class="block font-medium text-navy-900">' . e($p['name']) . '</span><span class="block text-xs text-navy-400">' . e($p['tagline']) . '</span></span></a></td>'
                 . '<td class="px-5 py-3 text-navy-600">' . e($p['client'] ?? 'Not set') . '</td>'
-                . '<td class="px-5 py-3"><span class="rounded-full px-2.5 py-0.5 text-xs font-semibold ' . ($prod ? 'bg-mint-50 text-mint-700' : 'bg-navy-50 text-navy-600') . '">' . ($prod ? 'Product' : 'Client work') . '</span></td>'
+                . '<td class="px-5 py-3"><span class="rounded-full px-2.5 py-0.5 text-xs font-semibold ' . ($prod ? 'bg-navy-900 text-white' : 'bg-navy-50 text-navy-600') . '">' . ($prod ? 'Product' : 'Client work') . '</span></td>'
                 . '<td class="px-5 py-3 text-navy-600">' . ((int) $p['published'] ? 'Visible' : 'Hidden') . '</td>'
                 . '<td class="px-5 py-3 text-navy-600">' . (int) $p['sortOrder'] . '</td></tr>';
         }
@@ -688,7 +688,7 @@ function admin_partners(array $user): void
         $h .= '<div class="grid gap-3 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5">';
         foreach ($list as $p) {
             $active = (int) $p['active'];
-            $h .= '<a href="/admin/partners/' . e($p['id']) . '" class="rounded-xl border border-navy-100 bg-white p-4 transition hover:border-mint-300">'
+            $h .= '<a href="/admin/partners/' . e($p['id']) . '" class="rounded-xl border border-navy-100 bg-white p-4 transition hover:border-navy-300">'
                 . '<div class="flex h-14 items-center justify-center"><img src="' . e($p['logo']) . '" alt="" loading="lazy" class="max-h-12 max-w-[140px] object-contain ' . ($active ? '' : 'opacity-40') . '"></div>'
                 . '<p class="mt-3 truncate text-sm font-semibold text-navy-900">' . e($p['name']) . '</p>'
                 . '<p class="text-xs text-navy-400">' . e(PARTNER_KINDS[$p['kind']]) . ' · ' . ($active ? 'visible' : 'hidden') . ' · #' . (int) $p['sortOrder'] . '</p></a>';
@@ -787,7 +787,7 @@ function admin_testimonials(array $user): void
     } else {
         $h .= '<div class="grid gap-4 md:grid-cols-2">';
         foreach ($list as $t) {
-            $h .= '<a href="/admin/testimonials/' . e($t['id']) . '" class="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-mint-300">' . icon('Quote', 'h-5 w-5 text-mint-500')
+            $h .= '<a href="/admin/testimonials/' . e($t['id']) . '" class="rounded-xl border border-navy-100 bg-white p-5 transition hover:border-navy-300">' . icon('Quote', 'h-5 w-5 text-navy-300')
                 . '<p class="mt-2 line-clamp-3 text-navy-700">' . e($t['quote']) . '</p><p class="mt-3 text-sm font-semibold text-navy-900">' . e($t['name']) . '</p>'
                 . '<p class="text-xs text-navy-400">' . e(implode(', ', array_filter([$t['role'], $t['organization']]))) . ' · ' . ((int) $t['active'] ? 'visible' : 'hidden') . '</p></a>';
         }
