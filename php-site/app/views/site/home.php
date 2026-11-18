@@ -87,7 +87,7 @@ $heroLogos = array_slice($partners, 0, 5);
         <div class="absolute inset-0 flex items-center justify-center">
           <span class="absolute h-[26%] w-[26%] animate-ping-slow rounded-3xl bg-brand-400/30"></span>
           <div class="relative flex h-[26%] w-[26%] items-center justify-center rounded-3xl border border-navy-100 bg-white shadow-2xl shadow-navy-900/15">
-            <img src="/images/mark.png" alt="Britech Solutions" width="120" height="120" class="h-3/5 w-3/5 object-contain">
+            <img src="/images/britech-mark.svg" alt="Britech Solutions" width="120" height="120" class="h-3/5 w-3/5 object-contain">
           </div>
         </div>
 
