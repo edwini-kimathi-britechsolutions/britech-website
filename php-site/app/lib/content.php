@@ -50,7 +50,7 @@ function settings(): array
 
 const PARTNER_PAGE_SIZE = 30;
 const PROJECT_PAGE_SIZE = 12;
-const PRODUCT_PAGE_SIZE = 6;
+const PRODUCT_PAGE_SIZE = 12;
 const POST_PAGE_SIZE = 9;
 
 function partner_preview(int $take = 15): array

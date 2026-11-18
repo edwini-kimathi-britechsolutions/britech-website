@@ -122,7 +122,7 @@ async function loadProjectSectors() {
 }
 export const getProjectSectors = cached(loadProjectSectors, "project-sectors");
 
-export const PRODUCT_PAGE_SIZE = 6;
+export const PRODUCT_PAGE_SIZE = 12;
 
 /** Britech-owned platforms (projects flagged “Show as a product”). */
 async function loadProducts({ page = 1, take }: { page?: number; take?: number } = {}) {
