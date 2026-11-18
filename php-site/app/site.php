@@ -24,12 +24,12 @@ function route_site(string $path): bool
     }
 
     if ($path === '/about') {
-        site_page('about', [], ['title' => 'About Britech', 'description' => 'Seven years of growth, innovation, and impact. Learn about Britech Solutions’ mission, vision, and values.']);
+        site_page('about', [], ['title' => 'About Britech', 'description' => 'Britech Solutions Limited is a Tanzania-based multidisciplinary professional services and technology company: engineering, digital transformation and business consultancy.']);
         return true;
     }
 
     if ($path === '/solutions') {
-        site_page('solutions', [], ['title' => 'Solutions', 'description' => 'Software, AI, ERP, business intelligence, cybersecurity, consulting and training services from Britech Solutions.']);
+        site_page('solutions', [], ['title' => 'Solutions', 'description' => 'Engineering consultancy, digital transformation and technology, and business and management consultancy from Britech Solutions.']);
         return true;
     }
     if (preg_match('#^/solutions/([a-z0-9-]+)$#', $path, $m)) {
@@ -42,7 +42,7 @@ function route_site(string $path): bool
     }
 
     if ($path === '/industries') {
-        site_page('industries', [], ['title' => 'Industries', 'description' => 'How Britech Solutions supports government, NGOs, agriculture, finance, healthcare, education and conservation.']);
+        site_page('industries', [], ['title' => 'Industries', 'description' => 'Sectors Britech Solutions supports with engineering, technology and business consultancy, from hospitality and real estate to government, finance and natural resources.']);
         return true;
     }
     if (preg_match('#^/industries/([a-z0-9-]+)$#', $path, $m)) {

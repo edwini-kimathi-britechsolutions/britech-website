@@ -43,12 +43,12 @@ export function ButtonLink({
 }: {
   href: string;
   children: React.ReactNode;
-  variant?: "primary" | "secondary" | "mint";
+  variant?: "primary" | "secondary" | "brand";
 }) {
   const styles = {
     primary: "bg-navy-900 text-white shadow-lg shadow-navy-900/20 hover:bg-navy-800",
     secondary: "bg-white text-navy-900 ring-1 ring-navy-200 hover:ring-navy-300 hover:bg-navy-50",
-    mint: "bg-mint-500 text-navy-950 shadow-lg shadow-mint-500/30 hover:bg-mint-400",
+    brand: "bg-brand-500 text-white shadow-lg shadow-brand-500/30 hover:bg-brand-600",
   };
   return (
     <Link

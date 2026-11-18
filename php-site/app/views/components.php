@@ -32,7 +32,7 @@ function button_link(string $href, string $label, string $variant = 'primary'): 
     $styles = [
         'primary' => 'bg-navy-900 text-white shadow-lg shadow-navy-900/20 hover:bg-navy-800',
         'secondary' => 'bg-white text-navy-900 ring-1 ring-navy-200 hover:ring-navy-300 hover:bg-navy-50',
-        'mint' => 'bg-mint-500 text-navy-950 shadow-lg shadow-mint-500/30 hover:bg-mint-400',
+        'brand' => 'bg-brand-500 text-white shadow-lg shadow-brand-500/30 hover:bg-brand-600',
     ];
     return '<a href="' . e($href) . '" class="group inline-flex items-center gap-2 rounded-lg px-6 py-3 font-semibold transition ' . $styles[$variant] . '">'
         . e($label) . icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-0.5') . '</a>';
@@ -68,7 +68,7 @@ function cta(): string
         . '<div class="max-w-2xl"><h2 class="text-3xl font-bold tracking-tight text-white sm:text-4xl">Let’s build something brilliant together.</h2>'
         . '<p class="mt-4 text-lg text-navy-200">Partner with us to design and deliver the digital solutions your organization needs to thrive in a fast-changing world.</p></div>'
         . '<div class="flex shrink-0 flex-col gap-4 sm:flex-row sm:items-center lg:flex-col lg:items-end">'
-        . button_link('/contact', 'Get in Touch', 'mint')
+        . button_link('/contact', 'Get in Touch', 'brand')
         . '<a href="' . e(tel_href($phone)) . '" class="inline-flex items-center gap-2 font-medium text-white/80 hover:text-white">' . icon('Phone', 'h-4 w-4 text-white') . ' ' . e($phone) . '</a>'
         . '</div></div></div></div></section>';
 }
@@ -160,7 +160,7 @@ function product_panel(array $p): string
 function post_cover(?string $src, string $alt, string $class): string
 {
     if (!$src) {
-        return '<div class="flex items-center justify-center bg-navy-900 ' . $class . '"><img src="/images/mark.png" alt="" width="64" height="64" loading="lazy" class="h-14 w-14 opacity-90"></div>';
+        return '<div class="flex items-center justify-center bg-navy-900 ' . $class . '"><img src="/images/mark-white.png" alt="" width="64" height="64" loading="lazy" class="h-14 w-14 opacity-90"></div>';
     }
     return '<div class="relative overflow-hidden bg-navy-50 ' . $class . '"><img src="' . e($src) . '" alt="' . e($alt) . '" loading="lazy" decoding="async" class="absolute inset-0 h-full w-full object-cover transition duration-500 group-hover:scale-105"></div>';
 }
@@ -258,7 +258,7 @@ function search_form(string $path, string $q, array $keep = [], string $placehol
     }
     $h .= icon('Search', 'pointer-events-none absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-navy-400');
     $h .= '<input type="search" name="q" value="' . e($q) . '" placeholder="' . e($placeholder) . '" maxlength="100" aria-label="' . e($placeholder) . '"'
-        . ' class="w-full rounded-lg border border-navy-200 bg-white py-2.5 pl-9 pr-9 text-sm text-navy-900 placeholder:text-navy-400 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15">';
+        . ' class="w-full rounded-lg border border-navy-200 bg-white py-2.5 pl-9 pr-9 text-sm text-navy-900 placeholder:text-navy-400 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15">';
     if ($q !== '') {
         $h .= '<a href="' . e(build_href($path, $keep)) . '" aria-label="Clear search" class="absolute right-2.5 top-1/2 -translate-y-1/2 text-navy-400 hover:text-navy-700">' . icon('X', 'h-4 w-4') . '</a>';
     }

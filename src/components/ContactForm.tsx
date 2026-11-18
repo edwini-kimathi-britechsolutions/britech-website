@@ -6,7 +6,7 @@ import { submitInquiry } from "@/app/(site)/contact/actions";
 import { INQUIRY_SERVICES } from "@/lib/data";
 
 const input =
-  "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15";
+  "w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15";
 
 export default function ContactForm({
   renderedAt,

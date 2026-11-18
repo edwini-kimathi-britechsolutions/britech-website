@@ -11,7 +11,7 @@ $siteName = 'Britech Solutions';
 $fullTitle = isset($meta['title']) && $meta['title'] !== ''
     ? $meta['title'] . ' | ' . $siteName
     : 'Britech Solutions | Driven by Innovation. Powered by Technology';
-$description = $meta['description'] ?? 'Britech Solutions builds smart, secure, and scalable digital systems for businesses, governments, and organizations in Tanzania, Africa and beyond.';
+$description = $meta['description'] ?? 'Britech Solutions is a Tanzania-based multidisciplinary professional services and technology company: engineering consultancy, digital transformation and business advisory, integrated.';
 $path = request_path();
 $canonical = site_url() . ($path === '/' ? '' : $path);
 $og = $meta['og'] ?? [];
@@ -54,8 +54,9 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
 <title><?= e($fullTitle) ?></title>
 <meta name="description" content="<?= e($description) ?>">
 <link rel="canonical" href="<?= e($canonical) ?>">
-<link rel="icon" href="/images/mark.png">
-<link rel="apple-touch-icon" href="/images/mark.png">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/mark.png" type="image/png">
+<link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
 <meta property="og:site_name" content="Britech Solutions">
 <meta property="og:locale" content="en_TZ">
 <meta property="og:type" content="<?= e($og['type'] ?? 'website') ?>">
@@ -88,23 +89,44 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
 <header data-header class="sticky top-0 z-50 border-b border-transparent bg-white transition-all">
   <div class="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
     <a href="/" class="flex shrink-0 items-center" aria-label="Britech Solutions home">
-      <img src="/images/logo.png" alt="Britech Solutions" width="140" height="53" class="h-10 w-auto" fetchpriority="high">
+      <img src="/images/logo.svg" alt="Britech Solutions" width="139" height="50" class="h-11 w-auto" fetchpriority="high">
     </a>
 
-    <nav class="hidden items-center gap-1 lg:flex" aria-label="Main">
+    <nav class="hidden items-center gap-1 self-stretch lg:flex" aria-label="Main">
       <?php foreach ($nav as [$href, $label, $mega]): ?>
         <?php if ($mega): ?>
-        <div class="group relative">
+        <div class="group flex items-center self-stretch">
           <a href="<?= $href ?>" class="flex items-center gap-1 rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 <?= $navCls($href) ?>"><?= e($label) ?><?= icon('ChevronDown', 'h-4 w-4 transition group-hover:rotate-180') ?></a>
-          <div class="invisible absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
-            <div class="grid grid-cols-2 gap-1 rounded-2xl border border-navy-100 bg-white p-3 shadow-xl shadow-navy-900/10">
-              <?php foreach (data('services') as $sv): ?>
-              <a href="/solutions/<?= e($sv['slug']) ?>" class="flex gap-3 rounded-xl p-3 transition hover:bg-navy-50">
-                <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
-                <span><span class="block text-sm font-semibold text-navy-900"><?= e($sv['title']) ?></span><span class="line-clamp-1 text-xs text-navy-400"><?= e($sv['short']) ?></span></span>
-              </a>
-              <?php endforeach; ?>
-              <a href="/solutions" class="flex items-center justify-center gap-2 rounded-xl bg-navy-900 p-3 text-sm font-semibold text-white transition hover:bg-navy-800">View all solutions <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+          <?php /* Anchored to the sticky header, centred on the page */ ?>
+          <div class="invisible absolute inset-x-0 top-full opacity-0 transition-all group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+            <div class="mx-auto max-w-5xl px-4">
+              <div class="grid grid-cols-3 gap-6 rounded-2xl border border-navy-100 bg-white p-5 shadow-xl shadow-navy-900/10">
+                <div class="space-y-5">
+                  <?php foreach (data('practices') as $pr): if ($pr['slug'] === 'digital') continue; ?>
+                  <div>
+                    <p class="px-3 text-xs font-semibold uppercase tracking-wider text-navy-400"><?= e($pr['title']) ?></p>
+                    <?php foreach (services_in($pr['slug']) as $sv): ?>
+                    <a href="/solutions/<?= e($sv['slug']) ?>" class="mt-1 flex gap-3 rounded-xl p-3 transition hover:bg-navy-50">
+                      <span class="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900"><?= icon($sv['icon'], 'h-5 w-5') ?></span>
+                      <span><span class="block text-sm font-semibold text-navy-900"><?= e($sv['title']) ?></span><span class="line-clamp-2 text-xs text-navy-400"><?= e($sv['short']) ?></span></span>
+                    </a>
+                    <?php endforeach; ?>
+                  </div>
+                  <?php endforeach; ?>
+                </div>
+                <div class="col-span-2">
+                  <p class="px-3 text-xs font-semibold uppercase tracking-wider text-navy-400"><?= e(current(array_filter(data('practices'), fn ($p) => $p['slug'] === 'digital'))['title']) ?></p>
+                  <div class="mt-1 grid grid-cols-2 gap-1">
+                    <?php foreach (services_in('digital') as $sv): ?>
+                    <a href="/solutions/<?= e($sv['slug']) ?>" class="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-navy-50">
+                      <span class="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900"><?= icon($sv['icon'], 'h-4 w-4') ?></span>
+                      <span class="text-sm font-semibold text-navy-900"><?= e($sv['title']) ?></span>
+                    </a>
+                    <?php endforeach; ?>
+                  </div>
+                  <a href="/solutions" class="mt-3 flex items-center justify-center gap-2 rounded-xl bg-navy-900 p-3 text-sm font-semibold text-white transition hover:bg-navy-800">View all solutions <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+                </div>
+              </div>
             </div>
           </div>
         </div>
@@ -128,9 +150,13 @@ $navCls = fn (string $href) => $isActive($href) ? 'bg-navy-50 text-navy-900 ring
     <a href="<?= $href ?>" class="block rounded-lg px-3 py-3 font-medium <?= $isActive($href) ? 'bg-navy-50 text-navy-900' : 'text-navy-700' ?>"><?= e($label) ?></a>
     <?php endforeach; ?>
     <div class="mt-2 border-t border-navy-100 pt-3">
-      <p class="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-navy-400">Solutions</p>
-      <?php foreach (data('services') as $sv): ?>
-      <a href="/solutions/<?= e($sv['slug']) ?>" class="block px-3 py-2 text-sm text-navy-700"><?= e($sv['title']) ?></a>
+      <?php foreach (data('practices') as $pr): ?>
+      <div class="mt-2">
+        <p class="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-navy-400"><?= e($pr['title']) ?></p>
+        <?php foreach (services_in($pr['slug']) as $sv): ?>
+        <a href="/solutions/<?= e($sv['slug']) ?>" class="block px-3 py-2 text-sm text-navy-700"><?= e($sv['title']) ?></a>
+        <?php endforeach; ?>
+      </div>
       <?php endforeach; ?>
     </div>
     <a href="<?= e(tel_href($s['phone1'])) ?>" class="mt-4 flex items-center justify-center gap-2 rounded-lg bg-navy-900 px-4 py-3 font-medium text-white"><?= icon('Phone', 'h-4 w-4') ?> <?= e($s['phone1']) ?></a>
@@ -153,8 +179,8 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
   <div class="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
     <div class="grid gap-12 lg:grid-cols-12">
       <div class="lg:col-span-3">
-        <img src="/images/logo-white.png" alt="Britech Solutions" width="150" height="58" loading="lazy" class="h-11 w-auto">
-        <p class="mt-6 max-w-sm leading-relaxed text-navy-300">Simplifying IT for a complex world. Innovative technology solutions for businesses, governments, and organizations in Africa and beyond.</p>
+        <img src="/images/logo-white.svg" alt="Britech Solutions" width="150" height="54" loading="lazy" class="h-12 w-auto">
+        <p class="mt-6 max-w-sm leading-relaxed text-navy-300"><?= e(data('company')['summary']) ?> Engineering consultancy, digital transformation and business advisory from Arusha, Tanzania.</p>
         <?php if ($socials): ?>
         <div class="mt-6 flex gap-3">
           <?php foreach ($socials as [$key, $href, $label]): ?>
@@ -167,9 +193,10 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
       <div class="lg:col-span-4">
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Solutions</h3>
         <ul class="mt-5 space-y-3">
-          <?php foreach (data('services') as $sv): ?>
-          <li><a href="/solutions/<?= e($sv['slug']) ?>" class="transition hover:text-white"><?= e($sv['title']) ?></a></li>
+          <?php foreach (data('practices') as $pr): ?>
+          <li><a href="<?= e(practice_href($pr)) ?>" class="transition hover:text-white"><?= e($pr['title']) ?></a></li>
           <?php endforeach; ?>
+          <li><a href="/solutions" class="font-medium text-white underline-offset-4 hover:underline">All solutions</a></li>
         </ul>
       </div>
 
@@ -195,7 +222,7 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
     </div>
 
     <div class="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-navy-400 sm:flex-row">
-      <p>© <?= date('Y') ?> Britech Solutions. All rights reserved.</p>
+      <p>© <?= date('Y') ?> <?= e(data('company')['legalName']) ?>. All rights reserved.</p>
       <p class="font-medium text-navy-300"><?= e($company['tagline']) ?></p>
     </div>
   </div>

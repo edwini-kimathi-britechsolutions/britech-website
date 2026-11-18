@@ -21,7 +21,7 @@ export function useFormAction(fn: (state: FormState, fd: FormData) => Promise<Fo
 }
 
 export const inputCls =
-  "w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15";
+  "w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15";
 
 export function Field({ label, hint, children }: { label: string; hint?: string; children: React.ReactNode }) {
   return (
@@ -43,7 +43,7 @@ export function SubmitButton({
   children: React.ReactNode;
   name?: string;
   value?: string;
-  variant?: "primary" | "secondary" | "mint" | "danger";
+  variant?: "primary" | "secondary" | "brand" | "danger";
   pending?: boolean;
 }) {
   const status = useFormStatus();
@@ -51,7 +51,7 @@ export function SubmitButton({
   const styles = {
     primary: "bg-navy-900 text-white hover:bg-navy-800",
     secondary: "bg-white text-navy-800 ring-1 ring-navy-200 hover:bg-navy-50",
-    mint: "bg-mint-500 text-navy-950 hover:bg-mint-400",
+    brand: "bg-brand-500 text-white hover:bg-brand-600",
     danger: "bg-white text-red-600 ring-1 ring-red-200 hover:bg-red-50",
   };
   return (

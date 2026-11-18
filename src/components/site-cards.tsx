@@ -123,7 +123,7 @@ function Cover({ src, alt, className = "" }: { src: string | null; alt: string; 
   if (!src) {
     return (
       <div className={`flex items-center justify-center bg-navy-900 ${className}`}>
-        <Image src="/images/mark.png" alt="" width={64} height={64} className="h-14 w-14 opacity-90" />
+        <Image src="/images/mark-white.png" alt="" width={64} height={64} className="h-14 w-14 opacity-90" />
       </div>
     );
   }

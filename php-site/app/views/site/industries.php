@@ -1,6 +1,16 @@
 <?php defined('BRITECH') || exit; ?>
-<?= page_hero('Industries', 'Technology for the sectors that shape Africa', 'We bring software, data, and security expertise to institutions in agriculture, health, education, conservation, finance, and governance.') ?>
-<section class="py-20 sm:py-24">
+<?= page_hero('Industries', 'Expertise for the sectors that shape Africa', 'We bring engineering, technology and business expertise to enterprises, institutions and development programs across these sectors.') ?>
+<section class="pt-16 sm:pt-20">
+  <div class="<?= CONTAINER ?>">
+    <h2 class="text-sm font-semibold uppercase tracking-[0.2em] text-navy-500">Sectors we support</h2>
+    <ul class="mt-5 flex flex-wrap gap-2">
+      <?php foreach (data('sectors') as $sec): ?>
+      <li class="rounded-full border border-navy-200 bg-white px-4 py-2 text-sm font-medium text-navy-700"><?= e($sec) ?></li>
+      <?php endforeach; ?>
+    </ul>
+  </div>
+</section>
+<section class="py-12 sm:py-16">
   <div class="<?= CONTAINER ?> grid gap-5 md:grid-cols-2 lg:grid-cols-3">
     <?php foreach (data('industries') as $i => $ind): ?>
     <div data-reveal style="transition-delay:<?= ($i % 3) * 80 ?>ms">
@@ -18,7 +28,7 @@
           <h2 class="text-lg font-semibold">Don’t see your sector?</h2>
           <p class="mt-2 max-w-md text-navy-200">Our solutions adapt to any organization. Tell us about your challenges and we’ll show you what’s possible.</p>
         </div>
-        <a href="/contact" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-mint-500 px-5 py-3 font-semibold text-navy-950 transition hover:bg-mint-400">Talk to us <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+        <a href="/contact" class="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600">Talk to us <?= icon('ArrowRight', 'h-4 w-4') ?></a>
       </div>
     </div>
   </div>

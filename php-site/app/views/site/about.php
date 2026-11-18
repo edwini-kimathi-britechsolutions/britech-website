@@ -1,12 +1,12 @@
 <?php defined('BRITECH') || exit; ?>
-<?= page_hero('About Britech', 'Seven years of growth, innovation & impact', 'We were founded with a mission to solve real-world challenges through technology, delivering digital solutions that transform institutions, empower communities, and shape a better future.') ?>
+<?= page_hero('About Britech', 'One Britech. Three practices. Integrated solutions.', 'For more than eight years we have helped clients solve real-world challenges, and today we bring engineering, technology and business expertise together in one integrated team.') ?>
 
 <section class="py-20 sm:py-24">
   <div class="<?= CONTAINER ?> grid items-center gap-14 lg:grid-cols-2">
     <div>
-      <?= section_heading('Who we are', 'Innovation, trust, and impact', '', false) ?>
+      <?= section_heading('Who we are', 'Built for complex, multidisciplinary challenges', '', false) ?>
       <div class="mt-6 space-y-4 text-lg leading-relaxed text-navy-500">
-        <p>Britech Solutions is proud to mark seven years of growth, innovation, and impact. It has been an inspiring journey filled with accomplishments, valuable lessons, and milestones that reflect our resilience, creativity, and shared purpose.</p>
+        <p>Britech Solutions Limited is a Tanzania-based multidisciplinary professional services and technology company. We integrate engineering consultancy, digital transformation and business advisory capabilities to help clients design, modernize and operate the physical, digital and organizational systems on which performance depends.</p>
         <p>We extend our heartfelt appreciation to every member of the Britech team, our clients, technology partners, and stakeholders. Your trust, support, and collaboration have been the cornerstone of our progress.</p>
         <p>We have refreshed our brand identity to reflect our future-forward vision: a palette that symbolizes clarity, intelligence, and transformation.</p>
       </div>
@@ -37,10 +37,29 @@
   </div>
 </section>
 
-<section class="pb-20 sm:pb-24">
+<section class="border-y border-navy-100 bg-navy-50/50 py-20 sm:py-24">
   <div class="<?= CONTAINER ?>">
-    <?= section_heading('How we work', 'From discovery to handover', 'We combine strategic insight, technical capability, cybersecurity awareness, and local context, with accountability from inception to handover.', false) ?>
-    <ol class="mt-12 grid gap-px overflow-hidden rounded-3xl border border-navy-100 bg-navy-100 sm:grid-cols-2 lg:grid-cols-4">
+    <?= section_heading('Our positioning', 'Physical, digital and business infrastructure', '', false) ?>
+    <div class="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-navy-500">
+      <?php foreach (data('positioning') as $para): ?><p><?= e($para) ?></p><?php endforeach; ?>
+    </div>
+    <div class="mt-12 grid gap-5 lg:grid-cols-3">
+      <?php foreach (data('practices') as $pr): ?>
+      <a href="<?= e(practice_href($pr)) ?>" class="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5">
+        <span class="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-white"><?= icon($pr['icon'], 'h-6 w-6') ?></span>
+        <h3 class="mt-5 text-lg font-semibold text-navy-900"><?= e($pr['title']) ?></h3>
+        <p class="mt-2 flex-1 leading-relaxed text-navy-500"><?= e($pr['short']) ?></p>
+        <span class="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">Learn more <?= icon('ArrowRight', 'h-4 w-4 transition group-hover:translate-x-1') ?></span>
+      </a>
+      <?php endforeach; ?>
+    </div>
+  </div>
+</section>
+
+<section class="py-20 sm:py-24">
+  <div class="<?= CONTAINER ?>">
+    <?= section_heading('How we work', 'One integrated delivery model', 'Every engagement moves from business goals to assurance, with engineering, technology and operational requirements considered together.', false) ?>
+    <ol class="mt-12 grid gap-px overflow-hidden rounded-3xl border border-navy-100 bg-navy-100 sm:grid-cols-2 lg:grid-cols-5">
       <?php foreach (data('engagementProcess') as $i => $step): ?>
       <li class="bg-white p-7">
         <span class="flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white"><?= $i + 1 ?></span>

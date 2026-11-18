@@ -40,7 +40,7 @@ export function NetworkField({ className = "" }: { className?: string }) {
     const ctx = canvas.getContext("2d");
     if (!ctx) return;
 
-    type Node = { x: number; y: number; vx: number; vy: number; mint: boolean };
+    type Node = { x: number; y: number; vx: number; vy: number; accent: boolean };
     let nodes: Node[] = [];
     let w = 0;
     let h = 0;
@@ -62,7 +62,7 @@ export function NetworkField({ className = "" }: { className?: string }) {
         y: Math.random() * h,
         vx: (Math.random() - 0.5) * 0.25,
         vy: (Math.random() - 0.5) * 0.25,
-        mint: Math.random() < 0.15,
+        accent: Math.random() < 0.15,
       }));
       draw();
     };
@@ -76,7 +76,7 @@ export function NetworkField({ className = "" }: { className?: string }) {
           const d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK) {
             const alpha = (1 - d / LINK) * 0.14;
-            ctx.strokeStyle = a.mint || b.mint ? `rgba(0,196,160,${alpha * 1.6})` : `rgba(26,28,69,${alpha})`;
+            ctx.strokeStyle = a.accent || b.accent ? `rgba(1,99,154,${alpha * 1.6})` : `rgba(25,29,64,${alpha})`;
             ctx.lineWidth = 1;
             ctx.beginPath();
             ctx.moveTo(a.x, a.y);
@@ -86,9 +86,9 @@ export function NetworkField({ className = "" }: { className?: string }) {
         }
       }
       for (const n of nodes) {
-        ctx.fillStyle = n.mint ? "rgba(0,196,160,0.9)" : "rgba(26,28,69,0.25)";
+        ctx.fillStyle = n.accent ? "rgba(1,99,154,0.9)" : "rgba(25,29,64,0.25)";
         ctx.beginPath();
-        ctx.arc(n.x, n.y, n.mint ? 2.4 : 1.6, 0, Math.PI * 2);
+        ctx.arc(n.x, n.y, n.accent ? 2.4 : 1.6, 0, Math.PI * 2);
         ctx.fill();
       }
     };
@@ -150,7 +150,7 @@ export function RotatingWord({ words, interval = 2600 }: { words: string[]; inte
       <span
         key={i}
         aria-hidden
-        className="absolute bottom-0 left-0 h-1.5 w-24 origin-left animate-underline rounded-full bg-mint-500 sm:w-32"
+        className="absolute bottom-0 left-0 h-1.5 w-24 origin-left animate-underline rounded-full bg-brand-500 sm:w-32"
       />
     </span>
   );

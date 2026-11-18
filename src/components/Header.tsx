@@ -5,7 +5,7 @@ import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { useEffect, useState } from "react";
 import { ArrowRight, ChevronDown, Menu, Phone, Sparkles, X } from "lucide-react";
-import { services, telHref } from "@/lib/data";
+import { practices, servicesIn, telHref } from "@/lib/data";
 import Icon from "./Icon";
 
 const nav = [
@@ -63,13 +63,13 @@ export default function Header({ phone, announcement }: { phone: string; announc
       >
         <div className="mx-auto flex h-18 max-w-7xl items-center justify-between gap-6 px-4 sm:px-6 lg:px-8">
           <Link href="/" className="flex shrink-0 items-center" aria-label="Britech Solutions home">
-            <Image src="/images/logo.png" alt="Britech Solutions" width={140} height={53} priority className="h-10 w-auto" />
+            <Image src="/images/logo.svg" alt="Britech Solutions" width={139} height={50} priority unoptimized className="h-11 w-auto" />
           </Link>
 
-          <nav className="hidden items-center gap-1 lg:flex">
+          <nav className="hidden items-center gap-1 self-stretch lg:flex">
             {nav.map((item) =>
               item.mega ? (
-                <div key={item.href} className="group relative">
+                <div key={item.href} className="group flex items-center self-stretch">
                   <Link
                     href={item.href}
                     className={`flex items-center gap-1 rounded-full px-2.5 py-2 text-[15px] font-medium transition xl:px-4 ${
@@ -79,29 +79,52 @@ export default function Header({ phone, announcement }: { phone: string; announc
                     {item.label}
                     <ChevronDown className="h-4 w-4 transition group-hover:rotate-180" />
                   </Link>
-                  <div className="invisible absolute left-1/2 top-full w-[640px] -translate-x-1/2 pt-3 opacity-0 transition-all group-hover:visible group-hover:opacity-100">
-                    <div className="grid grid-cols-2 gap-1 rounded-2xl border border-navy-100 bg-white p-3 shadow-xl shadow-navy-900/10">
-                      {services.map((s) => (
-                        <Link
-                          key={s.slug}
-                          href={`/solutions/${s.slug}`}
-                          className="flex gap-3 rounded-xl p-3 transition hover:bg-navy-50"
-                        >
-                          <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900">
-                            <Icon name={s.icon} className="h-5 w-5" />
-                          </span>
-                          <span>
-                            <span className="block text-sm font-semibold text-navy-900">{s.title}</span>
-                            <span className="line-clamp-1 text-xs text-navy-400">{s.short}</span>
-                          </span>
-                        </Link>
-                      ))}
-                      <Link
-                        href="/solutions"
-                        className="flex items-center justify-center gap-2 rounded-xl bg-navy-900 p-3 text-sm font-semibold text-white transition hover:bg-navy-800"
-                      >
-                        View all solutions <ArrowRight className="h-4 w-4" />
-                      </Link>
+                  {/* Anchored to the sticky header, centred on the page */}
+                  <div className="invisible absolute inset-x-0 top-full opacity-0 transition-all group-hover:visible group-hover:opacity-100">
+                    <div className="mx-auto max-w-5xl px-4">
+                      <div className="grid grid-cols-3 gap-6 rounded-2xl border border-navy-100 bg-white p-5 shadow-xl shadow-navy-900/10">
+                        <div className="space-y-5">
+                          {practices
+                            .filter((p) => p.slug !== "digital")
+                            .map((p) => (
+                              <div key={p.slug}>
+                                <p className="px-3 text-xs font-semibold uppercase tracking-wider text-navy-400">{p.title}</p>
+                                {servicesIn(p.slug).map((s) => (
+                                  <Link key={s.slug} href={`/solutions/${s.slug}`} className="mt-1 flex gap-3 rounded-xl p-3 transition hover:bg-navy-50">
+                                    <span className="flex h-9 w-9 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900">
+                                      <Icon name={s.icon} className="h-5 w-5" />
+                                    </span>
+                                    <span>
+                                      <span className="block text-sm font-semibold text-navy-900">{s.title}</span>
+                                      <span className="line-clamp-2 text-xs text-navy-400">{s.short}</span>
+                                    </span>
+                                  </Link>
+                                ))}
+                              </div>
+                            ))}
+                        </div>
+                        <div className="col-span-2">
+                          <p className="px-3 text-xs font-semibold uppercase tracking-wider text-navy-400">
+                            {practices.find((p) => p.slug === "digital")?.title}
+                          </p>
+                          <div className="mt-1 grid grid-cols-2 gap-1">
+                            {servicesIn("digital").map((s) => (
+                              <Link key={s.slug} href={`/solutions/${s.slug}`} className="flex items-center gap-3 rounded-xl p-2.5 transition hover:bg-navy-50">
+                                <span className="flex h-8 w-8 shrink-0 items-center justify-center rounded-lg bg-navy-50 text-navy-900">
+                                  <Icon name={s.icon} className="h-4 w-4" />
+                                </span>
+                                <span className="text-sm font-semibold text-navy-900">{s.title}</span>
+                              </Link>
+                            ))}
+                          </div>
+                          <Link
+                            href="/solutions"
+                            className="mt-3 flex items-center justify-center gap-2 rounded-xl bg-navy-900 p-3 text-sm font-semibold text-white transition hover:bg-navy-800"
+                          >
+                            View all solutions <ArrowRight className="h-4 w-4" />
+                          </Link>
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </div>
@@ -150,11 +173,15 @@ export default function Header({ phone, announcement }: { phone: string; announc
               </Link>
             ))}
             <div className="mt-2 border-t border-navy-100 pt-3">
-              <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-navy-400">Solutions</p>
-              {services.map((s) => (
-                <Link key={s.slug} href={`/solutions/${s.slug}`} className="block px-3 py-2 text-sm text-navy-700">
-                  {s.title}
-                </Link>
+              {practices.map((p) => (
+                <div key={p.slug} className="mt-2">
+                  <p className="px-3 pb-1 text-xs font-semibold uppercase tracking-wider text-navy-400">{p.title}</p>
+                  {servicesIn(p.slug).map((s) => (
+                    <Link key={s.slug} href={`/solutions/${s.slug}`} className="block px-3 py-2 text-sm text-navy-700">
+                      {s.title}
+                    </Link>
+                  ))}
+                </div>
               ))}
             </div>
             <a

@@ -21,17 +21,17 @@ export default async function OpengraphImage() {
           flexDirection: "column",
           justifyContent: "space-between",
           padding: "72px 80px",
-          background: "linear-gradient(135deg, #0f1029 0%, #1a1c45 60%, #00826c 140%)",
+          background: "linear-gradient(135deg, #0e1027 0%, #191d40 60%, #01639a 140%)",
           color: "white",
           fontFamily: "sans-serif",
         }}
       >
         <img src={logoSrc} alt="" height={96} style={{ height: 96 }} />
         <div style={{ display: "flex", flexDirection: "column" }}>
-          <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1 }}>Smart, secure & scalable</div>
-          <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1, color: "#4fdcba" }}>digital systems.</div>
+          <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1 }}>One Britech. Three practices.</div>
+          <div style={{ fontSize: 64, fontWeight: 800, lineHeight: 1.1, letterSpacing: -1, color: "#62a9d3" }}>Integrated solutions.</div>
           <div style={{ marginTop: 28, fontSize: 28, color: "#c7cae6" }}>
-            Software · Cybersecurity · Data & BI · ERP · AI · Arusha, Tanzania
+            Engineering · Digital Transformation · Business Consultancy · Arusha, Tanzania
           </div>
         </div>
         <div style={{ display: "flex", fontSize: 24, color: "#9a9fcf" }}>britechsolutions.co.tz</div>

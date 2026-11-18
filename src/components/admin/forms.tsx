@@ -58,11 +58,11 @@ export function PostForm({ post, canPublish }: { post?: Post | null; canPublish:
           </p>
           <div className="flex flex-col gap-2">
             {canPublish ? (
-              <SubmitButton name="intent" value="publish" variant="mint" pending={actionPending}>
+              <SubmitButton name="intent" value="publish" variant="brand" pending={actionPending}>
                 {post?.status === "PUBLISHED" ? "Update published post" : "Publish"}
               </SubmitButton>
             ) : (
-              <SubmitButton name="intent" value="review" variant="mint" pending={actionPending}>
+              <SubmitButton name="intent" value="review" variant="brand" pending={actionPending}>
                 Submit for review
               </SubmitButton>
             )}
@@ -97,7 +97,7 @@ export function PostForm({ post, canPublish }: { post?: Post | null; canPublish:
           </Field>
           {canPublish && (
             <label className="flex items-center gap-2 text-sm text-navy-700">
-              <input type="checkbox" name="featured" defaultChecked={post?.featured} className="h-4 w-4 accent-mint-600" />
+              <input type="checkbox" name="featured" defaultChecked={post?.featured} className="h-4 w-4 accent-brand-600" />
               Feature at the top of the blog
             </label>
           )}
@@ -146,12 +146,12 @@ export function ProjectForm({ project }: { project?: Project | null }) {
           <input name="sortOrder" type="number" min={0} max={999} defaultValue={project?.sortOrder ?? 0} className={inputCls} />
         </Field>
         <label className="flex items-center gap-2 self-end pb-3 text-sm text-navy-700">
-          <input type="checkbox" name="published" defaultChecked={project?.published ?? true} className="h-4 w-4 accent-mint-600" />
+          <input type="checkbox" name="published" defaultChecked={project?.published ?? true} className="h-4 w-4 accent-brand-600" />
           Show on website
         </label>
       </div>
       <label className="flex items-start gap-2 rounded-lg bg-navy-50/70 p-3 text-sm text-navy-700">
-        <input type="checkbox" name="isProduct" defaultChecked={project?.isProduct ?? false} className="mt-0.5 h-4 w-4 accent-mint-600" />
+        <input type="checkbox" name="isProduct" defaultChecked={project?.isProduct ?? false} className="mt-0.5 h-4 w-4 accent-brand-600" />
         <span>
           <span className="font-medium text-navy-900">Show as a Britech product</span>
           <span className="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs instead of Our Work. Leave off for client work.</span>
@@ -191,7 +191,7 @@ export function PartnerForm({ partner }: { partner?: Partner | null }) {
           <input name="sortOrder" type="number" min={0} max={999} defaultValue={partner?.sortOrder ?? 0} className={inputCls} />
         </Field>
         <label className="flex items-center gap-2 self-end pb-3 text-sm text-navy-700">
-          <input type="checkbox" name="active" defaultChecked={partner?.active ?? true} className="h-4 w-4 accent-mint-600" />
+          <input type="checkbox" name="active" defaultChecked={partner?.active ?? true} className="h-4 w-4 accent-brand-600" />
           Show on website
         </label>
       </div>
@@ -311,7 +311,7 @@ export function UserRow({ user, isMe }: { user: Pick<User, "id" | "name" | "emai
           </select>
           {isMe && <input type="hidden" name="role" value={user.role} />}
           <label className="flex items-center gap-2 text-sm text-navy-700">
-            <input type="checkbox" name="active" defaultChecked={user.active} disabled={isMe} className="h-4 w-4 accent-mint-600" />
+            <input type="checkbox" name="active" defaultChecked={user.active} disabled={isMe} className="h-4 w-4 accent-brand-600" />
             Active
           </label>
           {isMe && <input type="hidden" name="active" value="on" />}
@@ -434,7 +434,7 @@ export function SmtpForm({ config }: { config: SmtpView }) {
       </div>
       {config.hasPassword && (
         <label className="flex items-center gap-2 text-sm text-navy-600">
-          <input type="checkbox" name="smtp_pass_clear" className="h-4 w-4 accent-mint-600" /> Remove the saved password
+          <input type="checkbox" name="smtp_pass_clear" className="h-4 w-4 accent-brand-600" /> Remove the saved password
         </label>
       )}
       <Field label="From address" hint='Shown as the sender, e.g. "Britech Website <noreply@britechsolutions.co.tz>"'>
@@ -495,7 +495,7 @@ export function TestimonialForm({ testimonial }: { testimonial?: Testimonial | n
           <input name="sortOrder" type="number" min={0} max={999} defaultValue={testimonial?.sortOrder ?? 0} className={inputCls} />
         </Field>
         <label className="flex items-center gap-2 self-end pb-3 text-sm text-navy-700">
-          <input type="checkbox" name="active" defaultChecked={testimonial?.active ?? true} className="h-4 w-4 accent-mint-600" />
+          <input type="checkbox" name="active" defaultChecked={testimonial?.active ?? true} className="h-4 w-4 accent-brand-600" />
           Show on website
         </label>
       </div>

@@ -56,3 +56,6 @@ next-env.d.ts
 
 # design reference export (not part of the site)
 /figma-web
+
+# source documents (company profile, logo masters); the site uses copies in public/ and php-site/
+/files

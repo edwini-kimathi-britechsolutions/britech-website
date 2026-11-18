@@ -4,7 +4,10 @@ import {
   Activity,
   Bot,
   Boxes,
+  Briefcase,
   Building2,
+  Cloud,
+  Cpu,
   Link2,
   Map as MapIcon,
   MapPin,
@@ -28,6 +31,7 @@ import {
   Stethoscope,
   Store,
   Users,
+  Zap,
   type LucideProps,
 } from "lucide-react";
 
@@ -37,7 +41,10 @@ const icons = {
   Activity,
   Bot,
   Boxes,
+  Briefcase,
   Building2,
+  Cloud,
+  Cpu,
   Link2,
   Map: MapIcon,
   MapPin,
@@ -61,6 +68,7 @@ const icons = {
   Stethoscope,
   Store,
   Users,
+  Zap,
 };
 
 export default function Icon({ name, ...props }: { name: string } & LucideProps) {

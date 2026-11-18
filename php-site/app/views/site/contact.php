@@ -8,7 +8,7 @@ $cards = [
     ['Mail', 'Email us', [[$s['email'], 'mailto:' . $s['email']]]],
     ['Phone', 'Call us', array_map(fn ($p) => [$p, tel_href($p)], $phones)],
 ];
-$input = 'w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15';
+$input = 'w-full rounded-lg border border-navy-200 bg-white px-4 py-3 text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15';
 $v = fn (string $k) => e($old[$k] ?? '');
 ?>
 <?= page_hero('Contact', 'Let’s build something brilliant', 'Tell us about your goals and our team will help you find the right solution, from a quick consultation to full-scale delivery.') ?>

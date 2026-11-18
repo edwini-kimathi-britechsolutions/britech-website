@@ -163,7 +163,7 @@ export default function RichEditor({ name, defaultValue }: { name: string; defau
   });
 
   return (
-    <div className="overflow-hidden rounded-xl border border-navy-200 bg-white focus-within:border-mint-500 focus-within:ring-4 focus-within:ring-mint-500/15">
+    <div className="overflow-hidden rounded-xl border border-navy-200 bg-white focus-within:border-brand-500 focus-within:ring-4 focus-within:ring-brand-500/15">
       <input type="hidden" name={name} value={html} />
       {editor ? <Toolbar editor={editor} /> : <div className="h-11 border-b border-navy-100" />}
       <EditorContent editor={editor} />

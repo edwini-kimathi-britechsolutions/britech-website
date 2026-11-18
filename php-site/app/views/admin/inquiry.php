@@ -31,7 +31,7 @@ $btn = 'inline-flex items-center gap-2 rounded-lg bg-white px-4 py-2 text-sm fon
     <div class="whitespace-pre-wrap p-6 leading-relaxed text-navy-700"><?= e($inq['message']) ?></div>
 
     <div class="flex flex-wrap items-center gap-2 border-t border-navy-100 bg-navy-50/50 p-4">
-      <a href="<?= e($replyHref) ?>" class="inline-flex items-center gap-2 rounded-lg bg-mint-500 px-4 py-2 text-sm font-semibold text-navy-950 hover:bg-mint-400"><?= icon('Mail', 'h-4 w-4') ?> Reply by email</a>
+      <a href="<?= e($replyHref) ?>" class="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600"><?= icon('Mail', 'h-4 w-4') ?> Reply by email</a>
       <?php if ($inq['phone']): ?>
       <a href="<?= e(tel_href($inq['phone'])) ?>" class="<?= $btn ?>"><?= icon('Phone', 'h-4 w-4') ?> Call</a>
       <?php endif; ?>

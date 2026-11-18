@@ -1,7 +1,7 @@
 import Image from "next/image";
 import Link from "next/link";
 import { Mail, MapPin, Phone } from "lucide-react";
-import { company, services, telHref } from "@/lib/data";
+import { company, practices, servicesIn, telHref } from "@/lib/data";
 import { getSettings } from "@/lib/content";
 import { FacebookIcon, InstagramIcon, LinkedInIcon, XIcon } from "./Icon";
 
@@ -21,10 +21,9 @@ export default async function Footer() {
       <div className="relative mx-auto max-w-7xl px-4 pb-10 pt-16 sm:px-6 lg:px-8">
         <div className="grid gap-12 lg:grid-cols-12">
           <div className="lg:col-span-3">
-            <Image src="/images/logo-white.png" alt="Britech Solutions" width={150} height={58} className="h-11 w-auto" />
+            <Image src="/images/logo-white.svg" alt="Britech Solutions" width={150} height={54} unoptimized className="h-12 w-auto" />
             <p className="mt-6 max-w-sm leading-relaxed text-navy-300">
-              Simplifying IT for a complex world. Innovative technology solutions for businesses, governments, and organizations in
-              Africa and beyond.
+              {company.summary} Engineering consultancy, digital transformation and business advisory from Arusha, Tanzania.
             </p>
             {socials.length > 0 && (
             <div className="mt-6 flex gap-3">
@@ -47,13 +46,21 @@ export default async function Footer() {
           <div className="lg:col-span-4">
             <h3 className="text-sm font-semibold uppercase tracking-wider text-white">Solutions</h3>
             <ul className="mt-5 space-y-3">
-              {services.map((s) => (
-                <li key={s.slug}>
-                  <Link href={`/solutions/${s.slug}`} className="transition hover:text-white">
-                    {s.title}
-                  </Link>
-                </li>
-              ))}
+              {practices.map((p) => {
+                const list = servicesIn(p.slug);
+                return (
+                  <li key={p.slug}>
+                    <Link href={list.length === 1 ? `/solutions/${list[0].slug}` : `/solutions#${p.slug}`} className="transition hover:text-white">
+                      {p.title}
+                    </Link>
+                  </li>
+                );
+              })}
+              <li>
+                <Link href="/solutions" className="font-medium text-white underline-offset-4 hover:underline">
+                  All solutions
+                </Link>
+              </li>
             </ul>
           </div>
 
@@ -104,7 +111,7 @@ export default async function Footer() {
         </div>
 
         <div className="mt-14 flex flex-col items-center justify-between gap-4 border-t border-white/10 pt-8 text-sm text-navy-400 sm:flex-row">
-          <p>© {new Date().getFullYear()} Britech Solutions. All rights reserved.</p>
+          <p>© {new Date().getFullYear()} {company.legalName}. All rights reserved.</p>
           <p className="font-medium text-navy-300">{company.tagline}</p>
         </div>
       </div>

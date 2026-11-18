@@ -30,6 +30,19 @@ function data(string $key)
     return $data[$key];
 }
 
+/** Services in one of Britech's three practices (engineering, digital, business). */
+function services_in(string $practice): array
+{
+    return array_values(array_filter(data('services'), fn ($s) => $s['practice'] === $practice));
+}
+
+/** Link for a practice: its only service page, or its section on /solutions. */
+function practice_href(array $practice): string
+{
+    $list = services_in($practice['slug']);
+    return count($list) === 1 ? '/solutions/' . $list[0]['slug'] : '/solutions#' . $practice['slug'];
+}
+
 /** Versioned asset URL so browsers pick up new CSS/JS after an update. */
 function asset(string $path): string
 {

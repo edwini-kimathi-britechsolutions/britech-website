@@ -18,7 +18,7 @@ export default function NotFound() {
       <div className="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]" />
       <header className="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
         <Link href="/" aria-label="Britech Solutions home">
-          <Image src="/images/logo.png" alt="Britech Solutions" width={140} height={53} className="h-10 w-auto" priority />
+          <Image src="/images/logo.svg" alt="Britech Solutions" width={139} height={50} className="h-11 w-auto" unoptimized priority />
         </Link>
       </header>
       <main className="relative flex flex-1 items-center justify-center px-4 pb-24">

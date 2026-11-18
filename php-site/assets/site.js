@@ -146,7 +146,7 @@
       var count = Math.min(90, Math.round((w * h) / 16000));
       nodes = [];
       for (var i = 0; i < count; i++) {
-        nodes.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25, mint: Math.random() < 0.15 });
+        nodes.push({ x: Math.random() * w, y: Math.random() * h, vx: (Math.random() - 0.5) * 0.25, vy: (Math.random() - 0.5) * 0.25, accent: Math.random() < 0.15 });
       }
       draw();
     }
@@ -158,15 +158,15 @@
           var d = Math.hypot(a.x - b.x, a.y - b.y);
           if (d < LINK) {
             var alpha = (1 - d / LINK) * 0.14;
-            ctx.strokeStyle = a.mint || b.mint ? "rgba(0,196,160," + alpha * 1.6 + ")" : "rgba(26,28,69," + alpha + ")";
+            ctx.strokeStyle = a.accent || b.accent ? "rgba(1,99,154," + alpha * 1.6 + ")" : "rgba(25,29,64," + alpha + ")";
             ctx.lineWidth = 1;
             ctx.beginPath(); ctx.moveTo(a.x, a.y); ctx.lineTo(b.x, b.y); ctx.stroke();
           }
         }
       }
       nodes.forEach(function (n) {
-        ctx.fillStyle = n.mint ? "rgba(0,196,160,0.9)" : "rgba(26,28,69,0.25)";
-        ctx.beginPath(); ctx.arc(n.x, n.y, n.mint ? 2.4 : 1.6, 0, Math.PI * 2); ctx.fill();
+        ctx.fillStyle = n.accent ? "rgba(1,99,154,0.9)" : "rgba(25,29,64,0.25)";
+        ctx.beginPath(); ctx.arc(n.x, n.y, n.accent ? 2.4 : 1.6, 0, Math.PI * 2); ctx.fill();
       });
     }
     function tick() {

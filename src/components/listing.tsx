@@ -130,7 +130,7 @@ export function SearchForm({
         placeholder={placeholder}
         maxLength={100}
         aria-label={placeholder}
-        className="w-full rounded-lg border border-navy-200 bg-white py-2.5 pl-9 pr-9 text-sm text-navy-900 placeholder:text-navy-400 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15"
+        className="w-full rounded-lg border border-navy-200 bg-white py-2.5 pl-9 pr-9 text-sm text-navy-900 placeholder:text-navy-400 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15"
       />
       {q && (
         <Link href={buildHref(path, keep)} aria-label="Clear search" className="absolute right-2.5 top-1/2 -translate-y-1/2 text-navy-400 hover:text-navy-700">

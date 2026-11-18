@@ -66,7 +66,7 @@ export default async function InquiryPage({ params }: { params: Promise<{ id: st
         <div className="whitespace-pre-wrap p-6 leading-relaxed text-navy-700">{inq.message}</div>
 
         <div className="flex flex-wrap items-center gap-2 border-t border-navy-100 bg-navy-50/50 p-4">
-          <a href={replyHref} className="inline-flex items-center gap-2 rounded-lg bg-mint-500 px-4 py-2 text-sm font-semibold text-navy-950 hover:bg-mint-400">
+          <a href={replyHref} className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2 text-sm font-semibold text-white hover:bg-brand-600">
             <Mail className="h-4 w-4" /> Reply by email
           </a>
           {inq.phone && (

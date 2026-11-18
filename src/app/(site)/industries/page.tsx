@@ -5,11 +5,11 @@ import { ArrowRight } from "lucide-react";
 import Icon from "@/components/Icon";
 import { Reveal } from "@/components/motion";
 import { Container, PageHero } from "@/components/ui";
-import { industries } from "@/lib/data";
+import { industries, sectors } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "Industries",
-  description: "How Britech Solutions supports government, NGOs, agriculture, finance, healthcare, education and conservation.",
+  description: "Sectors Britech Solutions supports with engineering, technology and business consultancy, from hospitality and real estate to government, finance and natural resources.",
 };
 
 export default function IndustriesPage() {
@@ -17,10 +17,22 @@ export default function IndustriesPage() {
     <>
       <PageHero
         eyebrow="Industries"
-        title="Technology for the sectors that shape Africa"
-        text="We bring software, data, and security expertise to institutions in agriculture, health, education, conservation, finance, and governance."
+        title="Expertise for the sectors that shape Africa"
+        text="We bring engineering, technology and business expertise to enterprises, institutions and development programs across these sectors."
       />
-      <section className="py-20 sm:py-24">
+      <section className="pt-16 sm:pt-20">
+        <Container>
+          <h2 className="text-sm font-semibold uppercase tracking-[0.2em] text-navy-500">Sectors we support</h2>
+          <ul className="mt-5 flex flex-wrap gap-2">
+            {sectors.map((s) => (
+              <li key={s} className="rounded-full border border-navy-200 bg-white px-4 py-2 text-sm font-medium text-navy-700">
+                {s}
+              </li>
+            ))}
+          </ul>
+        </Container>
+      </section>
+      <section className="py-12 sm:py-16">
         <Container className="grid gap-5 md:grid-cols-2 lg:grid-cols-3">
           {industries.map((ind, i) => (
             <Reveal key={ind.slug} delay={(i % 3) * 80}>
@@ -49,7 +61,7 @@ export default function IndustriesPage() {
               </div>
               <Link
                 href="/contact"
-                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-mint-500 px-5 py-3 font-semibold text-navy-950 transition hover:bg-mint-400"
+                className="inline-flex shrink-0 items-center justify-center gap-2 rounded-lg bg-brand-500 px-5 py-3 font-semibold text-white transition hover:bg-brand-600"
               >
                 Talk to us <ArrowRight className="h-4 w-4" />
               </Link>

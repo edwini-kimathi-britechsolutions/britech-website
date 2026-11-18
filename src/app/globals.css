@@ -4,26 +4,27 @@
 @theme {
   --font-sans: var(--font-inter), ui-sans-serif, system-ui, sans-serif;
 
-  --color-navy-50: #f2f3fa;
-  --color-navy-100: #e3e5f3;
-  --color-navy-200: #d3d5e3;
-  --color-navy-300: #a3a6bd;
-  --color-navy-400: #767a98;
-  --color-navy-500: #52566f;
-  --color-navy-600: #3c3f5c;
-  --color-navy-700: #282c5f;
-  --color-navy-800: #1f2250;
-  --color-navy-900: #1a1c45;
-  --color-navy-950: #0f1029;
+  /* Brand: official logo navy #191D40 and blue #01639A */
+  --color-navy-50: #f2f3f8;
+  --color-navy-100: #e3e5ef;
+  --color-navy-200: #d2d4e2;
+  --color-navy-300: #a2a5bc;
+  --color-navy-400: #757996;
+  --color-navy-500: #52566e;
+  --color-navy-600: #3b3e5b;
+  --color-navy-700: #2a2e5c;
+  --color-navy-800: #20244f;
+  --color-navy-900: #191d40;
+  --color-navy-950: #0e1027;
 
-  --color-mint-50: #e8fbf6;
-  --color-mint-100: #c6f5e9;
-  --color-mint-200: #8eead3;
-  --color-mint-300: #4fdcba;
-  --color-mint-400: #1ccfa8;
-  --color-mint-500: #00c4a0;
-  --color-mint-600: #00a386;
-  --color-mint-700: #00826c;
+  --color-brand-50: #eaf4fa;
+  --color-brand-100: #cfe5f2;
+  --color-brand-200: #9fcbe5;
+  --color-brand-300: #62a9d3;
+  --color-brand-400: #2a87bf;
+  --color-brand-500: #01639a;
+  --color-brand-600: #01557f;
+  --color-brand-700: #01476a;
 
   --animate-marquee: marquee 40s linear infinite;
   --animate-float: float 6s ease-in-out infinite;
@@ -82,7 +83,7 @@ body {
 }
 
 @utility text-gradient {
-  background-image: linear-gradient(90deg, #00a386 0%, #00c4a0 100%);
+  background-image: linear-gradient(90deg, #191d40 0%, #01639a 100%);
   -webkit-background-clip: text;
   background-clip: text;
   color: transparent;
@@ -131,10 +132,10 @@ body {
   --tw-prose-links: var(--color-navy-900);
   --tw-prose-bold: var(--color-navy-900);
   --tw-prose-counters: var(--color-navy-400);
-  --tw-prose-bullets: var(--color-mint-500);
+  --tw-prose-bullets: var(--color-brand-500);
   --tw-prose-hr: var(--color-navy-100);
   --tw-prose-quotes: var(--color-navy-800);
-  --tw-prose-quote-borders: var(--color-mint-500);
+  --tw-prose-quote-borders: var(--color-brand-500);
   --tw-prose-captions: var(--color-navy-400);
   --tw-prose-code: var(--color-navy-900);
   --tw-prose-pre-code: var(--color-navy-100);

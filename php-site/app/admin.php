@@ -631,7 +631,7 @@ function admin_project_edit(array $user, string $id): void
         . field('Display order', text_input('sortOrder', (string) old($old, $p, 'sortOrder', 0), ['type' => 'number', 'min' => '0', 'max' => '999']), 'Lower numbers show first.')
         . '<div class="self-end pb-3">' . checkbox('published', old_checked($old, $p, 'published', true), 'Show on website') . '</div>'
         . '</div>'
-        . '<label class="flex items-start gap-2 rounded-lg bg-navy-50/70 p-3 text-sm text-navy-700"><input type="checkbox" name="isProduct"' . (old_checked($old, $p, 'isProduct', false) ? ' checked' : '') . ' class="mt-0.5 h-4 w-4 accent-mint-600">'
+        . '<label class="flex items-start gap-2 rounded-lg bg-navy-50/70 p-3 text-sm text-navy-700"><input type="checkbox" name="isProduct"' . (old_checked($old, $p, 'isProduct', false) ? ' checked' : '') . ' class="mt-0.5 h-4 w-4 accent-brand-600">'
         . '<span><span class="font-medium text-navy-900">Show as a Britech product</span><span class="block text-xs text-navy-500">Lists it on the Products page and the home page product tabs instead of Our Work. Leave off for client work.</span></span></label>'
         . submit_button('Save project') . '</form>';
 

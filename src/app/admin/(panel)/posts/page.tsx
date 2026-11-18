@@ -45,7 +45,7 @@ export default async function PostsPage({ searchParams }: { searchParams: Promis
         title="Blog posts"
         text={editor ? "Write, review and publish articles." : "Write articles and submit them for review."}
         action={
-          <Link href="/admin/posts/new" className="inline-flex items-center gap-2 rounded-lg bg-mint-500 px-4 py-2.5 text-sm font-semibold text-navy-950 hover:bg-mint-400">
+          <Link href="/admin/posts/new" className="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">
             <PenLine className="h-4 w-4" /> New post
           </Link>
         }

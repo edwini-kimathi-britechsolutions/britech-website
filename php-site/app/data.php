@@ -7,13 +7,16 @@ return array (
   'company' => 
   array (
     'name' => 'Britech Solutions',
+    'legalName' => 'Britech Solutions Limited',
     'tagline' => 'Driven by Innovation. Powered by Technology',
-    'address' => '25 Mallyse Street, Arusha, Tanzania',
+    'positioning' => 'One Britech. Three practices. Integrated solutions.',
+    'summary' => 'Integrated expertise for infrastructure, organizations and digital ecosystems.',
+    'address' => '3rd Floor, Ngorongoro Tourism Centre, Boma Road, Arusha, Tanzania',
     'email' => 'info@britechsolutions.co.tz',
     'phones' => 
     array (
-      0 => '+255 795 005 903',
-      1 => '+255 763 981 298',
+      0 => '+255 763 981 298',
+      1 => '+255 795 005 903',
     ),
     'social' => 
     array (
@@ -23,11 +26,116 @@ return array (
       'instagram' => 'https://instagram.com',
     ),
   ),
+  'practices' => 
+  array (
+    0 => 
+    array (
+      'slug' => 'engineering',
+      'title' => 'Engineering Consultancy',
+      'icon' => 'Building2',
+      'short' => 'Multidisciplinary design and technical advisory across civil, structural, electrical, renewable energy, mechanical/HVAC, wet services, ICT infrastructure and project coordination.',
+    ),
+    1 => 
+    array (
+      'slug' => 'digital',
+      'title' => 'Digital Transformation & Technology',
+      'icon' => 'Cpu',
+      'short' => 'Enterprise software, web and mobile applications, ERP, systems integration, data and BI, GIS, cybersecurity, cloud infrastructure and AI-enabled transformation.',
+    ),
+    2 => 
+    array (
+      'slug' => 'business',
+      'title' => 'Business & Management Consultancy',
+      'icon' => 'Briefcase',
+      'short' => 'Strategy, process optimization, feasibility studies, project and program management, governance, institutional strengthening and change management.',
+    ),
+  ),
   'services' => 
   array (
     0 => 
     array (
+      'slug' => 'engineering-consultancy',
+      'practice' => 'engineering',
+      'icon' => 'Building2',
+      'title' => 'Engineering Consultancy',
+      'short' => 'Coordinated design and technical advisory for buildings, infrastructure and complex developments.',
+      'headline' => 'Coordinated engineering design for buildings, infrastructure and complex developments.',
+      'intro' => 
+      array (
+        0 => 'Our engineering consultancy practice provides coordinated technical advisory and design services for buildings, infrastructure and complex developments, across civil, structural, electrical, renewable energy, mechanical/HVAC, wet services, ICT infrastructure and project coordination.',
+        1 => 'Engineering assignments are undertaken in accordance with applicable Tanzanian statutory, regulatory and professional requirements, and through appropriately qualified and registered professionals where required.',
+        2 => 'We coordinate across disciplines (architecture and structure, civil and wet services, civil and electrical, architecture and HVAC, architecture and ICT, electrical and solar/BESS, mechanical and structural) so that space, structure, utilities, energy, digital infrastructure and operational requirements are resolved as one system before implementation.',
+      ),
+      'features' => 
+      array (
+        0 => 
+        array (
+          'title' => 'Civil & Structural',
+          'text' => 'Site development, earthworks, roads, drainage, utility corridors, foundations, concrete and steel structures, roof systems, retaining structures and constructability.',
+        ),
+        1 => 
+        array (
+          'title' => 'Electrical & Energy',
+          'text' => 'Load assessment, distribution, substations, transformers, backup generation, lighting, earthing, solar PV, BESS, hybrid power and energy resilience.',
+        ),
+        2 => 
+        array (
+          'title' => 'Mechanical & Wet Services',
+          'text' => 'HVAC, ventilation, mechanical plant, water demand, storage, treatment, filtration, potable water, sewer reticulation and wastewater treatment.',
+        ),
+        3 => 
+        array (
+          'title' => 'ICT & Smart Infrastructure',
+          'text' => 'Fiber, structured cabling, data networks, Wi-Fi, communications infrastructure, ICT rooms, ELV coordination and smart infrastructure.',
+        ),
+        4 => 
+        array (
+          'title' => 'Digital Engineering',
+          'text' => 'CAD/BIM-enabled coordination, GIS, multidisciplinary interface management, engineering information control and coordinated technical documentation.',
+        ),
+        5 => 
+        array (
+          'title' => 'Project & Design Management',
+          'text' => 'Design coordination, program management, QA/QC, technical reviews, risk and issue management, change control and stakeholder interfaces.',
+        ),
+      ),
+    ),
+    1 => 
+    array (
+      'slug' => 'business-management-consultancy',
+      'practice' => 'business',
+      'icon' => 'Briefcase',
+      'title' => 'Business & Management Consultancy',
+      'short' => 'Strategy, process optimization, feasibility studies, project and program management, governance and change management.',
+      'headline' => 'Aligning strategy, operations, technology and implementation.',
+      'intro' => 
+      array (
+        0 => 'Britech works with enterprises, institutions and development programs to align strategy, operations, technology and implementation, translating recommendations into practical systems, processes and measurable improvement.',
+        1 => 'Our consultants work in coordinated teams with Britech’s engineers, technology professionals, project specialists and data experts, so technical design, technology and operating requirements are considered together.',
+      ),
+      'features' => 
+      array (
+        0 => 
+        array (
+          'title' => 'Strategy & Transformation',
+          'text' => 'Corporate and digital strategy, operating models, transformation roadmaps, growth planning and organizational change.',
+        ),
+        1 => 
+        array (
+          'title' => 'Process & Operational Excellence',
+          'text' => 'Process mapping, business process re-engineering, workflow optimization, SOPs, requirements analysis and automation readiness.',
+        ),
+        2 => 
+        array (
+          'title' => 'Projects, Feasibility & Advisory',
+          'text' => 'Project and program management, PMO support, feasibility studies, market research, business cases, risk management and implementation assurance.',
+        ),
+      ),
+    ),
+    2 => 
+    array (
       'slug' => 'mobile-software-development',
+      'practice' => 'digital',
       'icon' => 'Smartphone',
       'title' => 'Mobile & Software Development',
       'short' => 'High-quality web and mobile applications that keep your organization connected and efficient.',
@@ -71,9 +179,10 @@ return array (
         ),
       ),
     ),
-    1 => 
+    3 => 
     array (
       'slug' => 'ai-powered-digital-transformation',
+      'practice' => 'digital',
       'icon' => 'Sparkles',
       'title' => 'AI-Powered Digital Transformation',
       'short' => 'Integrate generative and agentic AI into your operations to optimize processes and accelerate growth.',
@@ -117,9 +226,10 @@ return array (
         ),
       ),
     ),
-    2 => 
+    4 => 
     array (
       'slug' => 'training-support-capacity-building',
+      'practice' => 'digital',
       'icon' => 'GraduationCap',
       'title' => 'Training, Support & Capacity Building',
       'short' => 'We equip your teams with the skills, tools, and ongoing support needed to fully adopt and sustain digital systems.',
@@ -163,9 +273,10 @@ return array (
         ),
       ),
     ),
-    3 => 
+    5 => 
     array (
       'slug' => 'enterprise-software-erp-development',
+      'practice' => 'digital',
       'icon' => 'Layers',
       'title' => 'Enterprise Software & ERP Development',
       'short' => 'Scalable ERP and enterprise solutions that streamline workflows and improve business efficiency.',
@@ -209,9 +320,10 @@ return array (
         ),
       ),
     ),
-    4 => 
+    6 => 
     array (
       'slug' => 'business-intelligence-services',
+      'practice' => 'digital',
       'icon' => 'BarChart3',
       'title' => 'Business Intelligence Services',
       'short' => 'Turn raw data into real-time insights with dashboards, analytics, and reporting tools for smarter decisions.',
@@ -255,9 +367,10 @@ return array (
         ),
       ),
     ),
-    5 => 
+    7 => 
     array (
       'slug' => 'cybersecurity-it-audit',
+      'practice' => 'digital',
       'icon' => 'ShieldCheck',
       'title' => 'Cybersecurity & IT Audit Services',
       'short' => 'End-to-end cybersecurity and IT audit services to stay secure, compliant, and resilient against evolving threats.',
@@ -301,9 +414,52 @@ return array (
         ),
       ),
     ),
-    6 => 
+    8 => 
+    array (
+      'slug' => 'cloud-infrastructure',
+      'practice' => 'digital',
+      'icon' => 'Cloud',
+      'title' => 'Cloud & Infrastructure',
+      'short' => 'Cloud architecture and hosting, infrastructure and network planning, backup, resilience and deployment.',
+      'headline' => 'Reliable infrastructure for the systems your organization depends on.',
+      'intro' => 
+      array (
+        0 => 'We design and run the cloud and on-premise infrastructure that business systems depend on, from architecture and hosting to networks, backup and deployment.',
+        1 => 'As an accredited .tz domain registrar, Britech hosts domains and accounts on secure, high-performance infrastructure.',
+      ),
+      'features' => 
+      array (
+        0 => 
+        array (
+          'title' => 'Cloud Architecture & Hosting',
+          'text' => 'Cloud and hosted environments designed for the performance, security and cost your systems need.',
+        ),
+        1 => 
+        array (
+          'title' => 'Infrastructure Planning',
+          'text' => 'On-premise, cloud and hybrid infrastructure planned for scale, performance and resilience.',
+        ),
+        2 => 
+        array (
+          'title' => 'Backup & Resilience',
+          'text' => 'Backup, recovery and continuity arrangements that keep systems and data available.',
+        ),
+        3 => 
+        array (
+          'title' => 'Network Architecture',
+          'text' => 'Network design that connects sites, users and systems securely.',
+        ),
+        4 => 
+        array (
+          'title' => 'DevOps & Deployment',
+          'text' => 'Repeatable deployment and release practices that get software into production reliably.',
+        ),
+      ),
+    ),
+    9 => 
     array (
       'slug' => 'digital-strategy-it-consulting',
+      'practice' => 'digital',
       'icon' => 'Compass',
       'title' => 'Digital Strategy & IT Consulting',
       'short' => 'Align IT investments with business objectives to ensure maximum return and long-term value.',
@@ -352,58 +508,76 @@ return array (
   array (
     0 => 
     array (
-      'value' => '300+',
-      'label' => 'Clients Served',
+      'value' => '8+',
+      'label' => 'Years of growth & innovation',
     ),
     1 => 
     array (
-      'value' => '~200',
-      'label' => '.tz Domains Hosted',
+      'value' => '50+',
+      'label' => 'Clients served',
     ),
     2 => 
     array (
       'value' => '10+',
-      'label' => 'Mobile Apps Shipped',
+      'label' => 'Engineering projects delivered',
     ),
     3 => 
     array (
-      'value' => '7 Years',
-      'label' => 'Of Impact',
+      'value' => '3',
+      'label' => 'Integrated professional practices',
     ),
   ),
   'highlights' => 
   array (
     0 => 
     array (
+      'title' => 'Three Integrated Practices',
+      'text' => 'Engineers, technology professionals, project specialists, data experts and business consultants working in coordinated teams.',
+      'icon' => 'Layers',
+    ),
+    1 => 
+    array (
+      'title' => 'Engineering Delivery',
+      'text' => '10+ engineering projects delivered, through appropriately qualified and registered professionals where required.',
+      'icon' => 'Building2',
+    ),
+    2 => 
+    array (
+      'title' => 'Own Digital Products',
+      'text' => 'HESABU, Foresta360, Shamba BI and the Britech Universal DDI Product Suite, alongside platforms such as RASIFlow and Resulynx.',
+      'icon' => 'Package',
+    ),
+    3 => 
+    array (
       'title' => 'Compliance & Integrity',
       'text' => 'We operate in full compliance with Tanzanian laws and ICT regulations, upholding integrity, transparency, and accountability.',
       'icon' => 'Scale',
     ),
-    1 => 
+    4 => 
     array (
       'title' => 'Domain Registrar & Hosting',
       'text' => 'Accredited .tz domain registrar with nearly 200 domains and hosted accounts on secure, high-performance infrastructure.',
       'icon' => 'Globe',
     ),
-    2 => 
+    5 => 
     array (
       'title' => 'Custom Mobile Applications',
       'text' => '10+ custom iOS and Android apps built with Flutter and React Native for agriculture, health, and finance.',
       'icon' => 'Smartphone',
     ),
-    3 => 
+    6 => 
     array (
       'title' => 'Professional Expertise',
       'text' => 'Leadership certified in PMP, CISA, ITIL, and CISSP, bringing global best practice in delivery, security and governance.',
       'icon' => 'BadgeCheck',
     ),
-    4 => 
+    7 => 
     array (
       'title' => 'Client Base',
-      'text' => 'Over 300 clients across agriculture, health, education, and finance with long-term partnerships.',
+      'text' => 'More than 50 clients served, with long-term partnerships across the public sector, development programs and business.',
       'icon' => 'Users',
     ),
-    5 => 
+    8 => 
     array (
       'title' => 'Bilingual Training & Support',
       'text' => 'Human-centered training and helpdesk support delivered in English and Kiswahili, matched to each user’s role.',
@@ -600,24 +774,48 @@ return array (
   array (
     0 => 
     array (
-      'title' => 'Discovery & Assessment',
-      'text' => 'We begin every engagement by understanding your institutional context, stakeholders, technical environment, and objectives.',
+      'title' => 'Strategy',
+      'text' => 'Business goals and outcomes.',
     ),
     1 => 
     array (
-      'title' => 'Strategy & Design',
-      'text' => 'We develop evidence-based strategies and user-centered designs that align technology with your priorities and users’ needs.',
+      'title' => 'Assess',
+      'text' => 'Technical, digital and operational needs.',
     ),
     2 => 
     array (
-      'title' => 'Implementation & Delivery',
-      'text' => 'We build and deploy using agile methods, with regular stakeholder engagement, quality assurance, and iterative improvement.',
+      'title' => 'Design',
+      'text' => 'Engineering, systems and processes.',
     ),
     3 => 
     array (
-      'title' => 'Capacity Building & Handover',
-      'text' => 'We transfer knowledge and build internal capacity for sustainable adoption, with full documentation and ongoing support.',
+      'title' => 'Implement',
+      'text' => 'Deployment and delivery.',
     ),
+    4 => 
+    array (
+      'title' => 'Assure',
+      'text' => 'Quality assurance, security and optimization.',
+    ),
+  ),
+  'sectors' => 
+  array (
+    0 => 'Hospitality & Tourism',
+    1 => 'Real Estate',
+    2 => 'Agriculture & Agribusiness',
+    3 => 'Development Programs',
+    4 => 'Financial Services',
+    5 => 'Government & Public Sector',
+    6 => 'Education',
+    7 => 'Healthcare',
+    8 => 'Logistics & Trade',
+    9 => 'Environment & Natural Resources',
+    10 => 'SMEs & Corporate Enterprises',
+  ),
+  'positioning' => 
+  array (
+    0 => 'Physical infrastructure, digital infrastructure and business infrastructure. Modern projects rarely fit within one discipline. Britech’s operating model brings engineers, technology professionals, project specialists, data experts and business consultants into coordinated teams, so that technical design, technology and operating requirements are considered together.',
+    1 => 'Our leadership includes professionals with credentials in project management, cybersecurity, service management and information systems assurance, including PMP, CISA, CISSP and ITIL. Britech’s established digital portfolio spans enterprise systems, mobile applications, data platforms and sector-specific solutions.',
   ),
   'industries' => 
   array (
@@ -817,16 +1015,19 @@ return array (
   ),
   'inquiryServices' => 
   array (
-    0 => 'Mobile & Software Development',
-    1 => 'AI-Powered Digital Transformation',
-    2 => 'Enterprise Software & ERP',
-    3 => 'Business Intelligence',
-    4 => 'Cybersecurity & IT Audit',
-    5 => 'Digital Strategy & IT Consulting',
-    6 => 'Training & Support',
-    7 => 'Bulk SMS (Njiwa)',
-    8 => 'Product demo',
-    9 => 'Domain & Hosting',
-    10 => 'Other',
+    0 => 'Engineering Consultancy',
+    1 => 'Business & Management Consultancy',
+    2 => 'Mobile & Software Development',
+    3 => 'AI-Powered Digital Transformation',
+    4 => 'Enterprise Software & ERP',
+    5 => 'Business Intelligence',
+    6 => 'Cybersecurity & IT Audit',
+    7 => 'Digital Strategy & IT Consulting',
+    8 => 'Cloud & Infrastructure',
+    9 => 'Training & Support',
+    10 => 'Bulk SMS (Njiwa)',
+    11 => 'Product demo',
+    12 => 'Domain & Hosting',
+    13 => 'Other',
   ),
 );

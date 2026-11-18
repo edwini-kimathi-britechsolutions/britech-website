@@ -1,14 +1,15 @@
 import type { Metadata } from "next";
 import CTA from "@/components/CTA";
-import { Eye, Target } from "lucide-react";
+import Link from "next/link";
+import { ArrowRight, Eye, Target } from "lucide-react";
 import Icon from "@/components/Icon";
 import { CountUp } from "@/components/motion";
 import { Container, PageHero, PartnerMarquee, SectionHeading } from "@/components/ui";
-import { engagementProcess, highlights, stats, values } from "@/lib/data";
+import { engagementProcess, highlights, positioning, practices, servicesIn, stats, values } from "@/lib/data";
 
 export const metadata: Metadata = {
   title: "About Britech",
-  description: "Seven years of growth, innovation, and impact. Learn about Britech Solutions’ mission, vision, and values.",
+  description: "Britech Solutions Limited is a Tanzania-based multidisciplinary professional services and technology company: engineering, digital transformation and business consultancy.",
 };
 
 export default function AboutPage() {
@@ -16,18 +17,19 @@ export default function AboutPage() {
     <>
       <PageHero
         eyebrow="About Britech"
-        title="Seven years of growth, innovation & impact"
-        text="We were founded with a mission to solve real-world challenges through technology, delivering digital solutions that transform institutions, empower communities, and shape a better future."
+        title="One Britech. Three practices. Integrated solutions."
+        text="For more than eight years we have helped clients solve real-world challenges, and today we bring engineering, technology and business expertise together in one integrated team."
       />
 
       <section className="py-20 sm:py-24">
         <Container className="grid items-center gap-14 lg:grid-cols-2">
           <div>
-            <SectionHeading center={false} eyebrow="Who we are" title="Innovation, trust, and impact" />
+            <SectionHeading center={false} eyebrow="Who we are" title="Built for complex, multidisciplinary challenges" />
             <div className="mt-6 space-y-4 text-lg leading-relaxed text-navy-500">
               <p>
-                Britech Solutions is proud to mark seven years of growth, innovation, and impact. It has been an inspiring journey filled
-                with accomplishments, valuable lessons, and milestones that reflect our resilience, creativity, and shared purpose.
+                Britech Solutions Limited is a Tanzania-based multidisciplinary professional services and technology company. We integrate
+                engineering consultancy, digital transformation and business advisory capabilities to help clients design, modernize and
+                operate the physical, digital and organizational systems on which performance depends.
               </p>
               <p>
                 We extend our heartfelt appreciation to every member of the Britech team, our clients, technology partners, and
@@ -76,16 +78,49 @@ export default function AboutPage() {
         </Container>
       </section>
 
+      {/* Practices & positioning */}
+      <section className="border-y border-navy-100 bg-navy-50/50 py-20 sm:py-24">
+        <Container>
+          <SectionHeading center={false} eyebrow="Our positioning" title="Physical, digital and business infrastructure" />
+          <div className="mt-6 max-w-3xl space-y-4 text-lg leading-relaxed text-navy-500">
+            {positioning.map((p) => (
+              <p key={p.slice(0, 24)}>{p}</p>
+            ))}
+          </div>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {practices.map((pr) => {
+              const list = servicesIn(pr.slug);
+              return (
+                <Link
+                  key={pr.slug}
+                  href={list.length === 1 ? `/solutions/${list[0].slug}` : `/solutions#${pr.slug}`}
+                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5"
+                >
+                  <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-white">
+                    <Icon name={pr.icon} className="h-6 w-6" />
+                  </span>
+                  <h3 className="mt-5 text-lg font-semibold text-navy-900">{pr.title}</h3>
+                  <p className="mt-2 flex-1 leading-relaxed text-navy-500">{pr.short}</p>
+                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
+                    Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
+                  </span>
+                </Link>
+              );
+            })}
+          </div>
+        </Container>
+      </section>
+
       {/* How we work */}
-      <section className="pb-20 sm:pb-24">
+      <section className="py-20 sm:py-24">
         <Container>
           <SectionHeading
             center={false}
             eyebrow="How we work"
-            title="From discovery to handover"
-            text="We combine strategic insight, technical capability, cybersecurity awareness, and local context, with accountability from inception to handover."
+            title="One integrated delivery model"
+            text="Every engagement moves from business goals to assurance, with engineering, technology and operational requirements considered together."
           />
-          <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-navy-100 bg-navy-100 sm:grid-cols-2 lg:grid-cols-4">
+          <ol className="mt-12 grid gap-px overflow-hidden rounded-3xl border border-navy-100 bg-navy-100 sm:grid-cols-2 lg:grid-cols-5">
             {engagementProcess.map((step, i) => (
               <li key={step.title} className="bg-white p-7">
                 <span className="flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-semibold text-white">

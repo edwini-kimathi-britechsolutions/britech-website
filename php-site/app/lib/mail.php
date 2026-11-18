@@ -144,11 +144,11 @@ function send_inquiry_notification(array $inq, string $adminUrl): void
         $text .= "{$k}: {$v}\n";
     }
     $m->isHTML(true);
-    $m->Body = '<div style="font-family:Arial,sans-serif;color:#1a1c45;max-width:600px">'
+    $m->Body = '<div style="font-family:Arial,sans-serif;color:#191d40;max-width:600px">'
         . '<h2 style="margin:0 0 16px">New inquiry from the website</h2>'
         . '<table style="border-collapse:collapse;width:100%">' . $tableRows . '</table>'
         . '<div style="margin:20px 0;padding:16px;background:#f2f3fa;border-radius:8px;white-space:pre-wrap">' . e($inq['message']) . '</div>'
-        . '<p><a href="' . e($adminUrl) . '" style="color:#00826c">Open in the admin portal</a> · Reply to this email to answer ' . e($name) . ' directly.</p>'
+        . '<p><a href="' . e($adminUrl) . '" style="color:#01639a">Open in the admin portal</a> · Reply to this email to answer ' . e($name) . ' directly.</p>'
         . '</div>';
     $m->AltBody = $text . "\n" . $inq['message'] . "\n\nView in admin: " . $adminUrl;
     $m->send();

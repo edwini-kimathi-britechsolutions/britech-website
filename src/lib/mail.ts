@@ -77,13 +77,13 @@ export async function sendInquiryNotification(inq: Inquiry, adminUrl: string) {
     replyTo: { name, address: inq.email },
     subject: oneLine(`New website inquiry: ${inq.service} (${inq.company || name})`).slice(0, 200),
     text: `${rows.map(([k, v]) => `${k}: ${v}`).join("\n")}\n\n${inq.message}\n\nView in admin: ${adminUrl}`,
-    html: `<div style="font-family:Arial,sans-serif;color:#1a1c45;max-width:600px">
+    html: `<div style="font-family:Arial,sans-serif;color:#191d40;max-width:600px">
       <h2 style="margin:0 0 16px">New inquiry from the website</h2>
       <table style="border-collapse:collapse;width:100%">${rows
         .map(([k, v]) => `<tr><td style="padding:6px 12px 6px 0;color:#52566f;white-space:nowrap">${k}</td><td style="padding:6px 0"><strong>${esc(v)}</strong></td></tr>`)
         .join("")}</table>
       <div style="margin:20px 0;padding:16px;background:#f2f3fa;border-radius:8px;white-space:pre-wrap">${esc(inq.message)}</div>
-      <p><a href="${esc(adminUrl)}" style="color:#00826c">Open in the admin portal</a> · Reply to this email to answer ${esc(name)} directly.</p>
+      <p><a href="${esc(adminUrl)}" style="color:#01639a">Open in the admin portal</a> · Reply to this email to answer ${esc(name)} directly.</p>
     </div>`,
   });
 }

@@ -16,7 +16,7 @@ $sep = '<span class="mx-1 h-5 w-px bg-navy-100"></span>';
     <?= field('Summary', textarea('excerpt', old($old, $post, 'excerpt'), 3, ['required' => true, 'maxlength' => '400']), 'Shown on the blog list and in search results (max 400 characters).') ?>
     <div>
       <span class="mb-1.5 block text-sm font-medium text-navy-800">Article</span>
-      <div data-rich-editor class="overflow-hidden rounded-xl border border-navy-200 bg-white focus-within:border-mint-500 focus-within:ring-4 focus-within:ring-mint-500/15">
+      <div data-rich-editor class="overflow-hidden rounded-xl border border-navy-200 bg-white focus-within:border-brand-500 focus-within:ring-4 focus-within:ring-brand-500/15">
         <input type="hidden" name="content" value="<?= e($content) ?>" data-editor-input>
         <div data-editor-toolbar class="sticky top-0 z-10 flex flex-wrap items-center gap-0.5 border-b border-navy-100 bg-white/95 p-1.5 backdrop-blur">
           <?= $tool('h2', 'Heading', 'Heading2') ?><?= $tool('h3', 'Subheading', 'Heading3') ?><?= $sep ?>
@@ -42,8 +42,8 @@ $sep = '<span class="mx-1 h-5 w-px bg-navy-100"></span>';
       <p class="text-xs text-navy-500">Status: <strong class="text-navy-800"><?= e($status ? strtolower($status) : 'new') ?></strong><?= $canPublish ? '' : ' · An editor reviews and publishes your posts.' ?></p>
       <div class="flex flex-col gap-2">
         <?= $canPublish
-            ? submit_button($status === 'PUBLISHED' ? 'Update published post' : 'Publish', 'mint', 'intent', 'publish')
-            : submit_button('Submit for review', 'mint', 'intent', 'review') ?>
+            ? submit_button($status === 'PUBLISHED' ? 'Update published post' : 'Publish', 'brand', 'intent', 'publish')
+            : submit_button('Submit for review', 'brand', 'intent', 'review') ?>
         <?= submit_button($status === 'PUBLISHED' ? 'Unpublish (save as draft)' : 'Save draft', 'secondary', 'intent', 'draft') ?>
       </div>
     </div>

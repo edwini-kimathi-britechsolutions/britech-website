@@ -3,7 +3,7 @@ defined('BRITECH') || exit;
 
 /* Admin form pieces — same look as the React admin (fields.tsx, StatusBadge.tsx). */
 
-const INPUT_CLS = 'w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-mint-500 focus:ring-4 focus:ring-mint-500/15';
+const INPUT_CLS = 'w-full rounded-lg border border-navy-200 bg-white px-3.5 py-2.5 text-sm text-navy-900 placeholder:text-navy-300 outline-none transition focus:border-brand-500 focus:ring-4 focus:ring-brand-500/15';
 const POST_CATEGORIES = ['News', 'Insights', 'Cybersecurity', 'Data & BI', 'Software', 'AI', 'Events', 'Case Study'];
 
 function field(string $label, string $control, string $hint = ''): string
@@ -44,7 +44,7 @@ function select(string $name, array $options, ?string $selected, string $extraCl
 function checkbox(string $name, bool $checked, string $label, bool $disabled = false): string
 {
     return '<label class="flex items-center gap-2 text-sm text-navy-700"><input type="checkbox" name="' . e($name) . '"' . ($checked ? ' checked' : '') . ($disabled ? ' disabled' : '')
-        . ' class="h-4 w-4 accent-mint-600"> ' . e($label) . '</label>';
+        . ' class="h-4 w-4 accent-brand-600"> ' . e($label) . '</label>';
 }
 
 function submit_button(string $label, string $variant = 'primary', string $name = '', string $value = ''): string
@@ -52,7 +52,7 @@ function submit_button(string $label, string $variant = 'primary', string $name 
     $styles = [
         'primary' => 'bg-navy-900 text-white hover:bg-navy-800',
         'secondary' => 'bg-white text-navy-800 ring-1 ring-navy-200 hover:bg-navy-50',
-        'mint' => 'bg-mint-500 text-navy-950 hover:bg-mint-400',
+        'brand' => 'bg-brand-500 text-white hover:bg-brand-600',
         'danger' => 'bg-white text-red-600 ring-1 ring-red-200 hover:bg-red-50',
     ];
     return '<button type="submit"' . ($name !== '' ? ' name="' . e($name) . '" value="' . e($value) . '"' : '')
@@ -123,7 +123,7 @@ function notice(string $html, string $tone = 'ok'): string
 
 function add_button(string $href, string $label, string $icon = 'Plus'): string
 {
-    return '<a href="' . e($href) . '" class="inline-flex items-center gap-2 rounded-lg bg-mint-500 px-4 py-2.5 text-sm font-semibold text-navy-950 hover:bg-mint-400">' . icon($icon, 'h-4 w-4') . ' ' . e($label) . '</a>';
+    return '<a href="' . e($href) . '" class="inline-flex items-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white hover:bg-brand-600">' . icon($icon, 'h-4 w-4') . ' ' . e($label) . '</a>';
 }
 
 /** Delete form for edit pages. */

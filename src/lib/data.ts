@@ -1,9 +1,12 @@
 export const company = {
   name: "Britech Solutions",
+  legalName: "Britech Solutions Limited",
   tagline: "Driven by Innovation. Powered by Technology",
-  address: "25 Mallyse Street, Arusha, Tanzania",
+  positioning: "One Britech. Three practices. Integrated solutions.",
+  summary: "Integrated expertise for infrastructure, organizations and digital ecosystems.",
+  address: "3rd Floor, Ngorongoro Tourism Centre, Boma Road, Arusha, Tanzania",
   email: "info@britechsolutions.co.tz",
-  phones: ["+255 795 005 903", "+255 763 981 298"],
+  phones: ["+255 763 981 298", "+255 795 005 903"],
   social: {
     linkedin: "https://linkedin.com",
     twitter: "https://twitter.com",
@@ -14,8 +17,37 @@ export const company = {
 
 export const telHref = (p: string) => `tel:${p.replace(/\s/g, "")}`;
 
+/** Britech's three professional practices (company profile). */
+export type PracticeSlug = "engineering" | "digital" | "business";
+export type Practice = { slug: PracticeSlug; title: string; short: string; icon: string };
+
+export const practices: Practice[] = [
+  {
+    slug: "engineering",
+    title: "Engineering Consultancy",
+    icon: "Building2",
+    short:
+      "Multidisciplinary design and technical advisory across civil, structural, electrical, renewable energy, mechanical/HVAC, wet services, ICT infrastructure and project coordination.",
+  },
+  {
+    slug: "digital",
+    title: "Digital Transformation & Technology",
+    icon: "Cpu",
+    short:
+      "Enterprise software, web and mobile applications, ERP, systems integration, data and BI, GIS, cybersecurity, cloud infrastructure and AI-enabled transformation.",
+  },
+  {
+    slug: "business",
+    title: "Business & Management Consultancy",
+    icon: "Briefcase",
+    short:
+      "Strategy, process optimization, feasibility studies, project and program management, governance, institutional strengthening and change management.",
+  },
+];
+
 export type Service = {
   slug: string;
+  practice: PracticeSlug;
   title: string;
   short: string;
   headline: string;
@@ -26,7 +58,48 @@ export type Service = {
 
 export const services: Service[] = [
   {
+    slug: "engineering-consultancy",
+    practice: "engineering",
+    icon: "Building2",
+    title: "Engineering Consultancy",
+    short:
+      "Coordinated design and technical advisory for buildings, infrastructure and complex developments.",
+    headline: "Coordinated engineering design for buildings, infrastructure and complex developments.",
+    intro: [
+      "Our engineering consultancy practice provides coordinated technical advisory and design services for buildings, infrastructure and complex developments, across civil, structural, electrical, renewable energy, mechanical/HVAC, wet services, ICT infrastructure and project coordination.",
+      "Engineering assignments are undertaken in accordance with applicable Tanzanian statutory, regulatory and professional requirements, and through appropriately qualified and registered professionals where required.",
+      "We coordinate across disciplines (architecture and structure, civil and wet services, civil and electrical, architecture and HVAC, architecture and ICT, electrical and solar/BESS, mechanical and structural) so that space, structure, utilities, energy, digital infrastructure and operational requirements are resolved as one system before implementation.",
+    ],
+    features: [
+      { title: "Civil & Structural", text: "Site development, earthworks, roads, drainage, utility corridors, foundations, concrete and steel structures, roof systems, retaining structures and constructability." },
+      { title: "Electrical & Energy", text: "Load assessment, distribution, substations, transformers, backup generation, lighting, earthing, solar PV, BESS, hybrid power and energy resilience." },
+      { title: "Mechanical & Wet Services", text: "HVAC, ventilation, mechanical plant, water demand, storage, treatment, filtration, potable water, sewer reticulation and wastewater treatment." },
+      { title: "ICT & Smart Infrastructure", text: "Fiber, structured cabling, data networks, Wi-Fi, communications infrastructure, ICT rooms, ELV coordination and smart infrastructure." },
+      { title: "Digital Engineering", text: "CAD/BIM-enabled coordination, GIS, multidisciplinary interface management, engineering information control and coordinated technical documentation." },
+      { title: "Project & Design Management", text: "Design coordination, program management, QA/QC, technical reviews, risk and issue management, change control and stakeholder interfaces." },
+    ],
+  },
+  {
+    slug: "business-management-consultancy",
+    practice: "business",
+    icon: "Briefcase",
+    title: "Business & Management Consultancy",
+    short:
+      "Strategy, process optimization, feasibility studies, project and program management, governance and change management.",
+    headline: "Aligning strategy, operations, technology and implementation.",
+    intro: [
+      "Britech works with enterprises, institutions and development programs to align strategy, operations, technology and implementation, translating recommendations into practical systems, processes and measurable improvement.",
+      "Our consultants work in coordinated teams with Britech’s engineers, technology professionals, project specialists and data experts, so technical design, technology and operating requirements are considered together.",
+    ],
+    features: [
+      { title: "Strategy & Transformation", text: "Corporate and digital strategy, operating models, transformation roadmaps, growth planning and organizational change." },
+      { title: "Process & Operational Excellence", text: "Process mapping, business process re-engineering, workflow optimization, SOPs, requirements analysis and automation readiness." },
+      { title: "Projects, Feasibility & Advisory", text: "Project and program management, PMO support, feasibility studies, market research, business cases, risk management and implementation assurance." },
+    ],
+  },
+  {
     slug: "mobile-software-development",
+    practice: "digital",
     icon: "Smartphone",
     title: "Mobile & Software Development",
     short:
@@ -47,6 +120,7 @@ export const services: Service[] = [
   },
   {
     slug: "ai-powered-digital-transformation",
+    practice: "digital",
     icon: "Sparkles",
     title: "AI-Powered Digital Transformation",
     short:
@@ -67,6 +141,7 @@ export const services: Service[] = [
   },
   {
     slug: "training-support-capacity-building",
+    practice: "digital",
     icon: "GraduationCap",
     title: "Training, Support & Capacity Building",
     short:
@@ -87,6 +162,7 @@ export const services: Service[] = [
   },
   {
     slug: "enterprise-software-erp-development",
+    practice: "digital",
     icon: "Layers",
     title: "Enterprise Software & ERP Development",
     short:
@@ -107,6 +183,7 @@ export const services: Service[] = [
   },
   {
     slug: "business-intelligence-services",
+    practice: "digital",
     icon: "BarChart3",
     title: "Business Intelligence Services",
     short:
@@ -127,6 +204,7 @@ export const services: Service[] = [
   },
   {
     slug: "cybersecurity-it-audit",
+    practice: "digital",
     icon: "ShieldCheck",
     title: "Cybersecurity & IT Audit Services",
     short:
@@ -146,7 +224,27 @@ export const services: Service[] = [
     ],
   },
   {
+    slug: "cloud-infrastructure",
+    practice: "digital",
+    icon: "Cloud",
+    title: "Cloud & Infrastructure",
+    short: "Cloud architecture and hosting, infrastructure and network planning, backup, resilience and deployment.",
+    headline: "Reliable infrastructure for the systems your organization depends on.",
+    intro: [
+      "We design and run the cloud and on-premise infrastructure that business systems depend on, from architecture and hosting to networks, backup and deployment.",
+      "As an accredited .tz domain registrar, Britech hosts domains and accounts on secure, high-performance infrastructure.",
+    ],
+    features: [
+      { title: "Cloud Architecture & Hosting", text: "Cloud and hosted environments designed for the performance, security and cost your systems need." },
+      { title: "Infrastructure Planning", text: "On-premise, cloud and hybrid infrastructure planned for scale, performance and resilience." },
+      { title: "Backup & Resilience", text: "Backup, recovery and continuity arrangements that keep systems and data available." },
+      { title: "Network Architecture", text: "Network design that connects sites, users and systems securely." },
+      { title: "DevOps & Deployment", text: "Repeatable deployment and release practices that get software into production reliably." },
+    ],
+  },
+  {
     slug: "digital-strategy-it-consulting",
+    practice: "digital",
     icon: "Compass",
     title: "Digital Strategy & IT Consulting",
     short:
@@ -168,18 +266,21 @@ export const services: Service[] = [
 ];
 
 export const stats = [
-  { value: "300+", label: "Clients Served" },
-  { value: "~200", label: ".tz Domains Hosted" },
-  { value: "10+", label: "Mobile Apps Shipped" },
-  { value: "7 Years", label: "Of Impact" },
+  { value: "8+", label: "Years of growth & innovation" },
+  { value: "50+", label: "Clients served" },
+  { value: "10+", label: "Engineering projects delivered" },
+  { value: "3", label: "Integrated professional practices" },
 ];
 
 export const highlights = [
+  { title: "Three Integrated Practices", text: "Engineers, technology professionals, project specialists, data experts and business consultants working in coordinated teams.", icon: "Layers" },
+  { title: "Engineering Delivery", text: "10+ engineering projects delivered, through appropriately qualified and registered professionals where required.", icon: "Building2" },
+  { title: "Own Digital Products", text: "HESABU, Foresta360, Shamba BI and the Britech Universal DDI Product Suite, alongside platforms such as RASIFlow and Resulynx.", icon: "Package" },
   { title: "Compliance & Integrity", text: "We operate in full compliance with Tanzanian laws and ICT regulations, upholding integrity, transparency, and accountability.", icon: "Scale" },
   { title: "Domain Registrar & Hosting", text: "Accredited .tz domain registrar with nearly 200 domains and hosted accounts on secure, high-performance infrastructure.", icon: "Globe" },
   { title: "Custom Mobile Applications", text: "10+ custom iOS and Android apps built with Flutter and React Native for agriculture, health, and finance.", icon: "Smartphone" },
   { title: "Professional Expertise", text: "Leadership certified in PMP, CISA, ITIL, and CISSP, bringing global best practice in delivery, security and governance.", icon: "BadgeCheck" },
-  { title: "Client Base", text: "Over 300 clients across agriculture, health, education, and finance with long-term partnerships.", icon: "Users" },
+  { title: "Client Base", text: "More than 50 clients served, with long-term partnerships across the public sector, development programs and business.", icon: "Users" },
   { title: "Bilingual Training & Support", text: "Human-centered training and helpdesk support delivered in English and Kiswahili, matched to each user’s role.", icon: "GraduationCap" },
 ];
 
@@ -273,24 +374,34 @@ export const serviceProcess: Record<string, { approach: string[]; deliverables: 
   },
 };
 
-/** Britech's engagement model, used on the About page. */
+/** Britech's integrated delivery model (company profile), used on the home and About pages. */
 export const engagementProcess = [
-  {
-    title: "Discovery & Assessment",
-    text: "We begin every engagement by understanding your institutional context, stakeholders, technical environment, and objectives.",
-  },
-  {
-    title: "Strategy & Design",
-    text: "We develop evidence-based strategies and user-centered designs that align technology with your priorities and users’ needs.",
-  },
-  {
-    title: "Implementation & Delivery",
-    text: "We build and deploy using agile methods, with regular stakeholder engagement, quality assurance, and iterative improvement.",
-  },
-  {
-    title: "Capacity Building & Handover",
-    text: "We transfer knowledge and build internal capacity for sustainable adoption, with full documentation and ongoing support.",
-  },
+  { title: "Strategy", text: "Business goals and outcomes." },
+  { title: "Assess", text: "Technical, digital and operational needs." },
+  { title: "Design", text: "Engineering, systems and processes." },
+  { title: "Implement", text: "Deployment and delivery." },
+  { title: "Assure", text: "Quality assurance, security and optimization." },
+];
+
+/** Sectors Britech supports (company profile). */
+export const sectors = [
+  "Hospitality & Tourism",
+  "Real Estate",
+  "Agriculture & Agribusiness",
+  "Development Programs",
+  "Financial Services",
+  "Government & Public Sector",
+  "Education",
+  "Healthcare",
+  "Logistics & Trade",
+  "Environment & Natural Resources",
+  "SMEs & Corporate Enterprises",
+];
+
+/** Britech's positioning (company profile), used on the About page. */
+export const positioning = [
+  "Physical infrastructure, digital infrastructure and business infrastructure. Modern projects rarely fit within one discipline. Britech’s operating model brings engineers, technology professionals, project specialists, data experts and business consultants into coordinated teams, so that technical design, technology and operating requirements are considered together.",
+  "Our leadership includes professionals with credentials in project management, cybersecurity, service management and information systems assurance, including PMP, CISA, CISSP and ITIL. Britech’s established digital portfolio spans enterprise systems, mobile applications, data platforms and sector-specific solutions.",
 ];
 
 export type Industry = {
@@ -454,12 +565,15 @@ export const industries: Industry[] = [
 
 /** Options for the contact form “How can we help you?” field. */
 export const INQUIRY_SERVICES = [
+  "Engineering Consultancy",
+  "Business & Management Consultancy",
   "Mobile & Software Development",
   "AI-Powered Digital Transformation",
   "Enterprise Software & ERP",
   "Business Intelligence",
   "Cybersecurity & IT Audit",
   "Digital Strategy & IT Consulting",
+  "Cloud & Infrastructure",
   "Training & Support",
   "Bulk SMS (Njiwa)",
   "Product demo",
@@ -470,6 +584,9 @@ export const INQUIRY_SERVICES = [
 type InquiryService = (typeof INQUIRY_SERVICES)[number];
 
 const SERVICE_FOR_SOLUTION: Record<string, InquiryService> = {
+  "engineering-consultancy": "Engineering Consultancy",
+  "business-management-consultancy": "Business & Management Consultancy",
+  "cloud-infrastructure": "Cloud & Infrastructure",
   "mobile-software-development": "Mobile & Software Development",
   "ai-powered-digital-transformation": "AI-Powered Digital Transformation",
   "training-support-capacity-building": "Training & Support",
@@ -497,3 +614,5 @@ export const contactForProduct = (p: { slug: string; name: string }) =>
 
 export const isInquiryService = (v: string | undefined): v is InquiryService =>
   (INQUIRY_SERVICES as readonly string[]).includes(v ?? "");
+
+export const servicesIn = (practice: PracticeSlug) => services.filter((s) => s.practice === practice);

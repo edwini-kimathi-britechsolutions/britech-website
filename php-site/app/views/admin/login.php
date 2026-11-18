@@ -8,7 +8,8 @@ defined('BRITECH') || exit;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow">
 <title>Sign in · Britech Admin</title>
-<link rel="icon" href="/images/mark.png">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/mark.png" type="image/png">
 <link rel="stylesheet" href="<?= e(asset('app.css')) ?>">
 <script src="<?= e(asset('admin.js')) ?>" defer></script>
 </head>
@@ -16,7 +17,7 @@ defined('BRITECH') || exit;
 <div class="min-h-screen bg-navy-50/60">
   <div class="flex min-h-screen items-center justify-center px-4 py-12">
     <div class="w-full max-w-sm">
-      <img src="/images/logo.png" alt="Britech Solutions" width="150" height="58" class="mx-auto h-12 w-auto">
+      <img src="/images/logo.svg" alt="Britech Solutions" width="150" height="54" class="mx-auto h-12 w-auto">
       <div class="mt-8 rounded-2xl border border-navy-100 bg-white p-7 shadow-xl shadow-navy-900/5">
         <h1 class="text-xl font-bold text-navy-900">Sign in to the admin portal</h1>
         <p class="mt-1 text-sm text-navy-500">For Britech team members only.</p>

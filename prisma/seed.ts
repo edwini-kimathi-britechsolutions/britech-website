@@ -97,13 +97,65 @@ const projects = [
     highlights: ["Vehicle & driver management", "Trip & route planning", "Fuel tracking", "Maintenance scheduling", "Cargo & delivery tracking", "Trip expenses & costing", "Licence & insurance expiry alerts", "Fleet dashboards & reports"],
     isProduct: true,
   },
+  {
+    slug: "hesabu",
+    name: "HESABU",
+    client: null,
+    tagline: "Cloud-based business management",
+    sector: "SMEs & Corporate Enterprises",
+    url: null,
+    logo: null,
+    description:
+      "HESABU is Britech Solutions’ cloud-based business management platform.",
+    highlights: ["Cloud-based business management"],
+    isProduct: true,
+  },
+  {
+    slug: "foresta360",
+    name: "Foresta360",
+    client: null,
+    tagline: "GIS-enabled forestry monitoring and traceability",
+    sector: "Environment & Natural Resources",
+    url: null,
+    logo: null,
+    description:
+      "Foresta360 is Britech Solutions’ GIS-enabled platform for forestry monitoring and traceability.",
+    highlights: ["GIS-enabled forestry monitoring", "Traceability"],
+    isProduct: true,
+  },
+  {
+    slug: "shamba-bi",
+    name: "Shamba BI",
+    client: null,
+    tagline: "Agricultural business intelligence",
+    sector: "Agriculture & Agribusiness",
+    url: null,
+    logo: null,
+    description:
+      "Shamba BI is Britech Solutions’ agricultural business intelligence platform.",
+    highlights: ["Agricultural business intelligence"],
+    isProduct: true,
+  },
+  {
+    slug: "britech-universal-ddi",
+    name: "Britech Universal DDI Product Suite",
+    client: null,
+    tagline: "Integrated Digital, Data and Intelligence solutions",
+    sector: null,
+    url: null,
+    logo: null,
+    description:
+      "The Britech Universal DDI Product Suite brings together Britech’s integrated Digital, Data and Intelligence solutions.",
+    highlights: ["Digital solutions", "Data solutions", "Intelligence solutions"],
+    isProduct: true,
+  },
 ];
 
 const settings: Record<string, string> = {
-  phone1: "+255 795 005 903",
-  phone2: "+255 763 981 298",
+  phone1: "+255 763 981 298",
+  phone2: "+255 795 005 903",
   email: "info@britechsolutions.co.tz",
-  address: "25 Mallyse Street, Arusha, Tanzania",
+  address: "3rd Floor, Ngorongoro Tourism Centre, Boma Road, Arusha, Tanzania",
 };
 
 async function main() {

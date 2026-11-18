@@ -12,11 +12,17 @@ export const metadata: Metadata = {
     template: "%s | Britech Solutions",
   },
   description:
-    "Britech Solutions builds smart, secure, and scalable digital systems for businesses, governments, and organizations in Tanzania, Africa and beyond.",
-  icons: { icon: "/images/mark.png", apple: "/images/mark.png" },
+    "Britech Solutions is a Tanzania-based multidisciplinary professional services and technology company: engineering consultancy, digital transformation and business advisory, integrated.",
+  icons: {
+    icon: [
+      { url: "/images/favicon.svg", type: "image/svg+xml" },
+      { url: "/images/mark.png", type: "image/png" },
+    ],
+    apple: "/images/apple-touch-icon.png",
+  },
   openGraph: {
     title: "Britech Solutions",
-    description: "Innovative technology solutions for businesses, governments, and organizations in Africa and beyond.",
+    description: "One Britech. Three practices. Integrated solutions: engineering, technology and business consultancy from Arusha, Tanzania.",
     locale: "en_TZ",
     type: "website",
   },

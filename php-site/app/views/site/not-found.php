@@ -5,14 +5,15 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Page not found | Britech Solutions</title>
-<link rel="icon" href="/images/mark.png">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/mark.png" type="image/png">
 <link rel="stylesheet" href="<?= e(asset('app.css')) ?>">
 </head>
 <body class="font-sans">
 <div class="relative flex min-h-screen flex-col overflow-hidden bg-white">
   <div class="bg-grid pointer-events-none absolute inset-0 [mask-image:radial-gradient(ellipse_at_center,black_20%,transparent_70%)]"></div>
   <header class="relative mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-    <a href="/" aria-label="Britech Solutions home"><img src="/images/logo.png" alt="Britech Solutions" width="140" height="53" class="h-10 w-auto"></a>
+    <a href="/" aria-label="Britech Solutions home"><img src="/images/logo.svg" alt="Britech Solutions" width="139" height="50" class="h-11 w-auto"></a>
   </header>
   <main class="relative flex flex-1 items-center justify-center px-4 pb-24">
     <div class="max-w-xl text-center">

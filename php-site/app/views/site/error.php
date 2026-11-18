@@ -8,12 +8,13 @@ defined('BRITECH') || exit;
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex">
 <title>Something went wrong | Britech Solutions</title>
-<link rel="icon" href="/images/mark.png">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/mark.png" type="image/png">
 <link rel="stylesheet" href="<?= e(asset('app.css')) ?>">
 </head>
 <body class="font-sans">
 <header class="mx-auto w-full max-w-7xl px-4 py-6 sm:px-6 lg:px-8">
-  <a href="/" aria-label="Britech Solutions home"><img src="/images/logo.png" alt="Britech Solutions" width="140" height="53" class="h-10 w-auto"></a>
+  <a href="/" aria-label="Britech Solutions home"><img src="/images/logo.svg" alt="Britech Solutions" width="139" height="50" class="h-11 w-auto"></a>
 </header>
 <section class="flex min-h-[60vh] items-center justify-center px-4 py-24">
   <div class="max-w-lg text-center">

@@ -9,7 +9,7 @@ import { CountUp, Reveal } from "@/components/motion";
 import { PartnerLogos, PostCard } from "@/components/site-cards";
 import { ButtonLink, Container, PartnerMarquee, SectionHeading } from "@/components/ui";
 import { getLatestPosts, getPartnerPreview, getProducts, getSettings, getTestimonials } from "@/lib/content";
-import { contactHref, engagementProcess, industries, services, stats, telHref, values } from "@/lib/data";
+import { contactHref, engagementProcess, industries, practices, sectors, servicesIn, stats, telHref, values } from "@/lib/data";
 
 export default async function Home() {
   const [{ partners, total: partnerTotal }, { products }, testimonials, posts, settings] = await Promise.all([
@@ -59,51 +59,70 @@ export default async function Home() {
         </section>
       )}
 
-      {/* SERVICES */}
+      {/* PRACTICES */}
       <section className="bg-navy-50/50 py-20 sm:py-28">
         <Container>
           <div className="grid items-end gap-6 lg:grid-cols-2">
-            <SectionHeading center={false} eyebrow="What we do" title="Our core services" />
+            <SectionHeading center={false} eyebrow="What we do" title="Three practices, one integrated team" />
             <p className="text-lg text-navy-500 lg:pb-2">
-              End-to-end technology services that help organizations build, secure, and scale their digital operations.
+              Engineers, technology professionals and business consultants work in coordinated teams, so technical design, technology
+              and operating requirements are considered together.
             </p>
           </div>
-          {/* Swipeable row on phones, grid from tablet up */}
-          <div className="-mx-4 mt-12 flex snap-x snap-mandatory gap-4 overflow-x-auto px-4 pb-4 sm:mx-0 sm:grid sm:grid-cols-2 sm:overflow-visible sm:px-0 sm:pb-0 lg:grid-cols-4">
-            {services.map((s, i) => (
-              <Reveal key={s.slug} delay={(i % 4) * 80} className="w-[82%] shrink-0 snap-start sm:w-auto">
-                <Link
-                  href={`/solutions/${s.slug}`}
-                  className="group flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-6 transition hover:border-navy-300 hover:shadow-lg hover:shadow-navy-900/5"
-                >
-                  <span className="flex h-11 w-11 items-center justify-center rounded-xl bg-navy-900 text-white transition group-hover:bg-navy-700">
-                    <Icon name={s.icon} className="h-5 w-5" />
-                  </span>
-                  <h3 className="mt-5 font-semibold text-navy-900">{s.title}</h3>
-                  <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-500">{s.short}</p>
-                  <span className="mt-5 inline-flex items-center gap-1 text-sm font-semibold text-navy-900">
-                    Learn more <ArrowRight className="h-4 w-4 transition group-hover:translate-x-1" />
-                  </span>
-                </Link>
-              </Reveal>
-            ))}
-            <Reveal delay={240} className="w-[82%] shrink-0 snap-start sm:w-auto">
-              <div className="flex h-full flex-col rounded-2xl bg-navy-900 p-6 text-white">
-                <h3 className="text-lg font-semibold">Not sure where to start?</h3>
-                <p className="mt-2 flex-1 text-sm leading-relaxed text-navy-200">
-                  Tell us what you’re trying to achieve and we’ll recommend the right approach.
-                </p>
-                <Link
-                  href={contactHref({ message: "I’d like to book a consultation." })}
-                  className="mt-5 inline-flex items-center justify-center gap-2 rounded-lg bg-mint-500 px-4 py-2.5 text-sm font-semibold text-navy-950 transition hover:bg-mint-400"
-                >
-                  Book a consultation <ArrowRight className="h-4 w-4" />
-                </Link>
-                <a href={telHref(settings.phone1)} className="mt-3 inline-flex items-center justify-center gap-2 text-sm text-navy-200 hover:text-white">
-                  <Phone className="h-3.5 w-3.5" /> {settings.phone1}
-                </a>
-              </div>
-            </Reveal>
+          <div className="mt-12 grid gap-5 lg:grid-cols-3">
+            {practices.map((pr, i) => {
+              const list = servicesIn(pr.slug);
+              const single = list.length === 1 ? list[0] : null;
+              const href = single ? `/solutions/${single.slug}` : `/solutions#${pr.slug}`;
+              return (
+                <Reveal key={pr.slug} delay={i * 80}>
+                  <div className="flex h-full flex-col rounded-2xl border border-navy-100 bg-white p-7">
+                    <span className="flex h-12 w-12 items-center justify-center rounded-xl bg-navy-900 text-white">
+                      <Icon name={pr.icon} className="h-6 w-6" />
+                    </span>
+                    <h3 className="mt-5 text-xl font-semibold text-navy-900">{pr.title}</h3>
+                    <p className="mt-2 text-sm leading-relaxed text-navy-500">{pr.short}</p>
+                    <ul className="mt-5 flex-1 space-y-2 border-t border-navy-100 pt-5 text-sm">
+                      {single
+                        ? single.features.map((ft) => (
+                            <li key={ft.title} className="font-medium text-navy-700">
+                              {ft.title}
+                            </li>
+                          ))
+                        : list.map((sv) => (
+                            <li key={sv.slug}>
+                              <Link href={`/solutions/${sv.slug}`} className="font-medium text-navy-700 underline-offset-4 hover:text-navy-900 hover:underline">
+                                {sv.title}
+                              </Link>
+                            </li>
+                          ))}
+                    </ul>
+                    <Link href={href} className="mt-6 inline-flex items-center gap-1 text-sm font-semibold text-navy-900 underline-offset-4 hover:underline">
+                      Explore {pr.title} <ArrowRight className="h-4 w-4" />
+                    </Link>
+                  </div>
+                </Reveal>
+              );
+            })}
+          </div>
+          <div className="mt-5 flex flex-col gap-5 rounded-2xl bg-navy-900 p-7 text-white sm:flex-row sm:items-center sm:justify-between">
+            <div>
+              <h3 className="text-lg font-semibold">Not sure where to start?</h3>
+              <p className="mt-1 text-sm leading-relaxed text-navy-200">
+                Tell us what you’re trying to achieve and we’ll recommend the right approach.
+              </p>
+            </div>
+            <div className="flex shrink-0 flex-col items-start gap-3 sm:items-end">
+              <Link
+                href={contactHref({ message: "I’d like to book a consultation." })}
+                className="inline-flex items-center justify-center gap-2 rounded-lg bg-brand-500 px-4 py-2.5 text-sm font-semibold text-white transition hover:bg-brand-600"
+              >
+                Book a consultation <ArrowRight className="h-4 w-4" />
+              </Link>
+              <a href={telHref(settings.phone1)} className="inline-flex items-center gap-2 text-sm text-navy-200 hover:text-white">
+                <Phone className="h-3.5 w-3.5" /> {settings.phone1}
+              </a>
+            </div>
           </div>
         </Container>
       </section>
@@ -144,7 +163,8 @@ export default async function Home() {
           <div className="grid items-end gap-6 lg:grid-cols-2">
             <SectionHeading center={false} eyebrow="Who we serve" title="Solutions across multiple sectors" />
             <p className="text-lg text-navy-500 lg:pb-2">
-              Our systems power institutions in agriculture, health, education, conservation, finance and governance.
+              We support enterprises, institutions and development programs in {sectors.length} sectors, from hospitality and real estate
+              to government, finance and natural resources.
             </p>
           </div>
           <div className="mt-12 grid gap-4 sm:grid-cols-2 lg:grid-cols-4">
@@ -183,14 +203,15 @@ export default async function Home() {
       <section className="py-20 sm:py-28">
         <Container>
           <div className="grid items-end gap-6 lg:grid-cols-2">
-            <SectionHeading center={false} eyebrow="How we work" title="From discovery to handover" />
+            <SectionHeading center={false} eyebrow="How we work" title="One integrated delivery model" />
             <p className="text-lg text-navy-500 lg:pb-2">
-              A clear, accountable process, so you always know what happens next and your team can run the system after we hand it over.
+              From business goals to assurance, every engagement follows the same accountable path across engineering, technology and
+              operations.
             </p>
           </div>
-          <ol className="relative mt-12 grid gap-8 md:grid-cols-2 lg:grid-cols-4 lg:gap-6">
+          <ol className="relative mt-12 grid gap-8 sm:grid-cols-2 lg:grid-cols-5 lg:gap-6">
             {/* connecting line on desktop */}
-            <span aria-hidden className="absolute left-5 right-5 top-5 hidden h-px bg-gradient-to-r from-mint-400 via-navy-200 to-navy-100 lg:block" />
+            <span aria-hidden className="absolute left-5 right-5 top-5 hidden h-px bg-gradient-to-r from-brand-400 via-navy-200 to-navy-100 lg:block" />
             {engagementProcess.map((step, i) => (
               <li key={step.title} className="relative">
                 <span className="relative flex h-10 w-10 items-center justify-center rounded-full bg-navy-900 text-sm font-bold text-white ring-4 ring-white">
@@ -221,7 +242,7 @@ export default async function Home() {
                     {t.photo ? (
                       <Image src={t.photo} alt="" width={44} height={44} unoptimized={t.photo.startsWith("/media/")} className="h-11 w-11 rounded-full object-cover" />
                     ) : (
-                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-mint-500 font-bold text-navy-950">{t.name.charAt(0)}</span>
+                      <span className="flex h-11 w-11 items-center justify-center rounded-full bg-brand-500 font-bold text-white">{t.name.charAt(0)}</span>
                     )}
                     <span>
                       <span className="block font-semibold">{t.name}</span>
@@ -240,12 +261,12 @@ export default async function Home() {
         <Container>
           <div className="grid gap-8 lg:grid-cols-12 lg:items-end">
             <div className="lg:col-span-7">
-              <SectionHeading center={false} eyebrow="Who we are" title="Smart, secure, and scalable digital systems" />
+              <SectionHeading center={false} eyebrow="Who we are" title="Built for complex, multidisciplinary challenges" />
             </div>
             <div className="lg:col-span-5">
               <p className="text-lg leading-relaxed text-navy-500">
-                Britech Solutions is a technology company in Arusha. For seven years we have helped public institutions, NGOs, and
-                businesses simplify operations and achieve impact through technology.
+                Britech Solutions Limited is a Tanzania-based multidisciplinary professional services and technology company in Arusha.
+                For more than eight years we have helped clients design, modernize and operate the systems their performance depends on.
               </p>
               <div className="mt-6 flex flex-wrap gap-3">
                 <ButtonLink href="/about">About Britech</ButtonLink>

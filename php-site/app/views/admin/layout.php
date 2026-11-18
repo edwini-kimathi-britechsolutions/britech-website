@@ -21,7 +21,8 @@ $items = [
 <meta name="robots" content="noindex, nofollow">
 <meta name="csrf-token" content="<?= e(csrf_token()) ?>">
 <title><?= e($title) ?> · Britech Admin</title>
-<link rel="icon" href="/images/mark.png">
+<link rel="icon" href="/images/favicon.svg" type="image/svg+xml">
+<link rel="icon" href="/images/mark.png" type="image/png">
 <link rel="stylesheet" href="<?= e(asset('app.css')) ?>">
 <script src="<?= e(asset('admin.js')) ?>" defer></script>
 <?php if (!empty($withEditor)): ?><script src="<?= e(asset('editor.js')) ?>" defer></script><?php endif; ?>
@@ -32,7 +33,7 @@ $items = [
   <aside class="border-b border-navy-100 bg-white lg:sticky lg:top-0 lg:flex lg:h-screen lg:w-64 lg:shrink-0 lg:flex-col lg:border-b-0 lg:border-r">
     <div class="flex items-center justify-between px-5 py-4 lg:block lg:py-6">
       <a href="/admin" class="flex items-center gap-2">
-        <img src="/images/logo.png" alt="Britech Solutions" width="110" height="42" class="h-9 w-auto">
+        <img src="/images/logo.svg" alt="Britech Solutions" width="111" height="40" class="h-9 w-auto">
         <span class="rounded bg-navy-900 px-1.5 py-0.5 text-[10px] font-bold uppercase tracking-wider text-white">Admin</span>
       </a>
     </div>

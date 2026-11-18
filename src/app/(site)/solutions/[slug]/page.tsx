@@ -5,7 +5,7 @@ import { notFound } from "next/navigation";
 import { ArrowLeft, ArrowRight, CheckCircle2, FileCheck2 } from "lucide-react";
 import Icon from "@/components/Icon";
 import { Container, Eyebrow } from "@/components/ui";
-import { contactForSolution, serviceProcess, services } from "@/lib/data";
+import { contactForSolution, practices, serviceProcess, services } from "@/lib/data";
 
 type Props = { params: Promise<{ slug: string }> };
 
@@ -23,7 +23,12 @@ export default async function ServicePage({ params }: Props) {
   const { slug } = await params;
   const service = services.find((s) => s.slug === slug);
   if (!service) notFound();
-  const others = services.filter((s) => s.slug !== slug).slice(0, 3);
+  // Same practice first, then the rest
+  const others = [
+    ...services.filter((s) => s.slug !== slug && s.practice === service.practice),
+    ...services.filter((s) => s.slug !== slug && s.practice !== service.practice),
+  ].slice(0, 3);
+  const practice = practices.find((p) => p.slug === service.practice);
   const delivery = serviceProcess[slug];
 
   return (
@@ -39,7 +44,7 @@ export default async function ServicePage({ params }: Props) {
               <Icon name={service.icon} className="h-8 w-8" />
             </span>
             <div>
-              <Eyebrow>Solution</Eyebrow>
+              <Eyebrow>{practice?.title ?? "Solution"}</Eyebrow>
               <h1 className="mt-3 text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl">{service.title}</h1>
             </div>
           </div>
@@ -59,7 +64,7 @@ export default async function ServicePage({ params }: Props) {
             <p className="mt-2 text-sm text-navy-200">Tell us about your project and we’ll get back to you shortly.</p>
             <Link
               href={contactForSolution(service.slug)}
-              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-mint-500 px-4 py-3 font-semibold text-navy-950 transition hover:bg-mint-400"
+              className="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-500 px-4 py-3 font-semibold text-white transition hover:bg-brand-600"
             >
               Schedule a Consultation <ArrowRight className="h-4 w-4" />
             </Link>

@@ -1,7 +1,12 @@
 <?php
 defined('BRITECH') || exit;
 /** @var array $service */
-$others = array_slice(array_values(array_filter(data('services'), fn ($s) => $s['slug'] !== $service['slug'])), 0, 3);
+// Same practice first, then the rest
+$others = array_slice(array_merge(
+    array_values(array_filter(data('services'), fn ($s) => $s['slug'] !== $service['slug'] && $s['practice'] === $service['practice'])),
+    array_values(array_filter(data('services'), fn ($s) => $s['practice'] !== $service['practice']))
+), 0, 3);
+$practice = current(array_filter(data('practices'), fn ($p) => $p['slug'] === $service['practice']));
 $delivery = data('serviceProcess')[$service['slug']] ?? null;
 ?>
 <section class="relative overflow-hidden border-b border-navy-100 bg-navy-50/50">
@@ -11,7 +16,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
     <div class="mt-6 flex animate-fade-up flex-col gap-6 lg:flex-row lg:items-center">
       <span class="flex h-16 w-16 shrink-0 items-center justify-center rounded-2xl bg-navy-900 text-white shadow-xl"><?= icon($service['icon'], 'h-8 w-8') ?></span>
       <div>
-        <?= eyebrow('Solution') ?>
+        <?= eyebrow($practice ? $practice['title'] : 'Solution') ?>
         <h1 class="mt-3 text-4xl font-bold tracking-tight text-navy-900 sm:text-5xl"><?= e($service['title']) ?></h1>
       </div>
     </div>
@@ -27,7 +32,7 @@ $delivery = data('serviceProcess')[$service['slug']] ?? null;
     <aside class="h-fit rounded-2xl bg-navy-900 p-7 text-white">
       <h2 class="text-lg font-semibold">Talk to an expert</h2>
       <p class="mt-2 text-sm text-navy-200">Tell us about your project and we’ll get back to you shortly.</p>
-      <a href="<?= e(contact_for_solution($service['slug'])) ?>" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-mint-500 px-4 py-3 font-semibold text-navy-950 transition hover:bg-mint-400">Schedule a Consultation <?= icon('ArrowRight', 'h-4 w-4') ?></a>
+      <a href="<?= e(contact_for_solution($service['slug'])) ?>" class="mt-5 inline-flex w-full items-center justify-center gap-2 rounded-lg bg-brand-500 px-4 py-3 font-semibold text-white transition hover:bg-brand-600">Schedule a Consultation <?= icon('ArrowRight', 'h-4 w-4') ?></a>
     </aside>
   </div>
 </section>
