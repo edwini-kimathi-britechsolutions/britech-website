@@ -69,7 +69,6 @@ export default async function Footer() {
             <ul className="mt-5 space-y-3">
               {[
                 ["/about", "About Britech"],
-                ["/products", "Products"],
                 ["/industries", "Industries"],
                 ["/our-work", "Our Work"],
                 ["/clients", "Clients & Partners"],

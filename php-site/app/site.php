@@ -16,7 +16,6 @@ function route_site(string $path): bool
         site_page('home', [
             'partners' => $preview['partners'],
             'partnerTotal' => $preview['total'],
-            'products' => products(1, 12)['products'],
             'testimonials' => testimonials(6),
             'posts' => latest_posts(3),
         ]);

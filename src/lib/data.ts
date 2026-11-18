@@ -303,6 +303,8 @@ export const partners = [
   { name: "SAP", file: "sap" },
   { name: "Sage", file: "sage" },
   { name: "Yealink", file: "yealink" },
+  { name: "Lenovo", file: "lenovo" },
+  { name: "Yas (formerly Tigo)", file: "yas" },
 ];
 
 

@@ -1,5 +1,5 @@
 import Image from "next/image";
-import { BarChart3, Cloud, Cpu, Database, ShieldCheck } from "lucide-react";
+import { BadgeCheck, BarChart3, Cloud, Cpu, Database, ShieldCheck } from "lucide-react";
 import Icon from "./Icon";
 import { NetworkField, RotatingWord } from "./motion";
 import { ButtonLink } from "./ui";
@@ -130,6 +130,10 @@ export default function Hero({ logos }: { logos: Pick<Partner, "id" | "name" | "
               Explore Solutions
             </ButtonLink>
           </div>
+
+          <p className="mt-6 inline-flex animate-fade-up items-center gap-2 rounded-full border border-navy-200 bg-white/90 px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm [animation-delay:350ms]">
+            <BadgeCheck className="h-4 w-4" /> OpenAI Selected Partner
+          </p>
 
           {logos.length > 0 && (
             <div className="mt-10 animate-fade-up [animation-delay:400ms]">

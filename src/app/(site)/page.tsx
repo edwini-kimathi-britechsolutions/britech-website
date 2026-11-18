@@ -4,17 +4,16 @@ import { ArrowRight, Award, Eye, Globe, Heart, Phone, Quote, Target } from "luci
 import CTA from "@/components/CTA";
 import Hero from "@/components/Hero";
 import Icon from "@/components/Icon";
-import ProductTabs from "@/components/ProductTabs";
 import { CountUp, Reveal } from "@/components/motion";
 import { PartnerLogos, PostCard } from "@/components/site-cards";
 import { ButtonLink, Container, PartnerMarquee, SectionHeading } from "@/components/ui";
-import { getLatestPosts, getPartnerPreview, getProducts, getSettings, getTestimonials } from "@/lib/content";
+import { getHeroLogos, getLatestPosts, getPartnerPreview, getSettings, getTestimonials } from "@/lib/content";
 import { contactHref, engagementProcess, industries, practices, sectors, servicesIn, stats, telHref, values } from "@/lib/data";
 
 export default async function Home() {
-  const [{ partners, total: partnerTotal }, { products }, testimonials, posts, settings] = await Promise.all([
+  const [{ partners, total: partnerTotal }, heroLogos, testimonials, posts, settings] = await Promise.all([
     getPartnerPreview(15),
-    getProducts({ take: 12 }),
+    getHeroLogos(5),
     getTestimonials(6),
     getLatestPosts(3),
     getSettings(),
@@ -22,7 +21,7 @@ export default async function Home() {
 
   return (
     <>
-      <Hero logos={partners.slice(0, 5)} />
+      <Hero logos={heroLogos} />
 
       {/* STATS */}
       <section className="border-b border-navy-100 bg-white">
@@ -126,30 +125,6 @@ export default async function Home() {
           </div>
         </Container>
       </section>
-
-      {/* PRODUCTS */}
-      {products.length > 0 && (
-        <section className="py-20 sm:py-28">
-          <Container>
-            <SectionHeading
-              eyebrow="Built by Britech"
-              title="Our flagship products & systems"
-              text="Platforms we’ve designed, built and support for operations, results management, logistics and messaging."
-            />
-            <div className="mt-12">
-              <ProductTabs products={products} />
-            </div>
-            <div className="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3">
-              <Link href="/products" className="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">
-                All products <ArrowRight className="h-4 w-4" />
-              </Link>
-              <Link href="/our-work" className="inline-flex items-center gap-1 font-semibold text-navy-600 hover:text-navy-900">
-                See our client work <ArrowRight className="h-4 w-4" />
-              </Link>
-            </div>
-          </Container>
-        </section>
-      )}
 
       {/* TECHNOLOGY PARTNERS */}
       <section className="border-y border-navy-100 bg-white py-10">

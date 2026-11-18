@@ -13,7 +13,6 @@ const nav = [
   { href: "/about", label: "About" },
   { href: "/solutions", label: "Solutions", mega: true },
   { href: "/industries", label: "Industries" },
-  { href: "/products", label: "Products" },
   { href: "/our-work", label: "Our Work" },
   { href: "/blog", label: "Blog" },
   { href: "/contact", label: "Contact" },

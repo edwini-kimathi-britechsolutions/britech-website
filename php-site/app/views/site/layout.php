@@ -39,7 +39,6 @@ $nav = [
     ['/about', 'About', false],
     ['/solutions', 'Solutions', true],
     ['/industries', 'Industries', false],
-    ['/products', 'Products', false],
     ['/our-work', 'Our Work', false],
     ['/blog', 'Blog', false],
     ['/contact', 'Contact', false],
@@ -203,7 +202,7 @@ $phones = array_filter([$s['phone1'], $s['phone2']]);
       <div class="lg:col-span-2">
         <h3 class="text-sm font-semibold uppercase tracking-wider text-white">Company</h3>
         <ul class="mt-5 space-y-3">
-          <?php foreach ([['/about', 'About Britech'], ['/products', 'Products'], ['/industries', 'Industries'], ['/our-work', 'Our Work'], ['/clients', 'Clients & Partners'], ['/blog', 'Blog'], ['/contact', 'Contact']] as [$href, $label]): ?>
+          <?php foreach ([['/about', 'About Britech'], ['/industries', 'Industries'], ['/our-work', 'Our Work'], ['/clients', 'Clients & Partners'], ['/blog', 'Blog'], ['/contact', 'Contact']] as [$href, $label]): ?>
           <li><a href="<?= $href ?>" class="transition hover:text-white"><?= e($label) ?></a></li>
           <?php endforeach; ?>
         </ul>

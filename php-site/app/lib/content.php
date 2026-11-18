@@ -61,6 +61,27 @@ function partner_preview(int $take = 15): array
     ];
 }
 
+/** Home hero "Trusted by" logos: these clients first (matched by name), then the usual order. */
+function hero_logos(int $take = 5): array
+{
+    $first = [['eabc', 'east african business council'], ['silverland'], ['trias'], ['pastoral women', 'pwc']];
+    $all = rows('SELECT id, name, logo FROM `Partner` WHERE active = 1 ORDER BY sortOrder ASC, name ASC');
+    $rank = function (string $name) use ($first): int {
+        $n = mb_strtolower($name);
+        foreach ($first as $i => $keys) {
+            foreach ($keys as $k) {
+                if (str_contains($n, $k)) {
+                    return $i;
+                }
+            }
+        }
+        return count($first);
+    };
+    // usort is stable (PHP 8+), so everyone else keeps the admin order.
+    usort($all, fn ($a, $b) => $rank($a['name']) <=> $rank($b['name']));
+    return array_slice($all, 0, $take);
+}
+
 /** @param ?string $kind CLIENT|PARTNER — "BOTH" counts as both. */
 function partners_page(?string $q, ?string $kind, int $page): array
 {

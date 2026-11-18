@@ -13,7 +13,7 @@ $onCircle = function (int $i, int $n): string {
     return sprintf('left:%.4F%%;top:%.4F%%', 50 + 50 * cos($a), 50 + 50 * sin($a));
 };
 $words = ['facilities', 'software', 'networks', 'dashboards', 'security'];
-$heroLogos = array_slice($partners, 0, 5);
+$heroLogos = hero_logos(5);
 ?>
 <!-- HERO -->
 <section class="relative overflow-hidden border-b border-navy-100 bg-gradient-to-br from-white via-white to-brand-50/60">
@@ -43,6 +43,8 @@ $heroLogos = array_slice($partners, 0, 5);
         <?= button_link('/contact', 'Start a Project') ?>
         <?= button_link('/solutions', 'Explore Solutions', 'secondary') ?>
       </div>
+
+      <p class="mt-6 inline-flex animate-fade-up items-center gap-2 rounded-full border border-navy-200 bg-white/90 px-4 py-2 text-sm font-semibold text-navy-900 shadow-sm [animation-delay:350ms]"><?= icon('BadgeCheck', 'h-4 w-4') ?> OpenAI Selected Partner</p>
 
       <?php if ($heroLogos): ?>
       <div class="mt-10 animate-fade-up [animation-delay:400ms]">
@@ -174,43 +176,6 @@ $heroLogos = array_slice($partners, 0, 5);
     </div>
   </div>
 </section>
-
-<?php if ($products): ?>
-<!-- PRODUCTS -->
-<section class="py-20 sm:py-28">
-  <div class="<?= CONTAINER ?>">
-    <?= section_heading('Built by Britech', 'Our flagship products &amp; systems', 'Platforms we’ve designed, built and support for operations, results management, logistics and messaging.') ?>
-    <div class="mt-12" data-tabs>
-      <div class="mx-auto flex w-fit max-w-full flex-wrap justify-center gap-1 rounded-2xl border border-navy-100 bg-navy-50/60 p-1 sm:rounded-full" role="tablist">
-        <?php foreach ($products as $i => $p): ?>
-        <button type="button" role="tab" id="tab-<?= e($p['slug']) ?>" aria-controls="panel-<?= e($p['slug']) ?>" aria-selected="<?= $i === 0 ? 'true' : 'false' ?>" data-tab="<?= $i ?>"
-          class="shrink-0 rounded-full px-5 py-2 text-sm font-semibold transition <?= $i === 0 ? 'bg-white text-navy-900 shadow ring-1 ring-navy-100' : 'text-navy-500 hover:text-navy-900' ?>"><?= e($p['name']) ?></button>
-        <?php endforeach; ?>
-      </div>
-      <?php foreach ($products as $i => $p): ?>
-      <div role="tabpanel" id="panel-<?= e($p['slug']) ?>" aria-labelledby="tab-<?= e($p['slug']) ?>" data-panel="<?= $i ?>" class="<?= $i === 0 ? '' : 'hidden ' ?>mt-10 grid animate-fade-up items-center gap-10 rounded-3xl border border-navy-100 bg-white p-6 shadow-xl shadow-navy-900/5 sm:p-10 lg:grid-cols-2">
-        <div>
-          <span class="text-sm font-semibold uppercase tracking-wider text-navy-500"><?= e($p['tagline']) ?></span>
-          <h3 class="mt-2 text-3xl font-bold text-navy-900 sm:text-4xl"><?= e($p['name']) ?></h3>
-          <p class="mt-4 leading-relaxed text-navy-500"><?= e($p['description']) ?></p>
-          <div class="mt-8 flex flex-wrap items-center gap-4">
-            <?= button_link(contact_for_product($p), 'Request a Demo') ?>
-            <?php if ($p['url']): ?>
-            <a href="<?= e($p['url']) ?>" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">Visit <?= e($p['name']) ?> <?= icon('ArrowUpRight', 'h-4 w-4') ?></a>
-            <?php endif; ?>
-          </div>
-        </div>
-        <?= product_panel($p) ?>
-      </div>
-      <?php endforeach; ?>
-    </div>
-    <div class="mt-10 flex flex-wrap justify-center gap-x-8 gap-y-3">
-      <a href="/products" class="inline-flex items-center gap-1 font-semibold text-navy-900 underline-offset-4 hover:underline">All products <?= icon('ArrowRight', 'h-4 w-4') ?></a>
-      <a href="/our-work" class="inline-flex items-center gap-1 font-semibold text-navy-600 hover:text-navy-900">See our client work <?= icon('ArrowRight', 'h-4 w-4') ?></a>
-    </div>
-  </div>
-</section>
-<?php endif; ?>
 
 <!-- TECHNOLOGY PARTNERS -->
 <section class="border-y border-navy-100 bg-white py-10">

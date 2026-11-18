@@ -664,6 +664,16 @@ return array (
       'name' => 'Yealink',
       'file' => 'yealink',
     ),
+    10 => 
+    array (
+      'name' => 'Lenovo',
+      'file' => 'lenovo',
+    ),
+    11 => 
+    array (
+      'name' => 'Yas (formerly Tigo)',
+      'file' => 'yas',
+    ),
   ),
   'serviceProcess' => 
   array (

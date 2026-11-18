@@ -82,6 +82,20 @@ async function loadPartnerPreview(take = 15) {
 }
 export const getPartnerPreview = cached(loadPartnerPreview, "partner-preview");
 
+/** Home hero "Trusted by" logos: these clients first (matched by name), then the usual order. */
+const HERO_CLIENTS_FIRST = [["eabc", "east african business council"], ["silverland"], ["trias"], ["pastoral women", "pwc"]];
+async function loadHeroLogos(take = 5) {
+  const all = await db.partner.findMany({ where: { active: true }, orderBy: byOrder, select: { id: true, name: true, logo: true } });
+  const rank = (name: string) => {
+    const n = name.toLowerCase();
+    const i = HERO_CLIENTS_FIRST.findIndex((keys) => keys.some((k) => n.includes(k)));
+    return i === -1 ? HERO_CLIENTS_FIRST.length : i;
+  };
+  // Array.sort is stable, so everyone else keeps the admin order.
+  return [...all].sort((a, b) => rank(a.name) - rank(b.name)).slice(0, take);
+}
+export const getHeroLogos = cached(loadHeroLogos, "hero-logos");
+
 export const PARTNER_PAGE_SIZE = 30;
 
 async function loadPartnersPage({ q, kind, page = 1 }: { q?: string; kind?: PartnerKind; page?: number }) {
